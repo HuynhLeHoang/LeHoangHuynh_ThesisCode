@@ -6,17 +6,23 @@ from threading import Thread
 import time
 event_queue = Queue(maxsize=1000000)
 running = True
+from bcc import BPF
+from ctypes import *
+import sys
+from queue import Queue
+from threading import Thread
+import time
+event_queue = Queue(maxsize=1000000)
+running = True
 
 TASK_COMM_LEN = 16
 MAX_ARGS = 20
 ARG_LEN = 128
 PATH_LEN = 256
 
-EDGE_OPEN   = 1
-EDGE_READ   = 2
-EDGE_WRITE  = 3
-EDGE_EXEC   = 4
-EDGE_DELETE = 5
+EDGE_CREATE   = 1
+EDGE_ATTR   = 2
+EDGE_EXEC  = 3
 
 # =======================
 # Python-side structures
@@ -76,6 +82,12 @@ program = r"""
 #define MAX_ARGS 20
 #define ARG_LEN 128
 
+//system process ID 
+#define MIN_PID 1000
+//bit rate 
+#define RATE_LIMIT_NS 100000000
+BPF_HASH(rate_limiter, u32, u64, 10240);
+
 //basic attribute for a process node
 struct proc_attr_t {
     u32 pid;
@@ -100,11 +112,9 @@ struct fork_event_t {
 
 //basic attribute for a file node
 enum file_edge_t {
-    EDGE_OPEN   = 1,
-    EDGE_READ   = 2,
-    EDGE_WRITE  = 3,
-    EDGE_EXEC   = 4,
-    EDGE_DELETE = 5,
+    EDGE_CREATE = 1,
+    EDGE_ATTR   = 2,
+    EDGE_EXEC   = 3,
 };
 
 struct file_event_t {
@@ -125,12 +135,27 @@ BPF_PERF_OUTPUT(file_events);
 
 /* =========== Function definition area for process node ==============*/
 
+
+
 //helper for credential
-static __always_inline void fill_proc_attr(struct proc_attr_t *a)
+static __always_inline int fill_proc_attr(struct proc_attr_t *a)
 {
     struct task_struct *task;
 
     a->pid = bpf_get_current_pid_tgid() >> 32;
+    //system process filter apply
+    if (a->pid < MIN_PID){
+        return 1;
+    }
+    //rate limit apply
+    u64 now = bpf_ktime_get_ns();
+    u32 pid = a->pid;
+    u64 *last_time = rate_limiter.lookup(&pid);
+    
+    if (last_time && (now - *last_time) < RATE_LIMIT_NS) {
+        return 1;
+    }
+    rate_limiter.update(&pid, &now);
 
     task = (struct task_struct *)bpf_get_current_task();
     a->ppid = task->real_parent->tgid;
@@ -140,6 +165,7 @@ static __always_inline void fill_proc_attr(struct proc_attr_t *a)
     a->egid = uidgid >> 32;
 
     a->ts = bpf_ktime_get_ns();
+    return 0;
 }
 
 /* =======================
@@ -154,7 +180,9 @@ int trace_execve(struct tracepoint__syscalls__sys_enter_execve *ctx)
 
     e->argc = 0;
 
-    fill_proc_attr(&e->attr);
+    if(fill_proc_attr(&e->attr)){
+        return 0;
+    }
 
     e->syscall = 1;
     bpf_get_current_comm(&e->comm, sizeof(e->comm));
@@ -185,7 +213,9 @@ int trace_execveat(struct tracepoint__syscalls__sys_enter_execveat *ctx)
 
     e->argc = 0;
 
-    fill_proc_attr(&e->attr);
+    if(fill_proc_attr(&e->attr)){
+        return 0;
+    }
 
     e->syscall = 2;
     bpf_get_current_comm(&e->comm, sizeof(e->comm));
@@ -215,9 +245,11 @@ int trace_fork_exit(struct tracepoint__syscalls__sys_exit_fork *ctx)
 
     struct fork_event_t e = {};
     e.type = 1;
-    fill_proc_attr(&e.parent);
+    if(fill_proc_attr(&e.parent)){
+        return 0;
+    }
+    
     e.child_pid = ctx->ret;
-
     fork_events.perf_submit(ctx, &e, sizeof(e));
     return 0;
 }
@@ -229,7 +261,9 @@ int trace_vfork_exit(struct tracepoint__syscalls__sys_exit_vfork *ctx)
 
     struct fork_event_t e = {};
     e.type = 2;
-    fill_proc_attr(&e.parent);
+    if(fill_proc_attr(&e.parent)){
+        return 0;
+    }
     e.child_pid = ctx->ret;
 
     fork_events.perf_submit(ctx, &e, sizeof(e));
@@ -244,7 +278,9 @@ int trace_clone_exit(struct tracepoint__syscalls__sys_exit_clone *ctx)
 
     struct fork_event_t e = {};
     e.type = 3;
-    fill_proc_attr(&e.parent);
+    if(fill_proc_attr(&e.parent)){
+        return 0;
+    }
     e.child_pid = ctx->ret;
 
     fork_events.perf_submit(ctx, &e, sizeof(e));
@@ -258,7 +294,9 @@ int trace_clone3_exit(struct tracepoint__syscalls__sys_exit_clone3 *ctx)
 
     struct fork_event_t e = {};
     e.type = 4;
-    fill_proc_attr(&e.parent);
+    if(fill_proc_attr(&e.parent)){
+        return 0;
+    }
     e.child_pid = ctx->ret;
 
     fork_events.perf_submit(ctx, &e, sizeof(e));
@@ -266,7 +304,7 @@ int trace_clone3_exit(struct tracepoint__syscalls__sys_exit_clone3 *ctx)
 }
 /* =========== Function definition area for file node ==============*/
 
-static __always_inline void submit_file(
+static __always_inline int submit_file(
     void *ctx,
     struct file *file,
     const char *path,
@@ -276,19 +314,32 @@ static __always_inline void submit_file(
     umode_t mode = 0;
 
     if (!file)
-        return;
+        return 1;
 
     bpf_probe_read(&inode, sizeof(inode), &file->f_inode);
     if (!inode)
-        return;
+        return 1;
 
     bpf_probe_read(&mode, sizeof(mode), &inode->i_mode);
     if (!S_ISREG(mode))
-        return;
+        return 1;
 
     struct file_event_t e = {};
-
+    //system process filter apply
     e.pid   = bpf_get_current_pid_tgid() >> 32;
+    if (e.pid < MIN_PID){
+        return 1;
+    }
+    //rate limit apply
+    u64 now = bpf_ktime_get_ns();
+    u32 pid = e.pid;
+    u64 *last_time = rate_limiter.lookup(&pid);
+    
+    if (last_time && (now - *last_time) < RATE_LIMIT_NS) {
+        return 0;
+    }
+    rate_limiter.update(&pid, &now);
+
     e.uid   = bpf_get_current_uid_gid();
     e.edge  = edge;
     u64 ino = 0;
@@ -310,32 +361,101 @@ static __always_inline void submit_file(
         bpf_probe_read_user_str(e.path, sizeof(e.path), path);
 
     file_events.perf_submit(ctx, &e, sizeof(e));
-}
-
-/* ========= OPEN / CREATE ========= */
-int trace_security_file_open(struct pt_regs *ctx, struct file *file)
-{
-    submit_file(ctx, file, NULL, EDGE_OPEN);
     return 0;
 }
 
-/* ========= READ ========= */
-int trace_vfs_read(struct pt_regs *ctx, struct file *file)
+static __always_inline int submit_inode(
+    void *ctx,
+    struct inode *inode,
+    u32 edge)
 {
-    submit_file(ctx, file, NULL, EDGE_READ);
+    umode_t mode = 0;
+    struct file_event_t e = {};
+
+    if (!inode)
+        return 1;
+
+    bpf_probe_read(&mode, sizeof(mode), &inode->i_mode);
+    if (!S_ISREG(mode))
+        return 1;
+
+    e.pid = bpf_get_current_pid_tgid() >> 32;
+    if (e.pid < MIN_PID)
+        return 1;
+
+    u64 now = bpf_ktime_get_ns();
+    u32 pid = e.pid;
+    u64 *last_time = rate_limiter.lookup(&pid);
+    if (last_time && (now - *last_time) < RATE_LIMIT_NS)
+        return 0;
+
+    rate_limiter.update(&pid, &now);
+
+    e.uid = bpf_get_current_uid_gid();
+    e.edge = edge;
+
+    bpf_probe_read(&e.inode, sizeof(e.inode), &inode->i_ino);
+
+    struct super_block *sb = NULL;
+    bpf_probe_read(&sb, sizeof(sb), &inode->i_sb);
+    if (sb)
+        bpf_probe_read(&e.dev, sizeof(e.dev), &sb->s_dev);
+
+    e.ts = bpf_ktime_get_ns();
+    bpf_get_current_comm(&e.comm, sizeof(e.comm));
+
+    // path không luôn available → để trống là OK cho provenance
+    e.path[0] = '\0';
+
+    file_events.perf_submit(ctx, &e, sizeof(e));
     return 0;
 }
 
-/* ========= WRITE ========= */
-int trace_vfs_write(struct pt_regs *ctx, struct file *file)
+int trace_security_inode_create(
+    struct pt_regs *ctx,
+    struct inode *dir,
+    struct dentry *dentry,
+    umode_t mode)
 {
-    submit_file(ctx, file, NULL, EDGE_WRITE);
+    if (!dentry)
+        return 0;
+    if(submit_inode(ctx, dentry->d_inode, EDGE_CREATE)){
+        return 1;
+    }
+    return 0;
+}
+
+int trace_security_inode_setattr(
+    struct pt_regs *ctx,
+    struct dentry *dentry,
+    struct iattr *attr)
+{
+    if (!dentry)
+        return 0;
+    if(submit_inode(ctx, dentry->d_inode, EDGE_ATTR)){
+        return 1;
+    }
+    return 0;
+}
+
+#include <linux/binfmts.h>
+
+int trace_security_bprm_check(
+    struct pt_regs *ctx,
+    struct linux_binprm *bprm)
+{
+    if (!bprm || !bprm->file)
+        return 0;
+    if(submit_file(ctx, bprm->file, NULL, EDGE_EXEC)){
+        return 1;
+    }
     return 0;
 }
 
 
 
 /* ========= DELETE ========= */
+/*
 int trace_unlinkat(struct tracepoint__syscalls__sys_enter_unlinkat *ctx)
 {
     struct file_event_t e = {};
@@ -351,6 +471,7 @@ int trace_unlinkat(struct tracepoint__syscalls__sys_enter_unlinkat *ctx)
     file_events.perf_submit(ctx, &e, sizeof(e));
     return 0;
 }
+*/
 """
 
 # =======================
@@ -365,11 +486,15 @@ b.attach_tracepoint(tp="syscalls:sys_exit_fork", fn_name="trace_fork_exit")
 b.attach_tracepoint(tp="syscalls:sys_exit_vfork", fn_name="trace_vfork_exit")
 b.attach_tracepoint(tp="syscalls:sys_exit_clone", fn_name="trace_clone_exit")
 b.attach_tracepoint(tp="syscalls:sys_exit_clone3", fn_name="trace_clone3_exit")
-b.attach_kprobe(event="security_file_open", fn_name="trace_security_file_open")
-b.attach_kprobe(event="vfs_read", fn_name="trace_vfs_read")
-b.attach_kprobe(event="vfs_write", fn_name="trace_vfs_write")
-b.attach_tracepoint("syscalls:sys_enter_execve", "trace_execve")
-b.attach_tracepoint("syscalls:sys_enter_unlinkat", "trace_unlinkat")
+b.attach_kprobe(event="security_inode_create",
+                fn_name="trace_security_inode_create")
+
+b.attach_kprobe(event="security_inode_setattr",
+                fn_name="trace_security_inode_setattr")
+
+b.attach_kprobe(event="security_bprm_check",
+                fn_name="trace_security_bprm_check")
+#b.attach_tracepoint("syscalls:sys_enter_unlinkat", "trace_unlinkat")
 
 print("Tracing provenance ... Ctrl-C to stop.\n")
 
@@ -388,11 +513,17 @@ def writer_thread():
                 pass
 
 def provstorage(outputstr):
+    #with queue
+    """
     try:
         event_queue.put_nowait(outputstr)
     except:
         # queue đầy → bỏ event (chấp nhận được)
         pass
+    """
+    # no queue
+    with open("Provenance.log", "a") as f:
+        f.write(outputstr + "\n")
 
 # =======================
 # Event handlers
@@ -434,13 +565,11 @@ def handle_fork(cpu, data, size):
 def handle_file(cpu, data, size):
     e = cast(data, POINTER(FileEvent)).contents
     edge = {
-        EDGE_OPEN: "OPEN",
-        EDGE_READ: "READ",
-        EDGE_WRITE: "WRITE",
-        EDGE_EXEC: "EXEC",
-        EDGE_DELETE: "DELETE"
+        EDGE_CREATE: "CREATE",
+        EDGE_ATTR: "ATTR",
+        EDGE_EXEC: "EXEC"
     }.get(e.edge, "?")
-    outputstr = str(edge) + "|" + str(e.uid) + "|" + str(e.pid) + "|" + str(e.dev) + "|" + str(e.path.decode(errors='ignore')) + "|" + str(e.comm.decode(errors='ignore'))
+    outputstr = str(edge) + "|" + str(e.uid) + "|" + str(e.pid) + "|" + str(e.inode) + "|" + str(e.dev) + "|" + str(e.path.decode(errors='ignore')) + "|" + str(e.comm.decode(errors='ignore'))
     #print(outputstr)
     if "python3" not in e.comm.decode(errors='ignore'):
         provstorage(outputstr)
@@ -464,6 +593,7 @@ while True:
     try:
         b.perf_buffer_poll()
     except KeyboardInterrupt:
-        running = False
-        event_queue.join()
-        print("Stopping tracer...")
+        pass
+        #running = False
+        #event_queue.join()
+        #print("Stopping tracer...")
