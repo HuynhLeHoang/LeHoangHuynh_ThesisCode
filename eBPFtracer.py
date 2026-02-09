@@ -68,17 +68,42 @@ class FileEvent(Structure):
 
 program = r"""
 #include <uapi/linux/ptrace.h>
-#include <linux/fs.h>
-#include <linux/dcache.h>
 #include <linux/sched.h>
+#include <linux/stat.h>
+#include <linux/fs.h>
 
 #define PATH_LEN 256
-#define TASK_COMM_LEN 16
+#define MAX_ARGS 20
+#define ARG_LEN 128
 
+//basic attribute for a process node
+struct proc_attr_t {
+    u32 pid;
+    u32 ppid;
+    u32 euid;
+    u32 egid;
+    u64 ts;
+};
+struct exec_event_t {
+    struct proc_attr_t attr;
+
+    u32 syscall;    // 1=execve, 2=execveat
+    char comm[TASK_COMM_LEN];
+    char argv[MAX_ARGS][ARG_LEN];
+    int argc;
+};
+struct fork_event_t {
+    struct proc_attr_t parent;
+    u32 child_pid;
+    u32 type;   // fork/vfork/clone/clone3
+};
+
+//basic attribute for a file node
 enum file_edge_t {
     EDGE_OPEN   = 1,
     EDGE_READ   = 2,
     EDGE_WRITE  = 3,
+    EDGE_EXEC   = 4,
     EDGE_DELETE = 5,
 };
 
@@ -93,128 +118,224 @@ struct file_event_t {
     char path[PATH_LEN];
 };
 
-/* ========= MAPS ========= */
-
-/* perf output */
+BPF_PERCPU_ARRAY(exec_storage, struct exec_event_t, 1);
+BPF_PERF_OUTPUT(exec_events);
+BPF_PERF_OUTPUT(fork_events);
 BPF_PERF_OUTPUT(file_events);
 
-/* cache: file* -> path */
-BPF_HASH(file_path_cache, u64, char[PATH_LEN]);
+/* =========== Function definition area for process node ==============*/
 
-/* ========= HELPERS ========= */
-
-static __always_inline int fill_file_event(
-    struct file_event_t *e,
-    struct file *file,
-    u32 edge)
+//helper for credential
+static __always_inline void fill_proc_attr(struct proc_attr_t *a)
 {
-    struct inode *inode = NULL;
-    struct super_block *sb = NULL;
-    umode_t mode = 0;
+    struct task_struct *task;
 
-    if (!file)
-        return -1;
+    a->pid = bpf_get_current_pid_tgid() >> 32;
 
-    bpf_probe_read(&inode, sizeof(inode), &file->f_inode);
-    if (!inode)
-        return -1;
+    task = (struct task_struct *)bpf_get_current_task();
+    a->ppid = task->real_parent->tgid;
 
-    bpf_probe_read(&mode, sizeof(mode), &inode->i_mode);
-    if (!S_ISREG(mode))
-        return -1;
+    u64 uidgid = bpf_get_current_uid_gid();
+    a->euid = uidgid & 0xffffffff;
+    a->egid = uidgid >> 32;
 
-    e->pid  = bpf_get_current_pid_tgid() >> 32;
-    e->uid  = bpf_get_current_uid_gid();
-    e->edge = edge;
-    e->ts   = bpf_ktime_get_ns();
+    a->ts = bpf_ktime_get_ns();
+}
 
+/* =======================
+ * execve
+ * ======================= */
+int trace_execve(struct tracepoint__syscalls__sys_enter_execve *ctx)
+{
+    int zero = 0;
+    struct exec_event_t *e = exec_storage.lookup(&zero);
+    if (!e)
+        return 0;
+
+    e->argc = 0;
+
+    fill_proc_attr(&e->attr);
+
+    e->syscall = 1;
     bpf_get_current_comm(&e->comm, sizeof(e->comm));
 
-    bpf_probe_read(&e->inode, sizeof(e->inode), &inode->i_ino);
+    #pragma unroll
+    for (int i = 0; i < MAX_ARGS; i++) {
+        const char *argp = NULL;
+        bpf_probe_read_user(&argp, sizeof(argp), &ctx->argv[i]);
+        if (!argp)
+            break;
+        bpf_probe_read_user_str(e->argv[i], ARG_LEN, argp);
+        e->argc = i + 1;
+    }
 
-    bpf_probe_read(&sb, sizeof(sb), &inode->i_sb);
-    if (sb)
-        bpf_probe_read(&e->dev, sizeof(e->dev), &sb->s_dev);
-
+    exec_events.perf_submit(ctx, e, sizeof(*e));
     return 0;
 }
 
-/* ========= OPEN ========= */
-
-int trace_security_file_open(struct pt_regs *ctx, struct file *file)
+/* =======================
+ * execveat
+ * ======================= */
+int trace_execveat(struct tracepoint__syscalls__sys_enter_execveat *ctx)
 {
+    int zero = 0;
+    struct exec_event_t *e = exec_storage.lookup(&zero);
+    if (!e)
+        return 0;
+
+    e->argc = 0;
+
+    fill_proc_attr(&e->attr);
+
+    e->syscall = 2;
+    bpf_get_current_comm(&e->comm, sizeof(e->comm));
+
+    #pragma unroll
+    for (int i = 0; i < MAX_ARGS; i++) {
+        const char *argp = NULL;
+        bpf_probe_read_user(&argp, sizeof(argp), &ctx->argv[i]);
+        if (!argp)
+            break;
+        bpf_probe_read_user_str(e->argv[i], ARG_LEN, argp);
+        e->argc = i + 1;
+    }
+
+    exec_events.perf_submit(ctx, e, sizeof(*e));
+    return 0;
+}
+
+/* =======================
+ * fork / vfork / clone / clone3
+ * ======================= */
+
+int trace_fork_exit(struct tracepoint__syscalls__sys_exit_fork *ctx)
+{
+    if (ctx->ret <= 0)
+        return 0;
+
+    struct fork_event_t e = {};
+    e.type = 1;
+    fill_proc_attr(&e.parent);
+    e.child_pid = ctx->ret;
+
+    fork_events.perf_submit(ctx, &e, sizeof(e));
+    return 0;
+}
+
+int trace_vfork_exit(struct tracepoint__syscalls__sys_exit_vfork *ctx)
+{
+    if (ctx->ret <= 0)
+        return 0;
+
+    struct fork_event_t e = {};
+    e.type = 2;
+    fill_proc_attr(&e.parent);
+    e.child_pid = ctx->ret;
+
+    fork_events.perf_submit(ctx, &e, sizeof(e));
+    return 0;
+}
+
+int trace_clone_exit(struct tracepoint__syscalls__sys_exit_clone *ctx)
+{
+
+    if (ctx->ret <= 0)
+        return 0;
+
+    struct fork_event_t e = {};
+    e.type = 3;
+    fill_proc_attr(&e.parent);
+    e.child_pid = ctx->ret;
+
+    fork_events.perf_submit(ctx, &e, sizeof(e));
+    return 0;
+}
+
+int trace_clone3_exit(struct tracepoint__syscalls__sys_exit_clone3 *ctx)
+{
+    if (ctx->ret <= 0)
+        return 0;
+
+    struct fork_event_t e = {};
+    e.type = 4;
+    fill_proc_attr(&e.parent);
+    e.child_pid = ctx->ret;
+
+    fork_events.perf_submit(ctx, &e, sizeof(e));
+    return 0;
+}
+/* =========== Function definition area for file node ==============*/
+
+static __always_inline void submit_file(
+    void *ctx,
+    struct file *file,
+    const char *path,
+    u32 edge)
+{
+    struct inode *inode = NULL;
+    umode_t mode = 0;
+
+    if (!file)
+        return;
+
+    bpf_probe_read(&inode, sizeof(inode), &file->f_inode);
+    if (!inode)
+        return;
+
+    bpf_probe_read(&mode, sizeof(mode), &inode->i_mode);
+    if (!S_ISREG(mode))
+        return;
+
     struct file_event_t e = {};
-    char path[PATH_LEN];
-    u64 key;
 
-    if (fill_file_event(&e, file, EDGE_OPEN) < 0)
-        return 0;
+    e.pid   = bpf_get_current_pid_tgid() >> 32;
+    e.uid   = bpf_get_current_uid_gid();
+    e.edge  = edge;
+    u64 ino = 0;
+    dev_t dev = 0;
+    struct super_block *sb = NULL;
 
-    /* resolve path */
-    if (bpf_d_path(&file->f_path, path, sizeof(path)) < 0)
-        return 0;
+    bpf_probe_read(&ino, sizeof(ino), &inode->i_ino);
+    bpf_probe_read(&sb, sizeof(sb), &inode->i_sb);
+    if (sb)
+        bpf_probe_read(&dev, sizeof(dev), &sb->s_dev);
 
-    __builtin_memcpy(e.path, path, sizeof(e.path));
+    e.inode = ino;
+    e.dev   = dev;
+    e.ts    = bpf_ktime_get_ns();
 
-    /* cache path */
-    key = (u64)file;
-    file_path_cache.update(&key, &path);
+    bpf_get_current_comm(&e.comm, sizeof(e.comm));
+
+    if (path)
+        bpf_probe_read_user_str(e.path, sizeof(e.path), path);
 
     file_events.perf_submit(ctx, &e, sizeof(e));
+}
+
+/* ========= OPEN / CREATE ========= */
+int trace_security_file_open(struct pt_regs *ctx, struct file *file)
+{
+    submit_file(ctx, file, NULL, EDGE_OPEN);
     return 0;
 }
 
 /* ========= READ ========= */
-
 int trace_vfs_read(struct pt_regs *ctx, struct file *file)
 {
-    struct file_event_t e = {};
-    u64 key;
-    char *path;
-
-    if (fill_file_event(&e, file, EDGE_READ) < 0)
-        return 0;
-
-    key = (u64)file;
-    path = file_path_cache.lookup(&key);
-    if (path)
-        __builtin_memcpy(e.path, path, sizeof(e.path));
-
-    file_events.perf_submit(ctx, &e, sizeof(e));
+    submit_file(ctx, file, NULL, EDGE_READ);
     return 0;
 }
 
 /* ========= WRITE ========= */
-
 int trace_vfs_write(struct pt_regs *ctx, struct file *file)
 {
-    struct file_event_t e = {};
-    u64 key;
-    char *path;
-
-    if (fill_file_event(&e, file, EDGE_WRITE) < 0)
-        return 0;
-
-    key = (u64)file;
-    path = file_path_cache.lookup(&key);
-    if (path)
-        __builtin_memcpy(e.path, path, sizeof(e.path));
-
-    file_events.perf_submit(ctx, &e, sizeof(e));
+    submit_file(ctx, file, NULL, EDGE_WRITE);
     return 0;
 }
 
-/* ========= CLOSE ========= */
 
-int trace_security_file_free(struct pt_regs *ctx, struct file *file)
-{
-    u64 key = (u64)file;
-    file_path_cache.delete(&key);
-    return 0;
-}
 
 /* ========= DELETE ========= */
-
 int trace_unlinkat(struct tracepoint__syscalls__sys_enter_unlinkat *ctx)
 {
     struct file_event_t e = {};
