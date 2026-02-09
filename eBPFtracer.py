@@ -1,6 +1,5 @@
 from bcc import BPF
 from ctypes import *
-import sys
 from queue import Queue
 from threading import Thread
 import time
@@ -8,12 +7,12 @@ event_queue = Queue(maxsize=1000000)
 running = True
 from bcc import BPF
 from ctypes import *
-import sys
 from queue import Queue
 from threading import Thread
 import time
-event_queue = Queue(maxsize=1000000)
-running = True
+
+#event_queue = Queue(maxsize=1000000)
+#running = True
 
 TASK_COMM_LEN = 16
 MAX_ARGS = 20
@@ -77,6 +76,7 @@ program = r"""
 #include <linux/sched.h>
 #include <linux/stat.h>
 #include <linux/fs.h>
+#include <linux/dcache.h>
 
 #define PATH_LEN 256
 #define MAX_ARGS 20
@@ -380,16 +380,7 @@ static __always_inline int submit_inode(
         return 1;
 
     e.pid = bpf_get_current_pid_tgid() >> 32;
-    if (e.pid < MIN_PID)
-        return 1;
-
-    u64 now = bpf_ktime_get_ns();
-    u32 pid = e.pid;
-    u64 *last_time = rate_limiter.lookup(&pid);
-    if (last_time && (now - *last_time) < RATE_LIMIT_NS)
-        return 0;
-
-    rate_limiter.update(&pid, &now);
+  
 
     e.uid = bpf_get_current_uid_gid();
     e.edge = edge;
@@ -410,68 +401,42 @@ static __always_inline int submit_inode(
     file_events.perf_submit(ctx, &e, sizeof(e));
     return 0;
 }
-
-int trace_security_inode_create(
-    struct pt_regs *ctx,
-    struct inode *dir,
-    struct dentry *dentry,
-    umode_t mode)
+TRACEPOINT_PROBE(syscalls, sys_enter_openat)
 {
-    if (!dentry)
+    if (!(args->flags & O_CREAT))
         return 0;
-    if(submit_inode(ctx, dentry->d_inode, EDGE_CREATE)){
-        return 1;
-    }
-    return 0;
-}
 
-int trace_security_inode_setattr(
-    struct pt_regs *ctx,
-    struct dentry *dentry,
-    struct iattr *attr)
-{
-    if (!dentry)
-        return 0;
-    if(submit_inode(ctx, dentry->d_inode, EDGE_ATTR)){
-        return 1;
-    }
-    return 0;
-}
+    struct file_event_t e = {};
+    e.pid = bpf_get_current_pid_tgid() >> 32;
+    if (e.pid < MIN_PID) return 0;
 
-#include <linux/binfmts.h>
+    e.uid = bpf_get_current_uid_gid();
+    e.edge = EDGE_CREATE;
+    e.ts = bpf_ktime_get_ns();
+    bpf_get_current_comm(&e.comm, sizeof(e.comm));
+    bpf_probe_read_user_str(e.path, sizeof(e.path), args->filename);
 
-int trace_security_bprm_check(
-    struct pt_regs *ctx,
-    struct linux_binprm *bprm)
-{
-    if (!bprm || !bprm->file)
-        return 0;
-    if(submit_file(ctx, bprm->file, NULL, EDGE_EXEC)){
-        return 1;
-    }
+    file_events.perf_submit(args, &e, sizeof(e));
     return 0;
 }
 
 
-
-/* ========= DELETE ========= */
-/*
-int trace_unlinkat(struct tracepoint__syscalls__sys_enter_unlinkat *ctx)
+TRACEPOINT_PROBE(syscalls, sys_enter_fchmodat)
 {
     struct file_event_t e = {};
+    e.pid = bpf_get_current_pid_tgid() >> 32;
+    if (e.pid < MIN_PID) return 0;
 
-    e.pid  = bpf_get_current_pid_tgid() >> 32;
-    e.uid  = bpf_get_current_uid_gid();
-    e.edge = EDGE_DELETE;
-    e.ts   = bpf_ktime_get_ns();
-
+    e.uid = bpf_get_current_uid_gid();
+    e.edge = EDGE_ATTR;
+    e.ts = bpf_ktime_get_ns();
     bpf_get_current_comm(&e.comm, sizeof(e.comm));
-    bpf_probe_read_user_str(e.path, sizeof(e.path), ctx->pathname);
+    bpf_probe_read_user_str(e.path, sizeof(e.path), args->filename);
 
-    file_events.perf_submit(ctx, &e, sizeof(e));
+    file_events.perf_submit(args, &e, sizeof(e));
     return 0;
 }
-*/
+
 """
 
 # =======================
@@ -486,15 +451,6 @@ b.attach_tracepoint(tp="syscalls:sys_exit_fork", fn_name="trace_fork_exit")
 b.attach_tracepoint(tp="syscalls:sys_exit_vfork", fn_name="trace_vfork_exit")
 b.attach_tracepoint(tp="syscalls:sys_exit_clone", fn_name="trace_clone_exit")
 b.attach_tracepoint(tp="syscalls:sys_exit_clone3", fn_name="trace_clone3_exit")
-b.attach_kprobe(event="security_inode_create",
-                fn_name="trace_security_inode_create")
-
-b.attach_kprobe(event="security_inode_setattr",
-                fn_name="trace_security_inode_setattr")
-
-b.attach_kprobe(event="security_bprm_check",
-                fn_name="trace_security_bprm_check")
-#b.attach_tracepoint("syscalls:sys_enter_unlinkat", "trace_unlinkat")
 
 print("Tracing provenance ... Ctrl-C to stop.\n")
 
@@ -565,7 +521,7 @@ def handle_fork(cpu, data, size):
 def handle_file(cpu, data, size):
     e = cast(data, POINTER(FileEvent)).contents
     edge = {
-        EDGE_CREATE: "CREATE",
+        EDGE_CREATE: "FILE_CREATE",
         EDGE_ATTR: "ATTR",
         EDGE_EXEC: "EXEC"
     }.get(e.edge, "?")

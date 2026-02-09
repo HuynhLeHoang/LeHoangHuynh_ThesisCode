@@ -1,391 +1,395 @@
-CLONE3|108937|108816|13999443565751
-EXEC|execve|14000131929573|108939|951|999|agent|blkid
-EXEC|execve|14000690283796|109011|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-EXEC|execve|14001274453859|109019|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109026|109019|14001553567655
-CLONE|109027|20600|14001830437070
-EXEC|execve|14001830982800|109027|20600|1000|code|/bin/sh -c which ps
-EXEC|execve|14001834444264|109028|109027|1000|sh|which ps
-EXEC|execve|14001839123605|109029|20600|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|14001841627060|109030|109029|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|14001902725455|109031|20600|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 61631 71737 72077 72345 72773 91443 96847 97074 98552 99111 99564 
-EXEC|execve|14001906223908|109032|109031|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 61631 71737 72077 72345 72773 91443 96847 97074 98552 99111 99564 104404 108814 71738 72078 72346 72774 91444 96848
-EXEC|execve|14001908411496|109033|109032|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|14001911365452|109034|109032|1000|cpuUsage.sh|cat /proc/61631/stat
-EXEC|execve|14001913114092|109035|109032|1000|cpuUsage.sh|cat /proc/71737/stat
-EXEC|execve|14001914943946|109036|109032|1000|cpuUsage.sh|cat /proc/72077/stat
-EXEC|execve|14001916633094|109037|109032|1000|cpuUsage.sh|cat /proc/72345/stat
-EXEC|execve|14001918237913|109038|109032|1000|cpuUsage.sh|cat /proc/72773/stat
-EXEC|execve|14001919877127|109039|109032|1000|cpuUsage.sh|cat /proc/91443/stat
-EXEC|execve|14001921531650|109040|109032|1000|cpuUsage.sh|cat /proc/96847/stat
-EXEC|execve|14001923162928|109041|109032|1000|cpuUsage.sh|cat /proc/97074/stat
-EXEC|execve|14001924578189|109042|109032|1000|cpuUsage.sh|cat /proc/98552/stat
-EXEC|execve|14001926159494|109043|109032|1000|cpuUsage.sh|cat /proc/99111/stat
-EXEC|execve|14001927906902|109044|109032|1000|cpuUsage.sh|cat /proc/99564/stat
-EXEC|execve|14001929618894|109045|109032|1000|cpuUsage.sh|cat /proc/104404/stat
-EXEC|execve|14001931479966|109046|109032|1000|cpuUsage.sh|cat /proc/108814/stat
-EXEC|execve|14001933223296|109047|109032|1000|cpuUsage.sh|cat /proc/71738/stat
-EXEC|execve|14001934910621|109048|109032|1000|cpuUsage.sh|cat /proc/72078/stat
-EXEC|execve|14001936645085|109049|109032|1000|cpuUsage.sh|cat /proc/72346/stat
-EXEC|execve|14001938322971|109050|109032|1000|cpuUsage.sh|cat /proc/72774/stat
-EXEC|execve|14001940247774|109051|109032|1000|cpuUsage.sh|cat /proc/91444/stat
-EXEC|execve|14001943285858|109052|109032|1000|cpuUsage.sh|cat /proc/96848/stat
-EXEC|execve|14001945308907|109053|109032|1000|cpuUsage.sh|cat /proc/97075/stat
-EXEC|execve|14001947380286|109054|109032|1000|cpuUsage.sh|cat /proc/98553/stat
-EXEC|execve|14001949104270|109055|109032|1000|cpuUsage.sh|cat /proc/99112/stat
-EXEC|execve|14001950883097|109056|109032|1000|cpuUsage.sh|cat /proc/99569/stat
-EXEC|execve|14001952647267|109057|109032|1000|cpuUsage.sh|cat /proc/104405/stat
-EXEC|execve|14001954349155|109058|109032|1000|cpuUsage.sh|cat /proc/108815/stat
-EXEC|execve|14001956178221|109059|109032|1000|cpuUsage.sh|cat /proc/71739/stat
-EXEC|execve|14001957902175|109060|109032|1000|cpuUsage.sh|cat /proc/72079/stat
-EXEC|execve|14001959686874|109061|109032|1000|cpuUsage.sh|cat /proc/72347/stat
-EXEC|execve|14001961357386|109062|109032|1000|cpuUsage.sh|cat /proc/72775/stat
-EXEC|execve|14001963135492|109063|109032|1000|cpuUsage.sh|cat /proc/91445/stat
-EXEC|execve|14001965011954|109064|109032|1000|cpuUsage.sh|cat /proc/96849/stat
-EXEC|execve|14001966833622|109065|109032|1000|cpuUsage.sh|cat /proc/97076/stat
-EXEC|execve|14001969143341|109066|109032|1000|cpuUsage.sh|cat /proc/98554/stat
-EXEC|execve|14001972533760|109067|109032|1000|cpuUsage.sh|cat /proc/99113/stat
-EXEC|execve|14001975131443|109068|109032|1000|cpuUsage.sh|cat /proc/99570/stat
-EXEC|execve|14001977518449|109069|109032|1000|cpuUsage.sh|cat /proc/104406/stat
-EXEC|execve|14001979270576|109070|109032|1000|cpuUsage.sh|cat /proc/108816/stat
-EXEC|execve|14001980858012|109071|109032|1000|cpuUsage.sh|sleep 1
-CLONE3|109073|3047|14002452827528
-CLONE3|109074|59731|14002458914186
-CLONE3|109075|3557|14002533854788
-CLONE|109077|109032|14002982852527
-EXEC|execve|14002983576294|109077|109032|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|14002987671362|109078|109032|1000|cpuUsage.sh|cat /proc/61631/stat
-EXEC|execve|14002990383762|109080|109032|1000|cpuUsage.sh|cat /proc/71737/stat
-EXEC|execve|14002992853493|109082|109032|1000|cpuUsage.sh|cat /proc/72077/stat
-EXEC|execve|14002996123665|109084|109032|1000|cpuUsage.sh|cat /proc/72345/stat
-EXEC|execve|14002998639564|109086|109032|1000|cpuUsage.sh|cat /proc/72773/stat
-EXEC|execve|14003003292746|109088|109032|1000|cpuUsage.sh|cat /proc/91443/stat
-EXEC|execve|14003009007172|109090|109032|1000|cpuUsage.sh|cat /proc/96847/stat
-EXEC|execve|14003016354680|109092|109032|1000|cpuUsage.sh|cat /proc/97074/stat
-EXEC|execve|14003018727999|109094|109032|1000|cpuUsage.sh|cat /proc/98552/stat
-EXEC|execve|14003020895770|109096|109032|1000|cpuUsage.sh|cat /proc/99111/stat
-EXEC|execve|14003024590744|109098|109032|1000|cpuUsage.sh|cat /proc/99564/stat
-EXEC|execve|14003026729791|109100|109032|1000|cpuUsage.sh|cat /proc/104404/stat
-EXEC|execve|14003028842308|109102|109032|1000|cpuUsage.sh|cat /proc/108814/stat
-EXEC|execve|14003033152022|109104|109032|1000|cpuUsage.sh|cat /proc/71738/stat
-EXEC|execve|14003035819687|109106|109032|1000|cpuUsage.sh|cat /proc/72078/stat
-EXEC|execve|14003038283918|109108|109032|1000|cpuUsage.sh|cat /proc/72346/stat
-EXEC|execve|14003042271033|109110|109032|1000|cpuUsage.sh|cat /proc/72774/stat
-EXEC|execve|14003044824793|109112|109032|1000|cpuUsage.sh|cat /proc/91444/stat
-EXEC|execve|14003047752429|109114|109032|1000|cpuUsage.sh|cat /proc/96848/stat
-EXEC|execve|14003052691811|109116|109032|1000|cpuUsage.sh|cat /proc/97075/stat
-EXEC|execve|14003057013889|109118|109032|1000|cpuUsage.sh|cat /proc/98553/stat
-EXEC|execve|14003059463500|109120|109032|1000|cpuUsage.sh|cat /proc/99112/stat
-EXEC|execve|14003062218720|109122|109032|1000|cpuUsage.sh|cat /proc/99569/stat
-EXEC|execve|14003069367062|109124|109032|1000|cpuUsage.sh|cat /proc/104405/stat
-EXEC|execve|14003076740511|109126|109032|1000|cpuUsage.sh|cat /proc/108815/stat
-CLONE|109128|109032|14003083894338
-EXEC|execve|14003084538599|109128|109032|1000|cpuUsage.sh|cat /proc/71739/stat
-EXEC|execve|14003089854519|109130|109032|1000|cpuUsage.sh|cat /proc/72079/stat
-EXEC|execve|14003092831759|109132|109032|1000|cpuUsage.sh|cat /proc/72347/stat
-EXEC|execve|14003095240488|109134|109032|1000|cpuUsage.sh|cat /proc/72775/stat
-EXEC|execve|14003102638821|109136|109032|1000|cpuUsage.sh|cat /proc/91445/stat
-EXEC|execve|14003108505153|109138|109032|1000|cpuUsage.sh|cat /proc/96849/stat
-EXEC|execve|14003118123367|109140|109032|1000|cpuUsage.sh|cat /proc/97076/stat
-EXEC|execve|14003126901395|109142|109032|1000|cpuUsage.sh|cat /proc/98554/stat
-EXEC|execve|14003133730103|109144|109032|1000|cpuUsage.sh|cat /proc/99113/stat
-EXEC|execve|14003138732742|109146|109032|1000|cpuUsage.sh|cat /proc/99570/stat
-EXEC|execve|14003141517979|109148|109032|1000|cpuUsage.sh|cat /proc/104406/stat
-EXEC|execve|14003147873975|109150|109032|1000|cpuUsage.sh|cat /proc/108816/stat
-EXEC|execve|14005752872420|109152|20543|1000|code|git config --get commit.template
-CLONE|109152|20543|14005751808622
-EXEC|execve|14005770264075|109153|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14005793179766|109154|20543|1000|code|git status -z -uall
-EXEC|execve|14005812303957|109155|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|109156|1046|14007972190058
-CLONE|109157|20543|14010832475987
-EXEC|execve|14010832885432|109157|20543|1000|code|git config --get commit.template
-EXEC|execve|14010840894038|109158|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14010849273873|109159|20543|1000|code|git status -z -uall
-EXEC|execve|14010856252606|109160|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109161|20543|14011419748109
-EXEC|execve|14011420493927|109161|20543|1000|code|git show --textconv :test.log
-EXEC|execve|14011433280340|109162|20543|1000|code|git ls-files --stage -- test.log
-EXEC|execve|14011448667452|109163|20543|1000|code|git hash-object -t tree /dev/null
-EXEC|execve|14011462378390|109164|20543|1000|code|git hash-object -t tree /dev/null
-CLONE|109165|20543|14011679662211
-EXEC|execve|14011680788006|109165|20543|1000|code|git check-ignore -v -z --stdin
-CLONE|109166|20543|14013267346780
-EXEC|execve|14013267769260|109166|20543|1000|code|git show --textconv :eBPFtracer.py
-EXEC|execve|14013280213234|109167|20543|1000|code|git ls-files --stage -- eBPFtracer.py
-EXEC|execve|14013336251591|109168|20543|1000|code|git cat-file -s da384ed5759989c38e684f850c200bc62faa1186
-EXEC|execve|14014487687221|109169|20543|1000|code|git show --textconv :Provenance.log
-CLONE|109169|20543|14014485618079
-EXEC|execve|14014521982130|109170|20543|1000|code|git ls-files --stage -- Provenance.log
-EXEC|execve|14014579825691|109171|20543|1000|code|git cat-file -s df99ef1e803a96a1b4afa6fc20cceb04a4ead110
-EXEC|execve|14015130018760|109172|951|999|agent|blkid
-CLONE|109244|20543|14015872772845
-EXEC|execve|14015873662304|109244|20543|1000|code|git config --get commit.template
-EXEC|execve|14015891324890|109245|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14015907520658|109246|20543|1000|code|git status -z -uall
-EXEC|execve|14015919523101|109247|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109248|20543|14020953802153
-EXEC|execve|14020954732806|109248|20543|1000|code|git config --get commit.template
-EXEC|execve|14020966957900|109249|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14020977539815|109250|20543|1000|code|git status -z -uall
-EXEC|execve|14020984939137|109251|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109252|20543|14026000246493
-EXEC|execve|14026000854450|109252|20543|1000|code|git config --get commit.template
-EXEC|execve|14026008607090|109253|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14026016378751|109254|20543|1000|code|git status -z -uall
-EXEC|execve|14026022036073|109255|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14030130651729|109256|951|999|agent|blkid
-EXEC|execve|14030690984599|109329|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109336|109329|14030982242083
-CLONE|109337|20543|14031033571274
-EXEC|execve|14031034220870|109337|20543|1000|code|git config --get commit.template
-EXEC|execve|14031044485183|109338|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14031052568918|109339|20543|1000|code|git status -z -uall
-EXEC|execve|14031059481124|109340|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14031292102598|109341|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109349|20543|14036082274015
-EXEC|execve|14036082803928|109349|20543|1000|code|git config --get commit.template
-EXEC|execve|14036089716862|109350|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14036098794405|109351|20543|1000|code|git status -z -uall
-EXEC|execve|14036107833799|109352|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109353|20543|14041124825875
-EXEC|execve|14041125683354|109353|20543|1000|code|git config --get commit.template
-EXEC|execve|14041137897143|109354|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14041151923500|109355|20543|1000|code|git status -z -uall
-EXEC|execve|14041158520318|109356|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14045131156183|109357|951|999|agent|blkid
-CLONE|109429|97355|14045508554238
-EXEC|execve|14045508792024|109429|97355|1000|bash|touch test
-CLONE3|109430|59731|14045511589486
-CLONE3|109431|3557|14045523921108
-CLONE|109433|2834|14045532795568
-EXEC|execve|14045540696173|109433|2834|1000|(xtract-3)|/usr/libexec/tracker-extract-3
-CLONE|109438|20543|14046901816600
-EXEC|execve|14046904822223|109438|20543|1000|code|git config --get commit.template
-EXEC|execve|14046948479846|109439|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14046979663703|109440|20543|1000|code|git status -z -uall
-EXEC|execve|14046999962996|109441|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109442|20543|14052030463379
-EXEC|execve|14052030989494|109442|20543|1000|code|git config --get commit.template
-EXEC|execve|14052038593281|109443|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14052050066385|109444|20543|1000|code|git status -z -uall
-EXEC|execve|14052057215661|109445|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109447|97355|14055090517001
-EXEC|execve|14055091025027|109447|97355|1000|bash|chmod 777 test
-CLONE3|109448|3557|14055097147836
-CLONE3|109449|109433|14055106990172
-CLONE3|109450|2877|14055972036178
-CLONE3|109451|3329|14055972294568
-EXEC|execve|14058635042556|109453|20543|1000|code|git config --get commit.template
-CLONE|109453|20543|14058633515724
-EXEC|execve|14058653651840|109454|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14058686946961|109455|20543|1000|code|git status -z -uall
-EXEC|execve|14058708255659|109456|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|109457|1039|14059152878370
-EXEC|execve|14060130196443|109458|951|999|agent|blkid
-EXEC|execve|14060691188951|109530|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109537|109530|14060962800843
-EXEC|execve|14061221770391|109538|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109547|20737|14063506731345
-CLONE|109551|20543|14063721499568
-EXEC|execve|14063722243114|109551|20543|1000|code|git show --textconv :eBPFtracer.py
-EXEC|execve|14063737675481|109552|20543|1000|code|git ls-files --stage -- eBPFtracer.py
-EXEC|execve|14063757062926|109553|20543|1000|code|git config --get commit.template
-EXEC|execve|14063769853033|109554|20543|1000|code|git cat-file -s da384ed5759989c38e684f850c200bc62faa1186
-EXEC|execve|14063786241037|109555|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14063802786402|109556|20543|1000|code|git status -z -uall
-EXEC|execve|14063820189969|109557|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109558|20543|14068844147255
-EXEC|execve|14068844702143|109558|20543|1000|code|git config --get commit.template
-EXEC|execve|14068853424179|109559|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14068862007382|109560|20543|1000|code|git status -z -uall
-EXEC|execve|14068868416659|109561|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14075131619179|109562|951|999|agent|blkid
-CLONE|109634|97355|14083607513564
-CLONE3|109638|3145|14083624284558
-CLONE|109640|97355|14088666902357
-EXEC|execve|14088667642778|109640|97355|1000|bash|ls --color=auto
-EXEC|execve|14090130783104|109641|951|999|agent|blkid
-EXEC|execve|14090690565292|109713|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109720|97355|14090757354776
-CLONE|109722|109713|14090964211307
-EXEC|execve|14091224220544|109723|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109730|97355|14092011485214
-EXEC|execve|14092011956731|109730|97355|1000|bash|ls --color=auto
-CLONE3|109731|97333|14092040182653
-CLONE|109737|97355|14093588353733
-CLONE|109739|97355|14095035923153
-CLONE|109741|97355|14096154817761
-EXEC|execve|14096155372278|109741|97355|1000|bash|ls --color=auto
-CLONE|109742|97355|14100045391098
-CLONE|109745|97355|14100804339357
-EXEC|execve|14100804882357|109745|97355|1000|bash|sudo python trace_privi.py
-EXEC|execve|14105130064029|109746|951|999|agent|blkid
-CLONE|109818|97355|14106059002753
-EXEC|execve|14106059724962|109818|97355|1000|bash|sudo python3 trace_privi.py
-CLONE|109820|109819|14106077471266
-EXEC|execve|14106077953293|109820|109819|0|sudo|python3 trace_privi.py
-CLONE|109822|20737|14109601628593
-CLONE|109826|20543|14109754960083
-EXEC|execve|14109756084588|109826|20543|1000|code|git config --get commit.template
-EXEC|execve|14109776859274|109827|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14109809422670|109828|20543|1000|code|git status -z -uall
-EXEC|execve|14109831985893|109829|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109830|20543|14109974218696
-EXEC|execve|14109979014759|109830|20543|1000|code|git show --textconv :Provenance.log
-EXEC|execve|14109996784668|109831|20543|1000|code|git ls-files --stage -- Provenance.log
-EXEC|execve|14110018077710|109832|20543|1000|code|git cat-file -s df99ef1e803a96a1b4afa6fc20cceb04a4ead110
-CLONE|109833|20543|14114878367606
-EXEC|execve|14114878934749|109833|20543|1000|code|git config --get commit.template
-EXEC|execve|14114885745080|109834|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14114894588464|109835|20543|1000|code|git status -z -uall
-EXEC|execve|14114901168070|109836|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109837|20543|14119919043808
-EXEC|execve|14119919470711|109837|20543|1000|code|git config --get commit.template
-EXEC|execve|14119925778689|109838|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14119933020906|109839|20543|1000|code|git status -z -uall
-EXEC|execve|14119938854930|109840|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14120131347821|109841|951|999|agent|blkid
-EXEC|execve|14120690209594|109913|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109920|109913|14120975649296
-EXEC|execve|14121268110786|109921|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|109928|109921|14121572661434
-CLONE|109930|20543|14124955319282
-EXEC|execve|14124956603115|109930|20543|1000|code|git config --get commit.template
-EXEC|execve|14124964163174|109931|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14124972159327|109932|20543|1000|code|git status -z -uall
-EXEC|execve|14124978198508|109933|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109934|20543|14129988982591
-EXEC|execve|14129989555522|109934|20543|1000|code|git config --get commit.template
-EXEC|execve|14129995729117|109935|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14130003428680|109936|20543|1000|code|git status -z -uall
-EXEC|execve|14130009551713|109937|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|109938|20543|14132850980065
-EXEC|execve|14132851677103|109938|20543|1000|code|git show --textconv :eBPFtracer.py
-EXEC|execve|14132867428182|109939|20543|1000|code|git ls-files --stage -- eBPFtracer.py
-EXEC|execve|14132883380569|109940|20543|1000|code|git cat-file -s da384ed5759989c38e684f850c200bc62faa1186
-CLONE3|109941|1046|14132988479676
-CLONE|109942|20543|14135023621474
-EXEC|execve|14135024382918|109942|20543|1000|code|git config --get commit.template
-EXEC|execve|14135031496457|109943|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14135039490766|109944|20543|1000|code|git status -z -uall
-EXEC|execve|14135045671990|109945|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14135131423501|109946|951|999|agent|blkid
-CLONE|110018|20543|14140058723210
-EXEC|execve|14140059207457|110018|20543|1000|code|git config --get commit.template
-EXEC|execve|14140066652125|110019|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14140075127665|110020|20543|1000|code|git status -z -uall
-EXEC|execve|14140081249426|110021|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|110022|1039|14140532999486
-CLONE|110023|20543|14145097552940
-EXEC|execve|14145098060435|110023|20543|1000|code|git config --get commit.template
-EXEC|execve|14145107348475|110024|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14145117248220|110025|20543|1000|code|git status -z -uall
-EXEC|execve|14145124742405|110026|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14150130262685|110027|951|999|agent|blkid
-CLONE|110028|20543|14150137712100
-EXEC|execve|14150139137606|110028|20543|1000|code|git config --get commit.template
-EXEC|execve|14150153052289|110065|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14150168456090|110100|20543|1000|code|git status -z -uall
-EXEC|execve|14150176911729|110102|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14150690928284|110103|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-EXEC|execve|14151218476466|110111|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|110118|20543|14155191307695
-EXEC|execve|14155191869005|110118|20543|1000|code|git config --get commit.template
-EXEC|execve|14155199283950|110119|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14155207910813|110120|20543|1000|code|git status -z -uall
-EXEC|execve|14155214049917|110121|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110122|20543|14160228308825
-EXEC|execve|14160228715057|110122|20543|1000|code|git config --get commit.template
-EXEC|execve|14160235474763|110123|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14160243011431|110124|20543|1000|code|git status -z -uall
-EXEC|execve|14160249410435|110125|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14165130846658|110126|951|999|agent|blkid
-CLONE|110198|20543|14165263718412
-EXEC|execve|14165264213259|110198|20543|1000|code|git config --get commit.template
-EXEC|execve|14165271693307|110199|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14165279119353|110200|20543|1000|code|git status -z -uall
-EXEC|execve|14165285246568|110201|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110202|20543|14170298684397
-EXEC|execve|14170299340503|110202|20543|1000|code|git config --get commit.template
-EXEC|execve|14170305632762|110203|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14170313115672|110204|20543|1000|code|git status -z -uall
-EXEC|execve|14170319075304|110205|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|110206|1046|14172994718879
-CLONE|110207|20543|14175333012389
-EXEC|execve|14175333615354|110207|20543|1000|code|git config --get commit.template
-EXEC|execve|14175340947392|110208|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14175348736517|110209|20543|1000|code|git status -z -uall
-EXEC|execve|14175354934996|110210|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14180131811047|110211|951|999|agent|blkid
-CLONE|110283|20543|14180374411980
-EXEC|execve|14180375248595|110283|20543|1000|code|git config --get commit.template
-EXEC|execve|14180384268246|110284|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14180415279380|110285|20543|1000|code|git status -z -uall
-EXEC|execve|14180425927505|110286|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14180690241464|110287|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|110294|110287|14180987211795
-EXEC|execve|14181306659175|110295|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|110304|20543|14185439654777
-EXEC|execve|14185440169025|110304|20543|1000|code|git config --get commit.template
-EXEC|execve|14185447164481|110305|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14185455180324|110306|20543|1000|code|git status -z -uall
-EXEC|execve|14185460962715|110307|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110308|20543|14190473681076
-EXEC|execve|14190474130938|110308|20543|1000|code|git config --get commit.template
-EXEC|execve|14190480502040|110309|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14190489040729|110310|20543|1000|code|git status -z -uall
-EXEC|execve|14190494721749|110311|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14195130571760|110312|951|999|agent|blkid
-CLONE|82|20510|14195212918021
-CLONE|110385|20543|14195509500215
-EXEC|execve|14195509983935|110385|20543|1000|code|git config --get commit.template
-EXEC|execve|14195517105259|110386|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14195525588288|110387|20543|1000|code|git status -z -uall
-EXEC|execve|14195531032196|110388|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110389|20543|14200543348738
-EXEC|execve|14200544048486|110389|20543|1000|code|git config --get commit.template
-EXEC|execve|14200550969031|110390|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14200559198003|110391|20543|1000|code|git status -z -uall
-EXEC|execve|14200566875040|110392|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110393|20543|14205581400515
-EXEC|execve|14205581784287|110393|20543|1000|code|git config --get commit.template
-EXEC|execve|14205589108965|110394|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14205596854662|110395|20543|1000|code|git status -z -uall
-EXEC|execve|14205603268120|110396|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14210130360873|110397|951|999|agent|blkid
-CLONE|110469|20543|14210617068731
-EXEC|execve|14210617550467|110469|20543|1000|code|git config --get commit.template
-EXEC|execve|14210625739136|110470|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14210634096247|110471|20543|1000|code|git status -z -uall
-EXEC|execve|14210640860927|110472|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14210690595187|110473|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-EXEC|execve|14211204102741|110480|952|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-CLONE|110488|20543|14215654438740
-EXEC|execve|14215655249724|110488|20543|1000|code|git config --get commit.template
-EXEC|execve|14215662090121|110489|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14215671625672|110490|20543|1000|code|git status -z -uall
-EXEC|execve|14215678007374|110491|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110492|20543|14220692276871
-EXEC|execve|14220692857073|110492|20543|1000|code|git config --get commit.template
-EXEC|execve|14220700150498|110493|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14220707953296|110494|20543|1000|code|git status -z -uall
-EXEC|execve|14220713751690|110495|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|110496|1039|14221905695977
-EXEC|execve|14225130852256|110497|951|999|agent|blkid
-CLONE|110569|20543|14225725669692
-EXEC|execve|14225726160305|110569|20543|1000|code|git config --get commit.template
-EXEC|execve|14225732983977|110570|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14225740739833|110571|20543|1000|code|git status -z -uall
-EXEC|execve|14225746244596|110572|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|14230763833001|110573|20543|1000|code|git config --get commit.template
-CLONE|110573|20543|14230762525814
-EXEC|execve|14230783143148|110574|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14230797147278|110575|20543|1000|code|git status -z -uall
-EXEC|execve|14230807086287|110576|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110577|20543|14235845641205
-EXEC|execve|14235848613755|110577|20543|1000|code|git config --get commit.template
-EXEC|execve|14235872683616|110578|20543|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|14235938898897|110579|20543|1000|code|git status -z -uall
-EXEC|execve|14235965638716|110580|20543|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|110580|20543|14235964203718
+CLONE3|8933|8884|850422150118
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.rBQT5y|Chrome_IOThread
+EXEC|execve|850533823396|8934|3509|1000|code|/bin/sh -c which ps
+CLONE|8934|3509|850533552411
+EXEC|execve|850538467316|8935|8934|1000|sh|which ps
+EXEC|execve|850545109284|8936|3509|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|850548270640|8937|8936|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|850576293530|8938|3509|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088
+EXEC|execve|850578518030|8939|8938|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088
+EXEC|execve|850580045584|8940|8939|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|850581756618|8941|8939|1000|cpuUsage.sh|cat /proc/3607/stat
+EXEC|execve|850582846136|8942|8939|1000|cpuUsage.sh|cat /proc/4940/stat
+EXEC|execve|850583944497|8943|8939|1000|cpuUsage.sh|cat /proc/7773/stat
+EXEC|execve|850585363229|8944|8939|1000|cpuUsage.sh|cat /proc/8086/stat
+EXEC|execve|850586624216|8945|8939|1000|cpuUsage.sh|cat /proc/8882/stat
+EXEC|execve|850587739483|8946|8939|1000|cpuUsage.sh|cat /proc/4941/stat
+EXEC|execve|850589106816|8947|8939|1000|cpuUsage.sh|cat /proc/7774/stat
+EXEC|execve|850590324801|8948|8939|1000|cpuUsage.sh|cat /proc/8087/stat
+EXEC|execve|850591617079|8949|8939|1000|cpuUsage.sh|cat /proc/8883/stat
+EXEC|execve|850592936950|8950|8939|1000|cpuUsage.sh|cat /proc/4942/stat
+EXEC|execve|850594047959|8951|8939|1000|cpuUsage.sh|cat /proc/7775/stat
+EXEC|execve|850595187393|8952|8939|1000|cpuUsage.sh|cat /proc/8088/stat
+EXEC|execve|850596237124|8953|8939|1000|cpuUsage.sh|sleep 1
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kfqNBC|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gSCHty|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Z18Q0n|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.DEhRdH|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.KEmg3l|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.bbtt0o|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.x1tCJA|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.aVPmTg|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gvLpdv|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Auhj8L|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.VHmVtQ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.X3Rogr|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.sKfWrh|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.pouzOd|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.RyLh28|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.yPIy49|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.okLBKg|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Jma1y6|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.iYzQKB|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eaN1TZ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.j5nMkE|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.TU5DL3|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.PsRnsJ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XM50W2|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.HK5M9f|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.B3wHOZ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.m5KmgD|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.cb0Uk0|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.w3SXi0|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.VaSCLC|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.TrvVGO|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.1pqmCS|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MtE4s2|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.4iPhw1|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kUzW6r|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.r7R8qh|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.AWYtpL|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.vcPwdW|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.6pMmnb|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.msQOaM|Chrome_IOThread
+EXEC|execve|851598237537|8954|8939|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+CLONE|8954|8939|851597887313
+EXEC|execve|851604821252|8955|8939|1000|cpuUsage.sh|cat /proc/3607/stat
+EXEC|execve|851610665754|8957|8939|1000|cpuUsage.sh|cat /proc/4940/stat
+EXEC|execve|851616387577|8959|8939|1000|cpuUsage.sh|cat /proc/7773/stat
+EXEC|execve|851619948082|8961|8939|1000|cpuUsage.sh|cat /proc/8086/stat
+EXEC|execve|851626649794|8963|8939|1000|cpuUsage.sh|cat /proc/8882/stat
+EXEC|execve|851633129178|8965|8939|1000|cpuUsage.sh|cat /proc/4941/stat
+EXEC|execve|851641050819|8967|8939|1000|cpuUsage.sh|cat /proc/7774/stat
+EXEC|execve|851647504387|8969|8939|1000|cpuUsage.sh|cat /proc/8087/stat
+EXEC|execve|851654121844|8971|8939|1000|cpuUsage.sh|cat /proc/8883/stat
+EXEC|execve|851659588922|8973|8939|1000|cpuUsage.sh|cat /proc/4942/stat
+EXEC|execve|851662897402|8975|8939|1000|cpuUsage.sh|cat /proc/7775/stat
+EXEC|execve|851666356872|8977|8939|1000|cpuUsage.sh|cat /proc/8088/stat
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Y1jp8f|Chrome_IOThread
+EXEC|execve|852073206894|8979|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|8979|0|0|/opt/datadog-packages/packages.db|installer
+CLONE|8986|8979|852331672161
+EXEC|execve|852653102451|8987|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|8987|0|0|/opt/datadog-packages/packages.db|installer
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.DhAQS0|Chrome_ChildIOT
+CLONE|8996|5194|854422935935
+EXEC|execve|854423828203|8996|5194|1000|bash|nano test_prov.sh
+FILE_CREATE|1000|8996|0|0|./.test_prov.sh.swp|nano
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.HbM1hc|Chrome_ChildIOT
+EXEC|execve|855538499235|8997|3509|1000|code|/bin/sh -c which ps
+CLONE|8997|3509|855537973902
+EXEC|execve|855545176862|8998|8997|1000|sh|which ps
+EXEC|execve|855552457983|8999|3509|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|855560307529|9000|8999|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|855592469765|9001|3509|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088 8884
+EXEC|execve|855595536529|9002|9001|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088 8884
+EXEC|execve|855597489469|9003|9002|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|855599596816|9004|9002|1000|cpuUsage.sh|cat /proc/3607/stat
+EXEC|execve|855601638972|9005|9002|1000|cpuUsage.sh|cat /proc/4940/stat
+EXEC|execve|855604739644|9006|9002|1000|cpuUsage.sh|cat /proc/7773/stat
+EXEC|execve|855606409306|9007|9002|1000|cpuUsage.sh|cat /proc/8086/stat
+EXEC|execve|855607980250|9008|9002|1000|cpuUsage.sh|cat /proc/8882/stat
+EXEC|execve|855609272458|9009|9002|1000|cpuUsage.sh|cat /proc/4941/stat
+EXEC|execve|855610746276|9010|9002|1000|cpuUsage.sh|cat /proc/7774/stat
+EXEC|execve|855612120322|9011|9002|1000|cpuUsage.sh|cat /proc/8087/stat
+EXEC|execve|855615320823|9012|9002|1000|cpuUsage.sh|cat /proc/8883/stat
+EXEC|execve|855616958255|9013|9002|1000|cpuUsage.sh|cat /proc/4942/stat
+EXEC|execve|855618418427|9014|9002|1000|cpuUsage.sh|cat /proc/7775/stat
+EXEC|execve|855619818592|9015|9002|1000|cpuUsage.sh|cat /proc/8088/stat
+EXEC|execve|855621129627|9016|9002|1000|cpuUsage.sh|cat /proc/8884/stat
+EXEC|execve|855623376341|9017|9002|1000|cpuUsage.sh|sleep 1
+CLONE|9018|9002|856624768814
+EXEC|execve|856625768128|9018|9002|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|856628752453|9019|9002|1000|cpuUsage.sh|cat /proc/3607/stat
+EXEC|execve|856631031170|9021|9002|1000|cpuUsage.sh|cat /proc/4940/stat
+EXEC|execve|856640566180|9023|9002|1000|cpuUsage.sh|cat /proc/7773/stat
+EXEC|execve|856644248977|9025|9002|1000|cpuUsage.sh|cat /proc/8086/stat
+EXEC|execve|856646554987|9027|9002|1000|cpuUsage.sh|cat /proc/8882/stat
+EXEC|execve|856649347664|9029|9002|1000|cpuUsage.sh|cat /proc/4941/stat
+EXEC|execve|856656162236|9031|9002|1000|cpuUsage.sh|cat /proc/7774/stat
+EXEC|execve|856659954047|9033|9002|1000|cpuUsage.sh|cat /proc/8087/stat
+EXEC|execve|856662433089|9035|9002|1000|cpuUsage.sh|cat /proc/8883/stat
+EXEC|execve|856664598819|9037|9002|1000|cpuUsage.sh|cat /proc/4942/stat
+EXEC|execve|856667006013|9039|9002|1000|cpuUsage.sh|cat /proc/7775/stat
+EXEC|execve|856679450368|9041|9002|1000|cpuUsage.sh|cat /proc/8088/stat
+EXEC|execve|856682563933|9043|9002|1000|cpuUsage.sh|cat /proc/8884/stat
+CLONE|9046|9045|856861799664
+EXEC|execve|856864029169|9046|9045|0|cron|/bin/sh -c command -v debian-sa1 > /dev/null && debian-sa1 1 1
+EXEC|execve|856865213065|9047|9046|0|sh|debian-sa1 1 1
+FILE_CREATE|0|9046|0|0|/dev/null|sh
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.xFxtFM|Chrome_ChildIOT
+FILE_CREATE|1000|8996|0|0|./.test_prov.sh.swp|nano
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/meta.db-wal|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal|tracker-miner-f
+EXEC|execve|860685547421|9049|928|999|agent|blkid
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.LY0vB1|Chrome_ChildIOT
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.lYuxGH|Chrome_ChildIOT
+FILE_CREATE|1000|8996|0|0|test_prov.sh|nano
+CLONE3|9120|3044|864409913854
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.SPX9J3|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.GBW9J3|tracker-miner-f
+FILE_CREATE|1000|2392|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/tracker-extract-3.service/cgroup.subtree_control|systemd
+CLONE|9121|2392|864415199725
+EXEC|execve|864420466207|9121|2392|1000|(xtract-3)|/usr/libexec/tracker-extract-3
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.0AgON4|Chrome_ChildIOT
+CLONE3|9126|1024|867133421967
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.KIoJlE|Chrome_ChildIOT
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+CLONE|9127|5194|869747470567
+CLONE3|9129|2625|869760018728
+FILE_CREATE|1000|2625|0|0|/home/ubuntu/.cache/event-sound-cache.tdb.cef2eb6cc724476ba7c4029f1b986fe1.x86_64-pc-linux-gnu|pool-gnome-shel
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+CLONE|9131|5194|870321966401
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+CLONE|9133|5194|871597428951
+FILE_CREATE|1000|5194|0|0|/dev/null|bash
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.7OOvsR|Chrome_ChildIOT
+CLONE|9135|5194|872269725095
+EXEC|execve|872270382872|9135|5194|1000|bash|chmod +x test_prov.sh
+ATTR|1000|9135|0|0|test_prov.sh|chmod
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.AWH7J3|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.LH36J3|tracker-miner-f
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.hL7y6m|Chrome_ChildIOT
+CLONE3|9136|2429|874963261526
+CLONE3|9137|2893|874965726923
+EXEC|execve|875685697255|9139|928|999|agent|blkid
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.SBC7aE|Chrome_ChildIOT
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.3aEqD6|Chrome_ChildIOT
+EXEC|execve|882072663090|9210|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|9210|0|0|/opt/datadog-packages/packages.db|installer
+CLONE3|9217|1024|882136906627
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.9Ku5qg|Chrome_ChildIOT
+EXEC|execve|883187996081|9218|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|9218|0|0|/opt/datadog-packages/packages.db|installer
+CLONE|9225|9218|883439626957
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.oR6un5|Chrome_ChildIOT
+CLONE|9227|5194|885279419945
+EXEC|execve|885280369834|9227|5194|1000|bash|./test_prov.sh
+FILE_CREATE|1000|9227|0|0|prov_test.txt|test_prov.sh
+EXEC|execve|885289400343|9228|9227|1000|test_prov.sh|chmod 600 prov_test.txt
+ATTR|1000|9228|0|0|prov_test.txt|chmod
+FILE_CREATE|1000|9227|0|0|prov_test.txt|test_prov.sh
+EXEC|execve|885293398828|9229|9227|1000|test_prov.sh|ls -l prov_test.txt
+CLONE3|9230|5091|885307235665
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/meta.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.B6LBK3|tracker-miner-f
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.9UKBK3|tracker-miner-f
+CLONE3|9234|3044|885333745808
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal|pool-tracker-mi
+CLONE|9235|2392|885339537168
+FILE_CREATE|1000|2392|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/tracker-extract-3.service/cgroup.subtree_control|systemd
+EXEC|execve|885350284857|9235|2392|1000|(xtract-3)|/usr/libexec/tracker-extract-3
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal|pool-tracker-mi
+CLONE3|9240|9235|885502736215
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/meta.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal|pool-tracker-mi
+FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal|pool-tracker-mi
+CLONE3|9241|1024|887151170260
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.CiZqpA|Chrome_ChildIOT
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.mWKfo8|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.pfhqPa|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.7uf1f6|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.4X2eLK|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.OqHuEK|code
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.paT7yb|code
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XaLnpZ|code
+EXEC|execve|890027786937|9242|3521|1000|code|git config --get commit.template
+CLONE|9242|3521|890026896135
+EXEC|execve|890051045735|9243|3521|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|890075788771|9244|3521|1000|code|git status -z -uall
+EXEC|execve|890085222286|9245|3521|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+CLONE3|23358|23300|3459102399074
+EXEC|execve|3460189944788|23359|3521|1000|code|git config --get commit.template
+CLONE|23359|3521|3460189396488
+EXEC|execve|3460205090696|23360|3521|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|3460220194176|23361|3521|1000|code|git status -z -uall
+EXEC|execve|3460232546876|23362|3521|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.alntzm|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.QZ70rL|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.9KOBth|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.fllVii|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.avpGiR|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ucMifw|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.PX8waa|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ni9a5U|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.A46jXi|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.K51Nrl|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.9HwAuq|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.xbCJGk|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.yiX2rq|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.1iExHb|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kNXg0e|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ZaSfPt|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.DH9ced|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eLAUmx|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.IdNMxG|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.AqNUNN|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XHLaQK|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gvNeJf|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.BkEgaP|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eM3Trw|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.V72SRQ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MTqWgk|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.QFEy3D|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.yaOY7X|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.43etMY|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hkPqfg|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.n6tmvK|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.bgNrQq|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.p7FEOL|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Yiv0xf|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.EFzFPZ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.0kIVrN|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.oDgNEg|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gBhhRS|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.rwyOMp|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.7SR9O6|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Uml6HZ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.BjJfUu|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.wsrJzR|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.H8nbKz|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MoN3wR|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.esSxvP|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.KlQjRW|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.cb5aiW|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.q1ixgH|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.P5bUk1|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hY54vk|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hwkqoL|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.zIYLLS|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kf0xaJ|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hG5v99|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.YCQqqc|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Uhs7aw|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.fsK2A9|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.B4P9JK|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.KSS5HC|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.V141J2|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ALb9RR|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.2uM6w6|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.tx7wFV|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.aXiX4P|Chrome_IOThread
+CLONE|23363|3521|3461006034252
+EXEC|execve|3461008374675|23363|3521|1000|code|git show --textconv :Provenance.log
+FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
+EXEC|execve|3461038652540|23364|3521|1000|code|git ls-files --stage -- Provenance.log
+EXEC|execve|3461055471431|23365|3521|1000|code|git cat-file -s 55fd7da0877a1d14eb19fc21a62883ee88897f1a
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.TrGSPd|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.72LQ44|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.0hvBZU|Chrome_IOThread
+CLONE|23366|3509|3461129579304
+EXEC|execve|3461132316355|23366|3509|1000|code|/bin/sh -c which ps
+EXEC|execve|3461140135503|23367|23366|1000|sh|which ps
+EXEC|execve|3461144833346|23368|3509|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|3461151507795|23369|23368|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|3461193806382|23370|3509|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 3607 4940 7773 8086 8882 23294 4941 7774 8087 8883 23299 4942 7775
+EXEC|execve|3461204004137|23371|23370|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 3607 4940 7773 8086 8882 23294 4941 7774 8087 8883 23299 4942 7775 8088 8884 23300
+EXEC|execve|3461207497092|23372|23371|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|3461210519425|23373|23371|1000|cpuUsage.sh|cat /proc/3607/stat
+EXEC|execve|3461214035945|23374|23371|1000|cpuUsage.sh|cat /proc/4940/stat
+EXEC|execve|3461216372847|23375|23371|1000|cpuUsage.sh|cat /proc/7773/stat
+EXEC|execve|3461217930441|23376|23371|1000|cpuUsage.sh|cat /proc/8086/stat
+EXEC|execve|3461219436638|23377|23371|1000|cpuUsage.sh|cat /proc/8882/stat
+EXEC|execve|3461220712188|23378|23371|1000|cpuUsage.sh|cat /proc/23294/stat
+EXEC|execve|3461221841760|23379|23371|1000|cpuUsage.sh|cat /proc/4941/stat
+EXEC|execve|3461223009114|23380|23371|1000|cpuUsage.sh|cat /proc/7774/stat
+EXEC|execve|3461225943099|23381|23371|1000|cpuUsage.sh|cat /proc/8087/stat
+EXEC|execve|3461231572216|23382|23371|1000|cpuUsage.sh|cat /proc/8883/stat
+EXEC|execve|3461234472157|23383|23371|1000|cpuUsage.sh|cat /proc/23299/stat
+EXEC|execve|3461236742671|23384|23371|1000|cpuUsage.sh|cat /proc/4942/stat
+EXEC|execve|3461237956353|23385|23371|1000|cpuUsage.sh|cat /proc/7775/stat
+EXEC|execve|3461240003135|23386|23371|1000|cpuUsage.sh|cat /proc/8088/stat
+EXEC|execve|3461242104290|23387|23371|1000|cpuUsage.sh|cat /proc/8884/stat
+EXEC|execve|3461243581502|23388|23371|1000|cpuUsage.sh|cat /proc/23300/stat
+EXEC|execve|3461244773864|23389|23371|1000|cpuUsage.sh|sleep 1
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.7fsoHg|Chrome_ChildIOT
+EXEC|execve|3462072721227|23390|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|23390|0|0|/opt/datadog-packages/packages.db|installer
+EXEC|execve|3462247452726|23398|23371|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+CLONE|23398|23371|3462247046455
+EXEC|execve|3462255887451|23399|23371|1000|cpuUsage.sh|cat /proc/3607/stat
+EXEC|execve|3462258220754|23401|23371|1000|cpuUsage.sh|cat /proc/4940/stat
+EXEC|execve|3462260188016|23403|23371|1000|cpuUsage.sh|cat /proc/7773/stat
+EXEC|execve|3462263444242|23405|23371|1000|cpuUsage.sh|cat /proc/8086/stat
+EXEC|execve|3462265977642|23407|23371|1000|cpuUsage.sh|cat /proc/8882/stat
+EXEC|execve|3462267533433|23409|23371|1000|cpuUsage.sh|cat /proc/23294/stat
+EXEC|execve|3462269118540|23411|23371|1000|cpuUsage.sh|cat /proc/4941/stat
+EXEC|execve|3462270941973|23413|23371|1000|cpuUsage.sh|cat /proc/7774/stat
+EXEC|execve|3462272937728|23415|23371|1000|cpuUsage.sh|cat /proc/8087/stat
+EXEC|execve|3462275096387|23417|23371|1000|cpuUsage.sh|cat /proc/8883/stat
+EXEC|execve|3462277061865|23419|23371|1000|cpuUsage.sh|cat /proc/23299/stat
+EXEC|execve|3462279289621|23421|23371|1000|cpuUsage.sh|cat /proc/4942/stat
+EXEC|execve|3462281218409|23423|23371|1000|cpuUsage.sh|cat /proc/7775/stat
+EXEC|execve|3462283335274|23425|23371|1000|cpuUsage.sh|cat /proc/8088/stat
+EXEC|execve|3462285405761|23427|23371|1000|cpuUsage.sh|cat /proc/8884/stat
+EXEC|execve|3462287304352|23429|23371|1000|cpuUsage.sh|cat /proc/23300/stat
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.2lKxMU|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XFbJ9y|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.oYZ0OT|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.agr9rn|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.iILZWj|Chrome_IOThread
+EXEC|execve|3462595724828|23431|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|23431|0|0|/opt/datadog-packages/packages.db|installer
+CLONE|23438|23431|3462838982260
+FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/History/614bc513/entries.json|libuv-worker
+FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/History/47f09f7b/entries.json|libuv-worker
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Dli47x|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eNjMEj|Chrome_IOThread
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.Ni8fL4|Chrome_ChildIOT
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MQNuOt|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Xs1yb0|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.228mMr|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.v6FXpL|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.26hVJE|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ftZ5qH|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.1Nkyhk|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.iTA7cN|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.G6yx7X|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.HvEVqc|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.BJ99Jy|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.SMhXv9|Chrome_IOThread
+CLONE|23439|3521|3465267353271
+EXEC|execve|3465268540754|23439|3521|1000|code|git config --get commit.template
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.i9puWA|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.3kK0qd|Chrome_IOThread
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.htjYbr|Chrome_IOThread
+EXEC|execve|3465293431053|23440|3521|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|3465321317261|23441|3521|1000|code|git status -z -uall
+EXEC|execve|3465345697379|23442|3521|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+CLONE|23443|3521|3465395312327
+EXEC|execve|3465395658862|23443|3521|1000|code|git show --textconv :eBPFtracer.py
+EXEC|execve|3465410680406|23444|3521|1000|code|git ls-files --stage -- eBPFtracer.py
+EXEC|execve|3465424585845|23445|3521|1000|code|git cat-file -s fe23069c6e3bef9d272c3718b3be50433e8c322f
+FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.lwIVkK|Chrome_IOThread
+FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.PBRyQw|Chrome_ChildIOT
