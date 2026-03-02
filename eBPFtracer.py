@@ -395,7 +395,6 @@ static __always_inline int submit_inode(
     e.ts = bpf_ktime_get_ns();
     bpf_get_current_comm(&e.comm, sizeof(e.comm));
 
-    // path không luôn available → để trống là OK cho provenance
     e.path[0] = '\0';
 
     file_events.perf_submit(ctx, &e, sizeof(e));
@@ -474,7 +473,6 @@ def provstorage(outputstr):
     try:
         event_queue.put_nowait(outputstr)
     except:
-        # queue đầy → bỏ event (chấp nhận được)
         pass
     """
     # no queue

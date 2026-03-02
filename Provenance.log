@@ -1,395 +1,298 @@
-CLONE3|8933|8884|850422150118
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.rBQT5y|Chrome_IOThread
-EXEC|execve|850533823396|8934|3509|1000|code|/bin/sh -c which ps
-CLONE|8934|3509|850533552411
-EXEC|execve|850538467316|8935|8934|1000|sh|which ps
-EXEC|execve|850545109284|8936|3509|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|850548270640|8937|8936|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|850576293530|8938|3509|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088
-EXEC|execve|850578518030|8939|8938|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088
-EXEC|execve|850580045584|8940|8939|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|850581756618|8941|8939|1000|cpuUsage.sh|cat /proc/3607/stat
-EXEC|execve|850582846136|8942|8939|1000|cpuUsage.sh|cat /proc/4940/stat
-EXEC|execve|850583944497|8943|8939|1000|cpuUsage.sh|cat /proc/7773/stat
-EXEC|execve|850585363229|8944|8939|1000|cpuUsage.sh|cat /proc/8086/stat
-EXEC|execve|850586624216|8945|8939|1000|cpuUsage.sh|cat /proc/8882/stat
-EXEC|execve|850587739483|8946|8939|1000|cpuUsage.sh|cat /proc/4941/stat
-EXEC|execve|850589106816|8947|8939|1000|cpuUsage.sh|cat /proc/7774/stat
-EXEC|execve|850590324801|8948|8939|1000|cpuUsage.sh|cat /proc/8087/stat
-EXEC|execve|850591617079|8949|8939|1000|cpuUsage.sh|cat /proc/8883/stat
-EXEC|execve|850592936950|8950|8939|1000|cpuUsage.sh|cat /proc/4942/stat
-EXEC|execve|850594047959|8951|8939|1000|cpuUsage.sh|cat /proc/7775/stat
-EXEC|execve|850595187393|8952|8939|1000|cpuUsage.sh|cat /proc/8088/stat
-EXEC|execve|850596237124|8953|8939|1000|cpuUsage.sh|sleep 1
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kfqNBC|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gSCHty|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Z18Q0n|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.DEhRdH|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.KEmg3l|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.bbtt0o|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.x1tCJA|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.aVPmTg|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gvLpdv|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Auhj8L|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.VHmVtQ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.X3Rogr|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.sKfWrh|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.pouzOd|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.RyLh28|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.yPIy49|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.okLBKg|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Jma1y6|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.iYzQKB|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eaN1TZ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.j5nMkE|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.TU5DL3|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.PsRnsJ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XM50W2|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.HK5M9f|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.B3wHOZ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.m5KmgD|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.cb0Uk0|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.w3SXi0|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.VaSCLC|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.TrvVGO|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.1pqmCS|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MtE4s2|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.4iPhw1|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kUzW6r|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.r7R8qh|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.AWYtpL|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.vcPwdW|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.6pMmnb|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.msQOaM|Chrome_IOThread
-EXEC|execve|851598237537|8954|8939|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-CLONE|8954|8939|851597887313
-EXEC|execve|851604821252|8955|8939|1000|cpuUsage.sh|cat /proc/3607/stat
-EXEC|execve|851610665754|8957|8939|1000|cpuUsage.sh|cat /proc/4940/stat
-EXEC|execve|851616387577|8959|8939|1000|cpuUsage.sh|cat /proc/7773/stat
-EXEC|execve|851619948082|8961|8939|1000|cpuUsage.sh|cat /proc/8086/stat
-EXEC|execve|851626649794|8963|8939|1000|cpuUsage.sh|cat /proc/8882/stat
-EXEC|execve|851633129178|8965|8939|1000|cpuUsage.sh|cat /proc/4941/stat
-EXEC|execve|851641050819|8967|8939|1000|cpuUsage.sh|cat /proc/7774/stat
-EXEC|execve|851647504387|8969|8939|1000|cpuUsage.sh|cat /proc/8087/stat
-EXEC|execve|851654121844|8971|8939|1000|cpuUsage.sh|cat /proc/8883/stat
-EXEC|execve|851659588922|8973|8939|1000|cpuUsage.sh|cat /proc/4942/stat
-EXEC|execve|851662897402|8975|8939|1000|cpuUsage.sh|cat /proc/7775/stat
-EXEC|execve|851666356872|8977|8939|1000|cpuUsage.sh|cat /proc/8088/stat
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Y1jp8f|Chrome_IOThread
-EXEC|execve|852073206894|8979|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|8979|0|0|/opt/datadog-packages/packages.db|installer
-CLONE|8986|8979|852331672161
-EXEC|execve|852653102451|8987|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|8987|0|0|/opt/datadog-packages/packages.db|installer
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.DhAQS0|Chrome_ChildIOT
-CLONE|8996|5194|854422935935
-EXEC|execve|854423828203|8996|5194|1000|bash|nano test_prov.sh
-FILE_CREATE|1000|8996|0|0|./.test_prov.sh.swp|nano
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.HbM1hc|Chrome_ChildIOT
-EXEC|execve|855538499235|8997|3509|1000|code|/bin/sh -c which ps
-CLONE|8997|3509|855537973902
-EXEC|execve|855545176862|8998|8997|1000|sh|which ps
-EXEC|execve|855552457983|8999|3509|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|855560307529|9000|8999|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|855592469765|9001|3509|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088 8884
-EXEC|execve|855595536529|9002|9001|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 3607 4940 7773 8086 8882 4941 7774 8087 8883 4942 7775 8088 8884
-EXEC|execve|855597489469|9003|9002|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|855599596816|9004|9002|1000|cpuUsage.sh|cat /proc/3607/stat
-EXEC|execve|855601638972|9005|9002|1000|cpuUsage.sh|cat /proc/4940/stat
-EXEC|execve|855604739644|9006|9002|1000|cpuUsage.sh|cat /proc/7773/stat
-EXEC|execve|855606409306|9007|9002|1000|cpuUsage.sh|cat /proc/8086/stat
-EXEC|execve|855607980250|9008|9002|1000|cpuUsage.sh|cat /proc/8882/stat
-EXEC|execve|855609272458|9009|9002|1000|cpuUsage.sh|cat /proc/4941/stat
-EXEC|execve|855610746276|9010|9002|1000|cpuUsage.sh|cat /proc/7774/stat
-EXEC|execve|855612120322|9011|9002|1000|cpuUsage.sh|cat /proc/8087/stat
-EXEC|execve|855615320823|9012|9002|1000|cpuUsage.sh|cat /proc/8883/stat
-EXEC|execve|855616958255|9013|9002|1000|cpuUsage.sh|cat /proc/4942/stat
-EXEC|execve|855618418427|9014|9002|1000|cpuUsage.sh|cat /proc/7775/stat
-EXEC|execve|855619818592|9015|9002|1000|cpuUsage.sh|cat /proc/8088/stat
-EXEC|execve|855621129627|9016|9002|1000|cpuUsage.sh|cat /proc/8884/stat
-EXEC|execve|855623376341|9017|9002|1000|cpuUsage.sh|sleep 1
-CLONE|9018|9002|856624768814
-EXEC|execve|856625768128|9018|9002|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|856628752453|9019|9002|1000|cpuUsage.sh|cat /proc/3607/stat
-EXEC|execve|856631031170|9021|9002|1000|cpuUsage.sh|cat /proc/4940/stat
-EXEC|execve|856640566180|9023|9002|1000|cpuUsage.sh|cat /proc/7773/stat
-EXEC|execve|856644248977|9025|9002|1000|cpuUsage.sh|cat /proc/8086/stat
-EXEC|execve|856646554987|9027|9002|1000|cpuUsage.sh|cat /proc/8882/stat
-EXEC|execve|856649347664|9029|9002|1000|cpuUsage.sh|cat /proc/4941/stat
-EXEC|execve|856656162236|9031|9002|1000|cpuUsage.sh|cat /proc/7774/stat
-EXEC|execve|856659954047|9033|9002|1000|cpuUsage.sh|cat /proc/8087/stat
-EXEC|execve|856662433089|9035|9002|1000|cpuUsage.sh|cat /proc/8883/stat
-EXEC|execve|856664598819|9037|9002|1000|cpuUsage.sh|cat /proc/4942/stat
-EXEC|execve|856667006013|9039|9002|1000|cpuUsage.sh|cat /proc/7775/stat
-EXEC|execve|856679450368|9041|9002|1000|cpuUsage.sh|cat /proc/8088/stat
-EXEC|execve|856682563933|9043|9002|1000|cpuUsage.sh|cat /proc/8884/stat
-CLONE|9046|9045|856861799664
-EXEC|execve|856864029169|9046|9045|0|cron|/bin/sh -c command -v debian-sa1 > /dev/null && debian-sa1 1 1
-EXEC|execve|856865213065|9047|9046|0|sh|debian-sa1 1 1
-FILE_CREATE|0|9046|0|0|/dev/null|sh
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.xFxtFM|Chrome_ChildIOT
-FILE_CREATE|1000|8996|0|0|./.test_prov.sh.swp|nano
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/meta.db-wal|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal|tracker-miner-f
-EXEC|execve|860685547421|9049|928|999|agent|blkid
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.LY0vB1|Chrome_ChildIOT
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.lYuxGH|Chrome_ChildIOT
-FILE_CREATE|1000|8996|0|0|test_prov.sh|nano
-CLONE3|9120|3044|864409913854
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.SPX9J3|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.GBW9J3|tracker-miner-f
-FILE_CREATE|1000|2392|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/tracker-extract-3.service/cgroup.subtree_control|systemd
-CLONE|9121|2392|864415199725
-EXEC|execve|864420466207|9121|2392|1000|(xtract-3)|/usr/libexec/tracker-extract-3
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.0AgON4|Chrome_ChildIOT
-CLONE3|9126|1024|867133421967
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.KIoJlE|Chrome_ChildIOT
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-CLONE|9127|5194|869747470567
-CLONE3|9129|2625|869760018728
-FILE_CREATE|1000|2625|0|0|/home/ubuntu/.cache/event-sound-cache.tdb.cef2eb6cc724476ba7c4029f1b986fe1.x86_64-pc-linux-gnu|pool-gnome-shel
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-CLONE|9131|5194|870321966401
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-CLONE|9133|5194|871597428951
-FILE_CREATE|1000|5194|0|0|/dev/null|bash
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.7OOvsR|Chrome_ChildIOT
-CLONE|9135|5194|872269725095
-EXEC|execve|872270382872|9135|5194|1000|bash|chmod +x test_prov.sh
-ATTR|1000|9135|0|0|test_prov.sh|chmod
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.AWH7J3|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.LH36J3|tracker-miner-f
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.hL7y6m|Chrome_ChildIOT
-CLONE3|9136|2429|874963261526
-CLONE3|9137|2893|874965726923
-EXEC|execve|875685697255|9139|928|999|agent|blkid
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.SBC7aE|Chrome_ChildIOT
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.3aEqD6|Chrome_ChildIOT
-EXEC|execve|882072663090|9210|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|9210|0|0|/opt/datadog-packages/packages.db|installer
-CLONE3|9217|1024|882136906627
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.9Ku5qg|Chrome_ChildIOT
-EXEC|execve|883187996081|9218|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|9218|0|0|/opt/datadog-packages/packages.db|installer
-CLONE|9225|9218|883439626957
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.oR6un5|Chrome_ChildIOT
-CLONE|9227|5194|885279419945
-EXEC|execve|885280369834|9227|5194|1000|bash|./test_prov.sh
-FILE_CREATE|1000|9227|0|0|prov_test.txt|test_prov.sh
-EXEC|execve|885289400343|9228|9227|1000|test_prov.sh|chmod 600 prov_test.txt
-ATTR|1000|9228|0|0|prov_test.txt|chmod
-FILE_CREATE|1000|9227|0|0|prov_test.txt|test_prov.sh
-EXEC|execve|885293398828|9229|9227|1000|test_prov.sh|ls -l prov_test.txt
-CLONE3|9230|5091|885307235665
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/meta.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.B6LBK3|tracker-miner-f
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/last-crawl.txt.9UKBK3|tracker-miner-f
-CLONE3|9234|3044|885333745808
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal|pool-tracker-mi
-CLONE|9235|2392|885339537168
-FILE_CREATE|1000|2392|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/tracker-extract-3.service/cgroup.subtree_control|systemd
-EXEC|execve|885350284857|9235|2392|1000|(xtract-3)|/usr/libexec/tracker-extract-3
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal|pool-tracker-mi
-CLONE3|9240|9235|885502736215
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/meta.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal|pool-tracker-mi
-FILE_CREATE|1000|3044|0|0|/home/ubuntu/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal|pool-tracker-mi
-CLONE3|9241|1024|887151170260
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.CiZqpA|Chrome_ChildIOT
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.mWKfo8|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.pfhqPa|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.7uf1f6|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.4X2eLK|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.OqHuEK|code
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.paT7yb|code
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XaLnpZ|code
-EXEC|execve|890027786937|9242|3521|1000|code|git config --get commit.template
-CLONE|9242|3521|890026896135
-EXEC|execve|890051045735|9243|3521|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|890075788771|9244|3521|1000|code|git status -z -uall
-EXEC|execve|890085222286|9245|3521|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|23358|23300|3459102399074
-EXEC|execve|3460189944788|23359|3521|1000|code|git config --get commit.template
-CLONE|23359|3521|3460189396488
-EXEC|execve|3460205090696|23360|3521|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|3460220194176|23361|3521|1000|code|git status -z -uall
-EXEC|execve|3460232546876|23362|3521|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.alntzm|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.QZ70rL|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.9KOBth|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.fllVii|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.avpGiR|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ucMifw|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.PX8waa|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ni9a5U|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.A46jXi|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.K51Nrl|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.9HwAuq|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.xbCJGk|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.yiX2rq|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.1iExHb|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kNXg0e|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ZaSfPt|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.DH9ced|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eLAUmx|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.IdNMxG|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.AqNUNN|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XHLaQK|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gvNeJf|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.BkEgaP|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eM3Trw|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.V72SRQ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MTqWgk|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.QFEy3D|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.yaOY7X|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.43etMY|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hkPqfg|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.n6tmvK|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.bgNrQq|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.p7FEOL|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Yiv0xf|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.EFzFPZ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.0kIVrN|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.oDgNEg|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.gBhhRS|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.rwyOMp|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.7SR9O6|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Uml6HZ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.BjJfUu|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.wsrJzR|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.H8nbKz|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MoN3wR|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.esSxvP|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.KlQjRW|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.cb5aiW|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.q1ixgH|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.P5bUk1|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hY54vk|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hwkqoL|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.zIYLLS|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.kf0xaJ|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.hG5v99|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.YCQqqc|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Uhs7aw|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.fsK2A9|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.B4P9JK|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.KSS5HC|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.V141J2|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ALb9RR|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.2uM6w6|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.tx7wFV|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.aXiX4P|Chrome_IOThread
-CLONE|23363|3521|3461006034252
-EXEC|execve|3461008374675|23363|3521|1000|code|git show --textconv :Provenance.log
-FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-EXEC|execve|3461038652540|23364|3521|1000|code|git ls-files --stage -- Provenance.log
-EXEC|execve|3461055471431|23365|3521|1000|code|git cat-file -s 55fd7da0877a1d14eb19fc21a62883ee88897f1a
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.TrGSPd|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.72LQ44|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.0hvBZU|Chrome_IOThread
-CLONE|23366|3509|3461129579304
-EXEC|execve|3461132316355|23366|3509|1000|code|/bin/sh -c which ps
-EXEC|execve|3461140135503|23367|23366|1000|sh|which ps
-EXEC|execve|3461144833346|23368|3509|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|3461151507795|23369|23368|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|3461193806382|23370|3509|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 3607 4940 7773 8086 8882 23294 4941 7774 8087 8883 23299 4942 7775
-EXEC|execve|3461204004137|23371|23370|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 3607 4940 7773 8086 8882 23294 4941 7774 8087 8883 23299 4942 7775 8088 8884 23300
-EXEC|execve|3461207497092|23372|23371|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|3461210519425|23373|23371|1000|cpuUsage.sh|cat /proc/3607/stat
-EXEC|execve|3461214035945|23374|23371|1000|cpuUsage.sh|cat /proc/4940/stat
-EXEC|execve|3461216372847|23375|23371|1000|cpuUsage.sh|cat /proc/7773/stat
-EXEC|execve|3461217930441|23376|23371|1000|cpuUsage.sh|cat /proc/8086/stat
-EXEC|execve|3461219436638|23377|23371|1000|cpuUsage.sh|cat /proc/8882/stat
-EXEC|execve|3461220712188|23378|23371|1000|cpuUsage.sh|cat /proc/23294/stat
-EXEC|execve|3461221841760|23379|23371|1000|cpuUsage.sh|cat /proc/4941/stat
-EXEC|execve|3461223009114|23380|23371|1000|cpuUsage.sh|cat /proc/7774/stat
-EXEC|execve|3461225943099|23381|23371|1000|cpuUsage.sh|cat /proc/8087/stat
-EXEC|execve|3461231572216|23382|23371|1000|cpuUsage.sh|cat /proc/8883/stat
-EXEC|execve|3461234472157|23383|23371|1000|cpuUsage.sh|cat /proc/23299/stat
-EXEC|execve|3461236742671|23384|23371|1000|cpuUsage.sh|cat /proc/4942/stat
-EXEC|execve|3461237956353|23385|23371|1000|cpuUsage.sh|cat /proc/7775/stat
-EXEC|execve|3461240003135|23386|23371|1000|cpuUsage.sh|cat /proc/8088/stat
-EXEC|execve|3461242104290|23387|23371|1000|cpuUsage.sh|cat /proc/8884/stat
-EXEC|execve|3461243581502|23388|23371|1000|cpuUsage.sh|cat /proc/23300/stat
-EXEC|execve|3461244773864|23389|23371|1000|cpuUsage.sh|sleep 1
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.7fsoHg|Chrome_ChildIOT
-EXEC|execve|3462072721227|23390|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|23390|0|0|/opt/datadog-packages/packages.db|installer
-EXEC|execve|3462247452726|23398|23371|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-CLONE|23398|23371|3462247046455
-EXEC|execve|3462255887451|23399|23371|1000|cpuUsage.sh|cat /proc/3607/stat
-EXEC|execve|3462258220754|23401|23371|1000|cpuUsage.sh|cat /proc/4940/stat
-EXEC|execve|3462260188016|23403|23371|1000|cpuUsage.sh|cat /proc/7773/stat
-EXEC|execve|3462263444242|23405|23371|1000|cpuUsage.sh|cat /proc/8086/stat
-EXEC|execve|3462265977642|23407|23371|1000|cpuUsage.sh|cat /proc/8882/stat
-EXEC|execve|3462267533433|23409|23371|1000|cpuUsage.sh|cat /proc/23294/stat
-EXEC|execve|3462269118540|23411|23371|1000|cpuUsage.sh|cat /proc/4941/stat
-EXEC|execve|3462270941973|23413|23371|1000|cpuUsage.sh|cat /proc/7774/stat
-EXEC|execve|3462272937728|23415|23371|1000|cpuUsage.sh|cat /proc/8087/stat
-EXEC|execve|3462275096387|23417|23371|1000|cpuUsage.sh|cat /proc/8883/stat
-EXEC|execve|3462277061865|23419|23371|1000|cpuUsage.sh|cat /proc/23299/stat
-EXEC|execve|3462279289621|23421|23371|1000|cpuUsage.sh|cat /proc/4942/stat
-EXEC|execve|3462281218409|23423|23371|1000|cpuUsage.sh|cat /proc/7775/stat
-EXEC|execve|3462283335274|23425|23371|1000|cpuUsage.sh|cat /proc/8088/stat
-EXEC|execve|3462285405761|23427|23371|1000|cpuUsage.sh|cat /proc/8884/stat
-EXEC|execve|3462287304352|23429|23371|1000|cpuUsage.sh|cat /proc/23300/stat
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.2lKxMU|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.XFbJ9y|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.oYZ0OT|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.agr9rn|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.iILZWj|Chrome_IOThread
-EXEC|execve|3462595724828|23431|931|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|23431|0|0|/opt/datadog-packages/packages.db|installer
-CLONE|23438|23431|3462838982260
-FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/History/614bc513/entries.json|libuv-worker
-FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/History/47f09f7b/entries.json|libuv-worker
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Dli47x|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.eNjMEj|Chrome_IOThread
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.Ni8fL4|Chrome_ChildIOT
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.MQNuOt|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.Xs1yb0|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.228mMr|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.v6FXpL|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.26hVJE|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.ftZ5qH|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.1Nkyhk|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.iTA7cN|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.G6yx7X|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.HvEVqc|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.BJ99Jy|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.SMhXv9|Chrome_IOThread
-CLONE|23439|3521|3465267353271
-EXEC|execve|3465268540754|23439|3521|1000|code|git config --get commit.template
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.i9puWA|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.3kK0qd|Chrome_IOThread
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.htjYbr|Chrome_IOThread
-EXEC|execve|3465293431053|23440|3521|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|3465321317261|23441|3521|1000|code|git status -z -uall
-EXEC|execve|3465345697379|23442|3521|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|23443|3521|3465395312327
-EXEC|execve|3465395658862|23443|3521|1000|code|git show --textconv :eBPFtracer.py
-EXEC|execve|3465410680406|23444|3521|1000|code|git ls-files --stage -- eBPFtracer.py
-EXEC|execve|3465424585845|23445|3521|1000|code|git cat-file -s fe23069c6e3bef9d272c3718b3be50433e8c322f
-FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|3406|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|3406|0|0|/dev/shm/.org.chromium.Chromium.lwIVkK|Chrome_IOThread
-FILE_CREATE|1000|3460|0|0|/dev/shm/.org.chromium.Chromium.PBRyQw|Chrome_ChildIOT
+CLONE3|48784|48733|7878895204999
+CLONE|48785|48769|7879544928521
+EXEC|execve|7879545424105|48785|48769|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|7879547648078|48786|48769|1000|cpuUsage.sh|cat /proc/16338/stat
+EXEC|execve|7879549810310|48788|48769|1000|cpuUsage.sh|cat /proc/48731/stat
+EXEC|execve|7879551786923|48790|48769|1000|cpuUsage.sh|cat /proc/48732/stat
+EXEC|execve|7879556940373|48792|48769|1000|cpuUsage.sh|cat /proc/48733/stat
+CLONE|48794|16248|7880631990189
+EXEC|execve|7880632367048|48794|16248|1000|code|git config --get commit.template
+EXEC|execve|7880641784453|48795|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7880649887617|48796|16248|1000|code|git status -z -uall
+EXEC|execve|7880656924477|48797|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.u6DN34|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.4Pm91B|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.BovUV0|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.kTCrJD|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.rrq5z0|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.rECpbz|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.YUX0Rq|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.ZZxtQq|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.lJA5qn|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Lvwbu3|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.1Xr6Y4|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.KlNU18|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.VKuNjP|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.JQ6Olo|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.3J4vAi|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.XDLmYf|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.vJvdFu|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.BFqB3B|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.nDsCZM|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.3WeUKJ|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.7QliLU|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.WWMlj6|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.SGKf9E|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.ILvdrU|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.nKjWDL|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.SOQ0GU|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.byCsyX|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.l6KPwr|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.MtFjrZ|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.pquGwY|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.1n2GLw|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.ni2eTG|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.jL6d8V|Chrome_ChildIOT
+CLONE|48798|16306|7883482412266
+EXEC|execve|7883483578152|48798|16306|1000|code|/bin/sh -c which ps
+EXEC|execve|7883486232189|48799|48798|1000|sh|which ps
+EXEC|execve|7883492285337|48800|16306|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|7883494219584|48801|48800|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.IOn5ic|Chrome_ChildIOT
+EXEC|execve|7883530234441|48802|16306|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 16338 48731 48732 48733
+EXEC|execve|7883532405031|48803|48802|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 16338 48731 48732 48733
+EXEC|execve|7883534129834|48804|48803|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|7883536264388|48805|48803|1000|cpuUsage.sh|cat /proc/16338/stat
+EXEC|execve|7883545680093|48806|48803|1000|cpuUsage.sh|cat /proc/48731/stat
+EXEC|execve|7883548854463|48807|48803|1000|cpuUsage.sh|cat /proc/48732/stat
+EXEC|execve|7883550765926|48808|48803|1000|cpuUsage.sh|cat /proc/48733/stat
+EXEC|execve|7883552530975|48809|48803|1000|cpuUsage.sh|sleep 1
+CLONE|48810|48803|7884555523207
+EXEC|execve|7884555944100|48810|48803|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|7884558320602|48811|48803|1000|cpuUsage.sh|cat /proc/16338/stat
+EXEC|execve|7884560524187|48813|48803|1000|cpuUsage.sh|cat /proc/48731/stat
+EXEC|execve|7884562770763|48815|48803|1000|cpuUsage.sh|cat /proc/48732/stat
+EXEC|execve|7884565010797|48817|48803|1000|cpuUsage.sh|cat /proc/48733/stat
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/CachedData/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/chrome/js/index-dir/temp-index|ThreadPoolForeg
+CLONE|48819|16248|7885680991601
+EXEC|execve|7885681346584|48819|16248|1000|code|git config --get commit.template
+EXEC|execve|7885687261011|48820|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7885697170454|48821|16248|1000|code|git status -z -uall
+EXEC|execve|7885703986305|48822|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.NcSw7O|Chrome_ChildIOT
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.onCDPN|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.juI4YR|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.fOoV2F|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.wFQgDy|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Gwnzrz|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.M9f3fR|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.3V84Cb|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.euWZl4|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.osIEig|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.FYyOwH|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.x3jv5r|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.hByeMh|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.IYx5V7|Chrome_IOThread
+EXEC|execve|7886500742180|48823|936|999|agent|blkid
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.pxN5nO|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.wcGKg1|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.fYYjN5|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.iRHDMS|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.azRLoy|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.quHQ7B|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.6QVYhP|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.oHUOcp|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.vZyhtr|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.hK1ttA|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.WBdme5|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.9HMqOO|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.rQCXMl|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.4P3LwE|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.lTPifW|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.yTfUUm|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.KofO2E|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.j9rSpf|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.nHWecR|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Df0csG|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.944iDe|code
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+CLONE|48895|16248|7887795206141
+EXEC|execve|7887795843566|48895|16248|1000|code|/usr/share/code/code /usr/share/code/resources/app/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=16248
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.08UHSR|code
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.cdJ2OR|code
+CLONE3|48896|48895|7888012056887
+CLONE|48903|16248|7888127963944
+EXEC|execve|7888129062210|48903|16248|1000|code|git show --textconv :README.md
+EXEC|execve|7888178846474|48904|16248|1000|code|git ls-files --stage -- README.md
+EXEC|execve|7888219863836|48905|16248|1000|code|git cat-file -s e2f8a9e40a696f33cd4604bdc452272924ab8a40
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.8ctUtS|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.NNTInu|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.dee3ah|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.tJHyDZ|Chrome_ChildIOT
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.oNqCz7|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.OEjuZB|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.bs67vz|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.60e4pi|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.6UJx5n|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.WaRdfG|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.t4LK7x|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.LRh1QV|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.YCDsTD|Chrome_IOThread
+CLONE|48906|16248|7888847459857
+EXEC|execve|7888847831532|48906|16248|1000|code|git show --textconv :Provenance.log
+EXEC|execve|7888860980239|48907|16248|1000|code|git ls-files --stage -- Provenance.log
+EXEC|execve|7888878673180|48908|16248|1000|code|git cat-file -s 24bad15db9bccc65df2e507a076c0a4d9cb85a6d
+CLONE|25|16216|7889580723681
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.68Paod|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.c3RFwC|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.TmjDPf|Chrome_ChildIOT
+EXEC|execve|7890728364802|48910|16248|1000|code|git config --get commit.template
+CLONE|48910|16248|7890725868193
+EXEC|execve|7890741246281|48911|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7890750459046|48912|16248|1000|code|git status -z -uall
+EXEC|execve|7890763937497|48913|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.xbp358|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.qBl5FI|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.sIylnB|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.3FPgJZ|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.fxdc1C|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.YvTVJh|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.BijxIf|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.8fL3Mx|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.3UnV1e|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.N5P2J4|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.1KNFnJ|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.id1Dai|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.vhIVDD|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.wl6eNt|Chrome_IOThread
+CLONE3|48914|1116|7891483967027
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.SuT9qi|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.k9gU2t|Chrome_ChildIOT
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.bpaKJw|Chrome_ChildIOT
+EXEC|execve|7895792968019|48915|16248|1000|code|git config --get commit.template
+CLONE|48915|16248|7895792463415
+EXEC|execve|7895806832976|48916|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7895834869004|48917|16248|1000|code|git status -z -uall
+EXEC|execve|7895862720955|48918|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.VBMFvx|Chrome_ChildIOT
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.pJscsq|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.jMIe6g|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.Ce4xIr|Chrome_ChildIOT
+CLONE|48919|16248|7900912815498
+EXEC|execve|7900913738322|48919|16248|1000|code|git config --get commit.template
+EXEC|execve|7900925289443|48920|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7900937315803|48921|16248|1000|code|git status -z -uall
+EXEC|execve|7900947678142|48922|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+EXEC|execve|7901501060515|48923|936|999|agent|blkid
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.hQSLsX|Chrome_ChildIOT
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.h8vRkm|Chrome_ChildIOT
+EXEC|execve|7905975909453|48995|16248|1000|code|git config --get commit.template
+CLONE|48995|16248|7905975351168
+EXEC|execve|7905995666498|48996|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7906015024212|48997|16248|1000|code|git status -z -uall
+EXEC|execve|7906035043391|48998|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.2qNUtd|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.8TatGw|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.diQA8n|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.skzNj3|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.DuQQ00|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.DNFaMI|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.1ceoZS|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.xI2pXQ|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.kIBtIU|Chrome_ChildIOT
+EXEC|execve|7908008592782|48999|937|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|48999|0|0|/opt/datadog-packages/packages.db|installer
+CLONE|49006|48999|7908298676698
+EXEC|execve|7908558878454|49007|937|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
+FILE_CREATE|0|49007|0|0|/opt/datadog-packages/packages.db|installer
+CLONE|49014|49007|7908790196787
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.RuUG4M|Chrome_ChildIOT
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.klE2Dl|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.PwCgfu|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.lbQYkS|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.N2CcnH|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.rlghIJ|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.7Ucceh|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.2i141C|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.8sLAs0|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.UTffQv|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.gluDe0|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.OQekHS|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.FVTnar|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.2nmq99|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.pCzhE9|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.BjurKl|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.uyJBO1|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.wd8I31|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.GFWhSn|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.ilm8GA|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.rAWIDd|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.wJ6Umu|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.w4lCUU|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.YXXixw|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.00fsvT|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.l4xN97|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.abDHuX|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.DYQVmB|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.k8CXyE|Chrome_IOThread
+CLONE|49015|16248|7911822460908
+EXEC|execve|7911824821160|49015|16248|1000|code|git config --get commit.template
+EXEC|execve|7911858313897|49016|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7911868365221|49017|16248|1000|code|git status -z -uall
+EXEC|execve|7911878502627|49018|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.w1dtP5|Chrome_ChildIOT
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Ux8cay|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.N6GhuL|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.JlbtZA|Chrome_ChildIOT
+EXEC|execve|7916500396499|49019|936|999|agent|blkid
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.JShTip|Chrome_ChildIOT
+EXEC|execve|7916908679374|49091|16248|1000|code|git config --get commit.template
+CLONE|49091|16248|7916908051677
+EXEC|execve|7916934910140|49092|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7916961671378|49093|16248|1000|code|git status -z -uall
+EXEC|execve|7916985869480|49094|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.X0zoSu|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.tRrOAO|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.vXfOAn|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.aM6v81|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.vfjvVk|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.RCWows|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.kPUWLn|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.YPpdVX|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.IFfypO|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.qZ0wW3|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.uwIWIJ|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.26viM3|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.iQZmvg|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.qxVoct|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.57A7ws|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.bcgOBg|Chrome_IOThread
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.Guft9U|Chrome_ChildIOT
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.mrRtYa|Chrome_IOThread
+CLONE|49095|16372|7919991933745
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.NpMXdb|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.CyRuit|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.VoErCc|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.1sibzM|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.4aB7UI|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.PfasMB|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.7PtUjI|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.GW9pIV|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Orhs8y|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.ZGAroN|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.VJAFtf|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.39xkrN|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.fz1Fkk|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.NtqI5q|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.iOmvjz|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|16150|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+EXEC|execve|7920419308264|49099|16248|1000|code|git show --textconv :eBPFtracer.py
+CLONE|49099|16248|7920418425384
+EXEC|execve|7920469710999|49100|16248|1000|code|git ls-files --stage -- eBPFtracer.py
+EXEC|execve|7920525875896|49101|16248|1000|code|git cat-file -s 1baa8c18850566c5296e1fa23a0daa7e2c3735e5
+CLONE|49101|16248|7920521885388
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.01gt53|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.ZnUr3u|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Fn8BeX|Chrome_IOThread
+EXEC|execve|7922026754754|49102|16248|1000|code|git config --get commit.template
+CLONE|49102|16248|7922026415555
+EXEC|execve|7922033202635|49103|16248|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|7922046952102|49104|16248|1000|code|git status -z -uall
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.dWW0Xu|Chrome_IOThread
+FILE_CREATE|1000|16150|0|0|/dev/shm/.org.chromium.Chromium.Rnx309|Chrome_IOThread
+EXEC|execve|7922062441360|49105|16248|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+FILE_CREATE|1000|16195|0|0|/dev/shm/.org.chromium.Chromium.ogPvlq|Chrome_ChildIOT
