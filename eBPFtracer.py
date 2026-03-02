@@ -132,7 +132,13 @@ BPF_PERCPU_ARRAY(exec_storage, struct exec_event_t, 1);
 BPF_PERF_OUTPUT(exec_events);
 BPF_PERF_OUTPUT(fork_events);
 BPF_PERF_OUTPUT(file_events);
+struct open_info_t {
+    char path[PATH_LEN];
+    int flags;
+};
 
+BPF_HASH(open_map, u32, struct open_info_t);
+BPF_PERCPU_ARRAY(file_storage, struct file_event_t, 1);
 /* =========== Function definition area for process node ==============*/
 
 
@@ -400,25 +406,61 @@ static __always_inline int submit_inode(
     file_events.perf_submit(ctx, &e, sizeof(e));
     return 0;
 }
+
 TRACEPOINT_PROBE(syscalls, sys_enter_openat)
 {
-    if (!(args->flags & O_CREAT))
+    u32 pid = bpf_get_current_pid_tgid() >> 32;
+    if (pid < MIN_PID)
         return 0;
 
-    struct file_event_t e = {};
-    e.pid = bpf_get_current_pid_tgid() >> 32;
-    if (e.pid < MIN_PID) return 0;
+    struct open_info_t info = {};
+    info.flags = args->flags;
 
-    e.uid = bpf_get_current_uid_gid();
-    e.edge = EDGE_CREATE;
-    e.ts = bpf_ktime_get_ns();
-    bpf_get_current_comm(&e.comm, sizeof(e.comm));
-    bpf_probe_read_user_str(e.path, sizeof(e.path), args->filename);
+    bpf_probe_read_user_str(info.path, sizeof(info.path),
+                            args->filename);
 
-    file_events.perf_submit(args, &e, sizeof(e));
+    open_map.update(&pid, &info);
     return 0;
 }
 
+TRACEPOINT_PROBE(syscalls, sys_exit_openat)
+{
+    u32 pid = bpf_get_current_pid_tgid() >> 32;
+    if (pid < MIN_PID)
+        return 0;
+
+    int ret = args->ret;
+    if (ret < 0)
+        goto cleanup;
+
+    struct open_info_t *info;
+    info = open_map.lookup(&pid);
+    if (!info)
+        return 0;
+
+    if (!(info->flags & O_CREAT))
+        goto cleanup;
+
+    int zero = 0;
+    struct file_event_t *e = file_storage.lookup(&zero);
+    if (!e)
+        goto cleanup;
+
+    e->pid = pid;
+    e->uid = bpf_get_current_uid_gid();
+    e->edge = EDGE_CREATE;
+    e->ts = bpf_ktime_get_ns();
+
+    bpf_get_current_comm(&e->comm, sizeof(e->comm));
+
+    __builtin_memcpy(&e->path, info->path, sizeof(e->path));
+
+    file_events.perf_submit(args, e, sizeof(*e));
+
+cleanup:
+    open_map.delete(&pid);
+    return 0;
+}
 
 TRACEPOINT_PROBE(syscalls, sys_enter_fchmodat)
 {
@@ -516,6 +558,10 @@ def handle_fork(cpu, data, size):
     #print(f"[{t.upper()}] {e.parent.pid} -> {e.child_pid}")
     #print(f"  TIMESTAMP={e.parent.ts}")
 
+def sudolog(sudolog):
+    with open("SudoAuthen.log", "a") as f:
+        f.write(sudolog + "\n")
+
 def handle_file(cpu, data, size):
     e = cast(data, POINTER(FileEvent)).contents
     edge = {
@@ -525,8 +571,10 @@ def handle_file(cpu, data, size):
     }.get(e.edge, "?")
     outputstr = str(edge) + "|" + str(e.uid) + "|" + str(e.pid) + "|" + str(e.inode) + "|" + str(e.dev) + "|" + str(e.path.decode(errors='ignore')) + "|" + str(e.comm.decode(errors='ignore'))
     #print(outputstr)
-    if "python3" not in e.comm.decode(errors='ignore'):
+    if ("python3" not in e.comm.decode(errors='ignore')) and ("/dev/shm" not in outputstr):
         provstorage(outputstr)
+    if "/run/sudo/ts" in outputstr:
+        sudolog(outputstr)
     #print(f"[{edge}] pid={e.pid} uid={e.uid} "
     #      f"inode={e.inode} dev={e.dev} "
     #      f"path={e.path.decode(errors='ignore')} "
