@@ -1,73 +1,8 @@
-from bcc import BPF
-from ctypes import *
 import networkx as nx
 import matplotlib.pyplot as plt
 from collections import defaultdict
-import time
 
-bpf_program = r"""
-#include <uapi/linux/ptrace.h>
-#include <linux/sched.h>
-
-#define __NR_setuid        105
-#define __NR_setgid        106
-#define __NR_setreuid     113
-#define __NR_setregid     114
-#define __NR_setresuid   117
-#define __NR_setresgid   119
-#define __NR_capset      126
-
-struct event_t {
-    u32 pid;
-    u32 uid;
-    u32 syscall;
-};
-
-BPF_PERF_OUTPUT(events);
-
-TRACEPOINT_PROBE(raw_syscalls, sys_exit)
-{
-    u32 id = args->id;
-
-    if (id != __NR_setuid &&
-        id != __NR_setgid &&
-        id != __NR_setreuid &&
-        id != __NR_setregid &&
-        id != __NR_setresuid &&
-        id != __NR_setresgid &&
-        id != __NR_capset)
-        return 0;
-
-    /* chỉ log khi thành công */
-    if (args->ret != 0)
-        return 0;
-
-    struct event_t e = {};
-    e.pid = bpf_get_current_pid_tgid() >> 32;
-    e.uid = bpf_get_current_uid_gid();
-    e.syscall = id;
-
-    events.perf_submit(args, &e, sizeof(e));
-    return 0;
-}
-"""
-
-class Event(Structure):
-    _fields_ = [
-        ("pid", c_uint),
-        ("uid", c_uint),
-        ("syscall", c_uint),
-    ]
-
-syscall_names = {
-    105: "setuid",
-    106: "setgid",
-    113: "setreuid",
-    114: "setregid",
-    117: "setresuid",
-    119: "setresgid",
-    126: "capset",
-}
+LOG_FILE = "Provenance.log"
 
 
 def parse_log(file_path):
@@ -134,17 +69,21 @@ def build_expanded_graph(target_pid, parent_map, children_map, all_edges):
     lineage = trace_lineage(target_pid, parent_map)
     lineage_set = set(lineage)
 
+    # 1️⃣ Thêm lineage chain
     for node in lineage:
         if node in parent_map:
             parent = parent_map[node]
             G.add_edge(parent, node, type="lineage")
 
+    # 2️⃣ Với mỗi node trong lineage → thêm toàn bộ edges cấp 1
     for node in lineage:
 
+        # Thêm parent edge
         if node in parent_map:
             parent = parent_map[node]
             G.add_edge(parent, node, type="neighbor")
 
+        # Thêm tất cả child edges
         if node in children_map:
             for child in children_map[node]:
                 G.add_edge(node, child, type="neighbor")
@@ -155,7 +94,7 @@ def build_expanded_graph(target_pid, parent_map, children_map, all_edges):
 def draw_graph(G, labels,pid):
     pos = nx.nx_agraph.graphviz_layout(G, prog="dot")
     plt.figure(figsize=(14, 12))
-    output= str(pid) + '_' + str(time.time()) + ".png"
+    output= str(pid) + ".png"
     nx.draw(
         G,
         pos,
@@ -179,13 +118,16 @@ def draw_graph(G, labels,pid):
     print(f"Saved to {output}")
     plt.show()
 
-def print_event(cpu, data, size):
-    e = cast(data, POINTER(Event)).contents
-    name = syscall_names.get(e.syscall, "unknown")
-    parent_map, children_map, all_edges, labels = parse_log("Provenance.log")
-    target_pid = e.pid
-    SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
-    pid = e.pid
+if __name__ == "__main__":
+    parent_map, children_map, all_edges, labels = parse_log(LOG_FILE)
+
+    target_pid = input("PID: ").strip()
+    checker = False
+    if target_pid not in parent_map:
+        print("PID not exist")
+    else:
+        SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
+    pid = target_pid
     while True:        
         for children in children_map[pid]:
             if str(children) in SudoAuthenLog:
@@ -195,20 +137,6 @@ def print_event(cpu, data, size):
         except:
             checker = True
             break
-    print(f"[PID {e.pid}] UID={e.uid} SUCCESS syscall={name}")
-    if target_pid not in parent_map:
-        print("PID not exist")
-    else:
+    if checker:    
         G = build_expanded_graph(target_pid, parent_map, children_map, all_edges)
         draw_graph(G, labels, target_pid)
-
-b = BPF(text=bpf_program)
-b["events"].open_perf_buffer(print_event)
-
-print("Tracing successful privilege-changing syscalls... Ctrl-C to stop.")
-
-while True:
-    try:
-        b.perf_buffer_poll()
-    except KeyboardInterrupt:
-        exit()

