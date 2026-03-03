@@ -186,6 +186,7 @@ def print_event(cpu, data, size):
     target_pid = e.pid
     SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
     pid = e.pid
+    
     while True:        
         for children in children_map[pid]:
             if str(children) in SudoAuthenLog:
