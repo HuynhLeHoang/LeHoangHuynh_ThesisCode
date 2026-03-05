@@ -600,3 +600,4 @@ while True:
         #running = False
         #event_queue.join()
         #print("Stopping tracer...")
+

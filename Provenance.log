@@ -227,3 +227,62 @@ EXEC|execve|533227718951|4887|4884|1000|cpuUsage.sh|cat /proc/4725/stat
 EXEC|execve|533234001055|4888|4884|1000|cpuUsage.sh|cat /proc/4732/stat
 EXEC|execve|533238703128|4889|4884|1000|cpuUsage.sh|cat /proc/4733/stat
 EXEC|execve|533242266913|4890|4884|1000|cpuUsage.sh|sleep 1
+CLONE3|11972|11961|5743986627827
+CLONE3|11973|9827|5743987805208
+CLONE|11974|4716|5745542805489
+EXEC|execve|5745544783545|11975|4716|1000|bash|sudo python3 trace_privi.py
+FILE_CREATE|1000|11975|0|0|1000|sudo
+CLONE|11977|11976|5745551122445
+EXEC|execve|5745551459265|11977|11976|0|sudo|python3 trace_privi.py
+CLONE|11978|4733|5745578008561
+CLONE|11984|4674|5746548790429
+EXEC|execve|5746549040221|11984|4674|1000|code|/bin/sh -c which ps
+EXEC|execve|5746551187006|11985|11984|1000|sh|which ps
+EXEC|execve|5746555053703|11986|4674|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5746557345093|11987|11986|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5746572472706|11988|4674|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4716 11377 11535 11713 11975 11398 11536 11714 11976 11399 11537 1
+EXEC|execve|5746573830437|11989|11988|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4716 11377 11535 11713 11975 11398 11536 11714 11976 11399 11537 11718
+EXEC|execve|5746575877287|11990|11989|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5746578154258|11991|11989|1000|cpuUsage.sh|cat /proc/4716/stat
+EXEC|execve|5746580450961|11992|11989|1000|cpuUsage.sh|cat /proc/11377/stat
+EXEC|execve|5746582168793|11993|11989|1000|cpuUsage.sh|cat /proc/11535/stat
+EXEC|execve|5746583352626|11994|11989|1000|cpuUsage.sh|cat /proc/11713/stat
+EXEC|execve|5746584530449|11995|11989|1000|cpuUsage.sh|cat /proc/11975/stat
+EXEC|execve|5746585842341|11996|11989|1000|cpuUsage.sh|cat /proc/11398/stat
+EXEC|execve|5746587339716|11997|11989|1000|cpuUsage.sh|cat /proc/11536/stat
+EXEC|execve|5746588785149|11998|11989|1000|cpuUsage.sh|cat /proc/11714/stat
+EXEC|execve|5746590064956|11999|11989|1000|cpuUsage.sh|cat /proc/11976/stat
+EXEC|execve|5746591214419|12000|11989|1000|cpuUsage.sh|cat /proc/11399/stat
+EXEC|execve|5746592621729|12001|11989|1000|cpuUsage.sh|cat /proc/11537/stat
+EXEC|execve|5746594245853|12002|11989|1000|cpuUsage.sh|cat /proc/11718/stat
+EXEC|execve|5746595404512|12003|11989|1000|cpuUsage.sh|sleep 1
+CLONE|12004|11989|5747598104027
+EXEC|execve|5747598320449|12004|11989|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5747601182267|12005|11989|1000|cpuUsage.sh|cat /proc/4716/stat
+EXEC|execve|5747603079594|12007|11989|1000|cpuUsage.sh|cat /proc/11377/stat
+EXEC|execve|5747605581734|12009|11989|1000|cpuUsage.sh|cat /proc/11535/stat
+EXEC|execve|5747610599988|12011|11989|1000|cpuUsage.sh|cat /proc/11713/stat
+EXEC|execve|5747613704058|12013|11989|1000|cpuUsage.sh|cat /proc/11975/stat
+EXEC|execve|5747616416675|12015|11989|1000|cpuUsage.sh|cat /proc/11398/stat
+EXEC|execve|5747619664663|12017|11989|1000|cpuUsage.sh|cat /proc/11536/stat
+EXEC|execve|5747622479483|12019|11989|1000|cpuUsage.sh|cat /proc/11714/stat
+EXEC|execve|5747624835022|12021|11989|1000|cpuUsage.sh|cat /proc/11976/stat
+EXEC|execve|5747627220496|12023|11989|1000|cpuUsage.sh|cat /proc/11399/stat
+EXEC|execve|5747629888684|12025|11989|1000|cpuUsage.sh|cat /proc/11537/stat
+EXEC|execve|5747631903605|12027|11989|1000|cpuUsage.sh|cat /proc/11718/stat
+FILE_CREATE|1000|4505|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/chatEditingSessions/3058a589-0556-40f8-8724-a1987284586b/state.json|libuv-worker
+CLONE3|38964|38958|13888913512108
+CLONE3|38965|9827|13888915896136
+CLONE|38966|4674|13888963346733
+EXEC|execve|13888964155332|38966|4674|1000|code|/bin/sh -c which ps
+EXEC|execve|13888966646946|38967|38966|1000|sh|which ps
+EXEC|execve|13888969777095|38968|4674|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|13888971783421|38969|38968|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|13888989688574|38970|4674|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 38914 38950 38957 38958
+EXEC|execve|13888991232315|38971|38970|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 38914 38950 38957 38958
+EXEC|execve|13888993060296|38972|38971|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|13888994764884|38973|38971|1000|cpuUsage.sh|cat /proc/38914/stat
+EXEC|execve|13888995995765|38974|38971|1000|cpuUsage.sh|cat /proc/38950/stat
+EXEC|execve|13888997263877|38975|38971|1000|cpuUsage.sh|cat /proc/38957/stat
+EXEC|execve|13888998618855|38976|38971|1000|cpuUsage.sh|cat /proc/38958/stat
+EXEC|execve|13888999865782|38977|38971|1000|cpuUsage.sh|sleep 1

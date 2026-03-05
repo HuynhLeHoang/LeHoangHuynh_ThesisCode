@@ -7,7 +7,8 @@ import time
 
 bpf_program = r"""
 #include <uapi/linux/ptrace.h>
-#include <linux/sched.h>
+#include <linux/fs.h>
+#include <linux/fcntl.h>
 
 #define __NR_setuid        105
 #define __NR_setgid        106
@@ -24,95 +25,28 @@ struct event_t {
     u32 uid;
     u32 syscall;
 };
-
 BPF_PERF_OUTPUT(events);
-
-struct file_event_t {
+struct sudo_event_t {
     u32 pid;
     u32 uid;
-    u32 type;   // 1=read, 2=write
+    char path[80];
 };
-
-BPF_PERF_OUTPUT(file_events);
-BPF_HASH(sudo_fds, u32, u32);
-
-static __always_inline int is_sudo_ts(const char *path)
+BPF_PERF_OUTPUT(sudo_events);
+TRACEPOINT_PROBE(syscalls, sys_enter_openat)
 {
-    char prefix1[] = "/run/sudo/ts/";
-    char prefix2[] = "/var/run/sudo/ts/";
+    int flags = args->flags;
 
-    if (__builtin_memcmp(path, prefix1, sizeof(prefix1)-1) == 0)
-        return 1;
-
-    if (__builtin_memcmp(path, prefix2, sizeof(prefix2)-1) == 0)
-        return 1;
-
-    return 0;
-}
-
-
-TRACEPOINT_PROBE(syscalls, sys_exit_openat)
-{
-    int ret = args->ret;
-    if (ret < 0)
+    if (!(flags & O_WRONLY) && !(flags & O_RDWR))
         return 0;
 
-    u32 pid = bpf_get_current_pid_tgid() >> 32;
-
-    char path[256];
-    // không có path ở exit → cần dùng enter để lưu
-    // nhưng để đơn giản ta check theo comm == sudo
-
-    char comm[TASK_COMM_LEN];
-    bpf_get_current_comm(&comm, sizeof(comm));
-
-    if (comm[0] != 's' || comm[1] != 'u')
-        return 0;
-
-    u32 key = (pid << 16) | ret;
-    u32 val = 1;
-    sudo_fds.update(&key, &val);
-
-    return 0;
-}
-
-TRACEPOINT_PROBE(syscalls, sys_enter_write)
-{
-    u32 pid = bpf_get_current_pid_tgid() >> 32;
-    int fd = args->fd;
-
-    u32 key = (pid << 16) | fd;
-
-    u32 *exists = sudo_fds.lookup(&key);
-    if (!exists)
-        return 0;
-
-    struct file_event_t e = {};
-    e.pid = pid;
+    struct sudo_event_t e = {};
+    e.pid = bpf_get_current_pid_tgid() >> 32;
     e.uid = bpf_get_current_uid_gid();
-    e.type = 2;
 
-    file_events.perf_submit(args, &e, sizeof(e));
-    return 0;
-}
+    bpf_probe_read_user_str(e.path, sizeof(e.path), args->filename);
 
-TRACEPOINT_PROBE(syscalls, sys_enter_read)
-{
-    u32 pid = bpf_get_current_pid_tgid() >> 32;
-    int fd = args->fd;
+    sudo_events.perf_submit(args, &e, sizeof(e));
 
-    u32 key = (pid << 16) | fd;
-
-    u32 *exists = sudo_fds.lookup(&key);
-    if (!exists)
-        return 0;
-
-    struct file_event_t e = {};
-    e.pid = pid;
-    e.uid = bpf_get_current_uid_gid();
-    e.type = 1;
-
-    file_events.perf_submit(args, &e, sizeof(e));
     return 0;
 }
 
@@ -150,11 +84,11 @@ class Event(Structure):
         ("syscall", c_uint),
     ]
 
-class FileEvent(Structure):
+class SudoEvent(Structure):
     _fields_ = [
         ("pid", c_uint),
         ("uid", c_uint),
-        ("type", c_uint),
+        ("path", c_char * 80),
     ]
 
 syscall_names = {
@@ -284,6 +218,7 @@ def print_event(cpu, data, size):
     target_pid = e.pid
     SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
     pid = e.pid
+    print("value of if:",str(target_pid) not in parent_map)
     checker = False
     while True:        
         for children in children_map[pid]:
@@ -303,16 +238,20 @@ def print_event(cpu, data, size):
         G = build_expanded_graph(target_pid, parent_map, children_map, all_edges)
         draw_graph(G, labels, target_pid)
 
-def print_file_event(cpu, data, size):
-    e = cast(data, POINTER(FileEvent)).contents
-    action = "READ" if e.type == 1 else "WRITE"
-    print(f"[SUDO_TS] PID={e.pid} UID={e.uid} {action}")
-    if action == "WRITE":
-        with open("SudoAuthen.log","w") as f:
-            f.write(str(e.uid) + "|" + str(e.pid) + "|" + str(action))
+def print_sudo_authen(cpu, data, size):
+    e = cast(data, POINTER(SudoEvent)).contents
+    path = e.path.decode("utf-8", "ignore")
+
+    if ".sudo_as_admin_successful" not in path:
+        return
+
+    print(f"[SUDO AUTH] PID={e.pid} UID={e.uid} FILE={path}")
+
+    with open("SudoAuthen.log","w") as f:
+        f.write(str(e.uid) + "|" + str(e.pid))
 
 b = BPF(text=bpf_program)
-b["file_events"].open_perf_buffer(print_file_event)
+b["sudo_events"].open_perf_buffer(print_sudo_authen)
 b["events"].open_perf_buffer(print_event)
 
 print("Tracing successful privilege-changing syscalls... Ctrl-C to stop.")
