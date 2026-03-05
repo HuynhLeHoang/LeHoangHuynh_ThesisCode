@@ -573,8 +573,9 @@ def handle_file(cpu, data, size):
     #print(outputstr)
     if ("python3" not in e.comm.decode(errors='ignore')) and ("/dev/shm" not in outputstr):
         provstorage(outputstr)
-    if "/run/sudo/ts" in outputstr:
-        sudolog(outputstr)
+    #if "/run/sudo/ts" in outputstr:
+    #    sudolog(outputstr)
+    
     #print(f"[{edge}] pid={e.pid} uid={e.uid} "
     #      f"inode={e.inode} dev={e.dev} "
     #      f"path={e.path.decode(errors='ignore')} "

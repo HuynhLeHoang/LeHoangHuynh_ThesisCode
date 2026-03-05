@@ -1,0 +1,229 @@
+CLONE3|4691|4667|347523636488
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+EXEC|execve|348706798756|4692|3946|1000|code|/bin/sh -c which ps
+CLONE|4692|3946|348706481851
+EXEC|execve|348710310380|4693|4692|1000|sh|which ps
+EXEC|execve|348714772405|4694|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|348718174832|4695|4694|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|348741230721|4696|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4041 4656 4666 4667
+EXEC|execve|348744365003|4697|4696|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4041 4656 4666 4667
+EXEC|execve|348747353659|4698|4697|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|348752461131|4699|4697|1000|cpuUsage.sh|cat /proc/4041/stat
+EXEC|execve|348754857259|4700|4697|1000|cpuUsage.sh|cat /proc/4656/stat
+EXEC|execve|348757232148|4701|4697|1000|cpuUsage.sh|cat /proc/4666/stat
+EXEC|execve|348759660012|4702|4697|1000|cpuUsage.sh|cat /proc/4667/stat
+EXEC|execve|348762224005|4703|4697|1000|cpuUsage.sh|sleep 1
+CLONE|4704|4697|349765236317
+EXEC|execve|349766062781|4704|4697|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|349771499732|4705|4697|1000|cpuUsage.sh|cat /proc/4041/stat
+EXEC|execve|349780569978|4707|4697|1000|cpuUsage.sh|cat /proc/4656/stat
+EXEC|execve|349786678589|4709|4697|1000|cpuUsage.sh|cat /proc/4666/stat
+EXEC|execve|349791960619|4711|4697|1000|cpuUsage.sh|cat /proc/4667/stat
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+CLONE3|4713|3660|352711347878
+CLONE3|4714|2452|352718234282
+CLONE3|4716|3294|352718569177
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/chatSessions/f07e82ae-ef55-4de0-a182-c0ef0ae23e7c.jsonl|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/chatEditingSessions/f07e82ae-ef55-4de0-a182-c0ef0ae23e7c/state.json|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+CLONE|4720|4053|369550245222
+FILE_CREATE|1000|4720|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+FILE_CREATE|1000|4721|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+FILE_CREATE|1000|4053|0|0|/dev/null|bash
+CLONE|4724|4053|370063747288
+EXEC|execve|370069871066|4725|4053|1000|bash|sudo python3 trace_privi.py
+FILE_CREATE|1000|4725|0|0|1000|sudo
+CLONE|4726|4096|370085954868
+CLONE|4732|4725|370887854869
+CLONE|4733|4732|370889153091
+EXEC|execve|370889971209|4733|4732|0|sudo|python3 trace_privi.py
+CLONE|4734|3946|371876201400
+EXEC|execve|371878102148|4734|3946|1000|code|/bin/sh -c which ps
+EXEC|execve|371881381110|4735|4734|1000|sh|which ps
+EXEC|execve|371888880767|4736|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|371891537643|4737|4736|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|371917633894|4738|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4053 4725 4732 4733
+EXEC|execve|371921861940|4739|4738|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4053 4725 4732 4733
+EXEC|execve|371924573042|4740|4739|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|371927426821|4741|4739|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|371929617590|4742|4739|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|371932278997|4743|4739|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|371936118309|4744|4739|1000|cpuUsage.sh|cat /proc/4733/stat
+EXEC|execve|371944402754|4745|4739|1000|cpuUsage.sh|sleep 1
+CLONE|4746|4739|372947805113
+EXEC|execve|372948585218|4746|4739|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|372952077647|4747|4739|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|372954448130|4749|4739|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|372956879905|4751|4739|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|372959146344|4753|4739|1000|cpuUsage.sh|cat /proc/4733/stat
+CLONE|4755|3946|372976349352
+EXEC|execve|372976604604|4755|3946|1000|code|/bin/sh -c which ps
+EXEC|execve|372978473613|4756|4755|1000|sh|which ps
+EXEC|execve|372982109436|4757|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|372983848517|4758|4757|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|373010433781|4759|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4053 4725 4732 4733
+EXEC|execve|373012991242|4760|4759|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4053 4725 4732 4733
+EXEC|execve|373015996787|4761|4760|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|373018496616|4762|4760|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|373020630362|4763|4760|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|373022713528|4764|4760|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|373025227622|4765|4760|1000|cpuUsage.sh|cat /proc/4733/stat
+EXEC|execve|373027530936|4766|4760|1000|cpuUsage.sh|sleep 1
+EXEC|execve|374030464337|4767|4760|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+CLONE|4767|4760|374030032947
+EXEC|execve|374034588917|4768|4760|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|374038108984|4770|4760|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|374043613789|4772|4760|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|374048541358|4774|4760|1000|cpuUsage.sh|cat /proc/4733/stat
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/chatEditingSessions/f07e82ae-ef55-4de0-a182-c0ef0ae23e7c/state.json|libuv-worker
+CLONE|4776|3631|377699051045
+EXEC|execve|377700199964|4776|3631|1000|exploit.sh|rm -rf /tmp/sudowoot.stage.JFVz5V
+CLONE|4777|3946|377977269071
+EXEC|execve|377978151137|4777|3946|1000|code|/bin/sh -c which ps
+EXEC|execve|377985755891|4778|4777|1000|sh|which ps
+EXEC|execve|377994500541|4779|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|377998859784|4780|4779|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|378039851221|4781|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4053 4725 4732 4733
+EXEC|execve|378043899472|4782|4781|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4053 4725 4732 4733
+EXEC|execve|378048299568|4783|4782|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|378052553105|4784|4782|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|378056078738|4785|4782|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|378059549330|4786|4782|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|378062954140|4787|4782|1000|cpuUsage.sh|cat /proc/4733/stat
+EXEC|execve|378066152480|4788|4782|1000|cpuUsage.sh|sleep 1
+EXEC|execve|379071747263|4789|4782|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+CLONE|4789|4782|379070612175
+EXEC|execve|379083130975|4790|4782|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|379092674223|4792|4782|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|379100228990|4794|4782|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|379107728405|4796|4782|1000|cpuUsage.sh|cat /proc/4733/stat
+CLONE|4798|3624|382006139714
+EXEC|execve|382006560468|4798|3624|1000|bash|./exploit.sh
+EXEC|execve|382011958007|4799|4798|1000|exploit.sh|mktemp -d /tmp/sudowoot.stage.XXXXXX
+FILE_CREATE|1000|4800|0|0|woot1337.c|exploit.sh
+EXEC|execve|382017855322|4800|4798|1000|exploit.sh|cat
+EXEC|execve|382021940201|4801|4798|1000|exploit.sh|mkdir -p woot/etc libnss_
+FILE_CREATE|1000|4798|0|0|woot/etc/nsswitch.conf|exploit.sh
+EXEC|execve|382026136333|4802|4798|1000|exploit.sh|cp /etc/group woot/etc
+FILE_CREATE|1000|4802|0|0|group|cp
+EXEC|execve|382030196923|4803|4798|1000|exploit.sh|gcc -shared -fPIC -Wl,-init,woot -o libnss_/woot1337.so.2 woot1337.c
+FILE_CREATE|1000|4803|0|0|/tmp/ccTvdPNr.s|gcc
+EXEC|execve|382033700185|4804|4803|1000|gcc|/usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -imultiarch x86_64-linux-gnu woot1337.c -quiet -dumpdir libnss_/woot1337.so.2- -dumpbase woot1337.c -dumpbase-ext .c -mtune=generic -march=x86-64 -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection
+FILE_CREATE|1000|4804|0|0|/tmp/ccTvdPNr.s|cc1
+FILE_CREATE|1000|4803|0|0|/tmp/cciMDKE1.o|gcc
+EXEC|execve|382066367412|4805|4803|1000|gcc|as --64 -o /tmp/cciMDKE1.o /tmp/ccTvdPNr.s
+FILE_CREATE|1000|4805|0|0|/tmp/cciMDKE1.o|as
+FILE_CREATE|1000|4803|0|0|/tmp/ccRMeIST.res|gcc
+EXEC|execve|382073315251|4806|4803|1000|gcc|/usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRMeIST.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -shared -z relro -o
+FILE_CREATE|1000|4806|0|0|/tmp/cc4rS6Vc.cdtor.c|collect2
+FILE_CREATE|1000|4806|0|0|/tmp/cck2tHwM.cdtor.o|collect2
+EXEC|execve|382076575180|4807|4806|1000|collect2|/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRMeIST.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -shared -z relro -o
+FILE_CREATE|1000|4807|0|0|libnss_/woot1337.so.2|ld
+CLONE|4808|4798|382111943114
+EXEC|execve|382112216256|4808|4798|1000|exploit.sh|sudo -R woot woot
+FILE_CREATE|1000|4808|0|0|1000|sudo
+EXEC|execve|382152585913|4809|4808|0|bash|lesspipe
+EXEC|execve|382156300750|4810|4809|0|lesspipe|basename /usr/bin/lesspipe
+EXEC|execve|382160435958|4812|4811|0|lesspipe|dirname /usr/bin/lesspipe
+CLONE|4812|4811|382160202072
+EXEC|execve|382167123896|4813|4808|0|bash|dircolors -b
+EXEC|execve|382265260381|4814|4733|0|python3|/usr/bin/dot -T dot
+CLONE3|4814|4733|382266456705
+CLONE|4817|3946|383125810185
+EXEC|execve|383126801791|4817|3946|1000|code|/bin/sh -c which ps
+EXEC|execve|383132647003|4818|4817|1000|sh|which ps
+EXEC|execve|383136745472|4819|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|383139132326|4820|4819|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|383178047921|4821|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4053 4725 4732 4733
+EXEC|execve|383181517595|4822|4821|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4053 4725 4732 4733
+EXEC|execve|383185776938|4823|4822|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|383189150369|4824|4822|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|383192720592|4825|4822|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|383195330936|4826|4822|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|383198463295|4827|4822|1000|cpuUsage.sh|cat /proc/4733/stat
+EXEC|execve|383200589145|4828|4822|1000|cpuUsage.sh|sleep 1
+CLONE3|4829|4733|383699492048
+CLONE3|4830|3318|383765983061
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.idx|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.db|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.idx|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.db|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.idx|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.db|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.idx|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.cache/mesa_shader_cache_db/part0/mesa_cache.db|gnome-shell
+CLONE|4833|4822|384203270286
+EXEC|execve|384203693087|4833|4822|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|384207818788|4834|4822|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|384213824846|4836|4822|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|384217290370|4838|4822|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|384220630283|4840|4822|1000|cpuUsage.sh|cat /proc/4733/stat
+CLONE|4842|4808|387060661300
+EXEC|execve|387061163546|4842|4808|0|bash|id
+CLONE|4843|3946|388124077279
+EXEC|execve|388125410840|4843|3946|1000|code|/bin/sh -c which ps
+EXEC|execve|388129583481|4844|4843|1000|sh|which ps
+EXEC|execve|388136125154|4845|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|388140447067|4846|4845|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|388173989516|4847|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4053 4725 4732 4733
+EXEC|execve|388180088661|4848|4847|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4053 4725 4732 4733
+EXEC|execve|388185666447|4849|4848|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|388191390684|4850|4848|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|388196378392|4851|4848|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|388200338640|4852|4848|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|388205544484|4853|4848|1000|cpuUsage.sh|cat /proc/4733/stat
+EXEC|execve|388211867659|4854|4848|1000|cpuUsage.sh|sleep 1
+CLONE|4855|4848|389216248530
+EXEC|execve|389217313963|4855|4848|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|389223120456|4856|4848|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|389228335541|4858|4848|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|389233629760|4860|4848|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|389239349950|4862|4848|1000|cpuUsage.sh|cat /proc/4733/stat
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+CLONE3|4865|2583|407532232066
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/SharedStorage|ThreadPoolForeg
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/SharedStorage-wal|ThreadPoolForeg
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/chatEditingSessions/f07e82ae-ef55-4de0-a182-c0ef0ae23e7c/state.json|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.local/share/gnome-shell/application_state|gnome-shell
+FILE_CREATE|1000|2583|0|0|/home/ubuntu/.local/share/gnome-shell/.goutputstream-ZC0NL3|gnome-shell
+CLONE3|4867|2583|451946543693
+CLONE|4868|1156|462238671082
+CLONE|4869|4868|462261841356
+EXEC|execve|462264275380|4869|4868|0|cron|/bin/sh -c command -v debian-sa1 > /dev/null && debian-sa1 1 1
+FILE_CREATE|0|4869|0|0|/dev/null|sh
+EXEC|execve|462267722206|4870|4869|0|sh|debian-sa1 1 1
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/chatEditingSessions/f07e82ae-ef55-4de0-a182-c0ef0ae23e7c/state.json|libuv-worker
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/a59b05621cf9ac77051fe07a93aeb8cf/state.vscdb-journal|libuv-worker
+CLONE3|4871|2583|525675787347
+CLONE|4872|4053|531685442391
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/Backups/e4cbcce8235aa9631a0abbffabeef27f/file/3d6dd2c7|libuv-worker
+CLONE|4873|3959|531931985513
+EXEC|execve|531932504590|4873|3959|1000|code|/usr/share/code/resources/app/node_modules/@vscode/ripgrep/bin/rg --files --hidden --case-sensitive --no-require-git -g **/package.json -g !**/.git -g !**/.svn -g !**/.hg -g !**/.DS_Store -g !**/Thumbs.db --no-ignore --follow --no-config
+FILE_CREATE|1000|3818|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+CLONE|4879|3946|533145023290
+EXEC|execve|533145560785|4879|3946|1000|code|/bin/sh -c which ps
+EXEC|execve|533151065296|4880|4879|1000|sh|which ps
+EXEC|execve|533159395901|4881|3946|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|533164594974|4882|4881|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|533200575591|4883|3946|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 4053 4725 4732 4733
+EXEC|execve|533204460072|4884|4883|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 4053 4725 4732 4733
+EXEC|execve|533216763679|4885|4884|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|533223314093|4886|4884|1000|cpuUsage.sh|cat /proc/4053/stat
+EXEC|execve|533227718951|4887|4884|1000|cpuUsage.sh|cat /proc/4725/stat
+EXEC|execve|533234001055|4888|4884|1000|cpuUsage.sh|cat /proc/4732/stat
+EXEC|execve|533238703128|4889|4884|1000|cpuUsage.sh|cat /proc/4733/stat
+EXEC|execve|533242266913|4890|4884|1000|cpuUsage.sh|sleep 1
