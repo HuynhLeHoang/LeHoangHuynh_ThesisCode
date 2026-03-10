@@ -983,3 +983,245 @@ EXEC|execve|545662712983|6571|6566|1000|bash|dircolors -b
 FILE_CREATE|1000|6566|0|0|/dev/null|bash
 EXEC|execve|560660811464|6572|6566|1000|bash|git add .
 CLONE|6572|6566|560660645108
+FILE_CREATE|1000|6572|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/index.lock|git
+FILE_CREATE|1000|6572|0|0|.git/objects/9b/tmp_obj_AM06sJ|git
+FILE_CREATE|1000|6572|0|0|.git/objects/0a/tmp_obj_s31F0M|git
+FILE_CREATE|1000|6572|0|0|.git/objects/ad/tmp_obj_Ra8QDO|git
+FILE_CREATE|1000|6572|0|0|.git/objects/ad/tmp_obj_9aPs5J|git
+FILE_CREATE|1000|6572|0|0|.git/objects/8c/tmp_obj_b5l6m4|git
+FILE_CREATE|1000|6572|0|0|.git/objects/5d/tmp_obj_GcCSfG|git
+FILE_CREATE|1000|6572|0|0|.git/objects/0e/tmp_obj_bN56QJ|git
+CLONE|6573|6566|572752238241
+EXEC|execve|572752439646|6573|6566|1000|bash|git commit -m update trace_privi.py
+FILE_CREATE|1000|6573|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/index.lock|git
+FILE_CREATE|1000|6573|0|0|.git/objects/da/tmp_obj_wVZ0ps|git
+FILE_CREATE|1000|6573|0|0|.git/objects/15/tmp_obj_GFpBmf|git
+FILE_CREATE|1000|6573|0|0|.git/COMMIT_EDITMSG|git
+FILE_CREATE|1000|6573|0|0|.git/objects/87/tmp_obj_6JfFON|git
+FILE_CREATE|1000|6573|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/HEAD.lock|git
+FILE_CREATE|1000|6573|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/refs/heads/main.lock|git
+FILE_CREATE|1000|6573|0|0|.git/logs/HEAD|git
+FILE_CREATE|1000|6573|0|0|.git/logs/refs/heads/main|git
+EXEC|execve|572760319004|6574|6573|1000|git|/usr/lib/git-core/git maintenance run --auto --no-quiet
+FILE_CREATE|1000|6574|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/objects/maintenance.lock|git
+CLONE3|6575|2272|579310499602
+FILE_CREATE|1000|2064|0|0|/home/ubuntu/.local/state/wireplumber/restore-stream.LAHQL3|wireplumber
+CLONE|6576|6566|581248644864
+EXEC|execve|581249179164|6576|6566|1000|bash|git push
+EXEC|execve|581252837791|6577|6576|1000|git|/usr/lib/git-core/git remote-https origin https://github.com/HuynhLeHoang/LeHoangHuynh_ThesisCode.git
+EXEC|execve|581256584016|6578|6577|1000|git|/usr/lib/git-core/git-remote-https origin https://github.com/HuynhLeHoang/LeHoangHuynh_ThesisCode.git
+CLONE|6580|6578|581725285703
+EXEC|execve|581725632517|6580|6578|1000|git-remote-http|/bin/sh -c /usr/bin/gh auth git-credential get /usr/bin/gh auth git-credential get
+EXEC|execve|581727692260|6581|6580|1000|sh|/usr/bin/gh auth git-credential get
+CLONE3|6588|2845|581803749888
+CLONE3|6589|2126|581803913163
+CLONE|6591|6578|582085400092
+EXEC|execve|582085758678|6591|6578|1000|git-remote-http|/bin/sh -c /usr/bin/gh auth git-credential store /usr/bin/gh auth git-credential store
+EXEC|execve|582088242712|6592|6591|1000|sh|/usr/bin/gh auth git-credential store
+EXEC|execve|582121938936|6599|6578|1000|git-remote-http|/usr/lib/git-core/git send-pack --stateless-rpc --helper-status --thin --progress https://github.com/HuynhLeHoang/LeHoangHuynh_ThesisCode.git/ --stdin
+EXEC|execve|582124378348|6601|6599|1000|git|/usr/lib/git-core/git pack-objects --all-progress-implied --revs --stdout --thin --delta-base-offset --progress
+FILE_CREATE|1000|6576|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/refs/remotes/origin/main.lock|git
+FILE_CREATE|1000|6576|0|0|.git/logs/refs/remotes/origin/main|git
+CLONE3|6603|4200|584043935923
+CLONE3|6604|4200|584179807570
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-3GGTL3|pool-org.gnome.
+EXEC|execve|584184585467|6605|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+EXEC|execve|584186074587|6606|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+EXEC|execve|584187814395|6607|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6609|584193630641
+EXEC|execve|584193794561|6611|6609|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+CLONE|2|6608|584194265340
+EXEC|execve|584194479929|6612|6608|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+CLONE|2|6610|584194909911
+EXEC|execve|584195151764|6613|6610|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6611|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/1d57481e00b96aba3c8f0cefae9f8ef9.png.EC1PL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/1d57481e00b96aba3c8f0cefae9f8ef9.png.EC1PL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-QTVPL3|pool-org.gnome.
+CLONE|6614|4200|584349706984
+EXEC|execve|584350066733|6614|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6615|584360354209
+EXEC|execve|584360551552|6616|6615|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6613|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/762504b3efbe1852f55e3f450f9c45c0.png.401OL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/762504b3efbe1852f55e3f450f9c45c0.png.401OL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-PPPPL3|pool-org.gnome.
+EXEC|execve|584388639491|6617|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6618|584399578312
+EXEC|execve|584399769381|6619|6618|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6612|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/8058bcbc7cbd1c8d08ea9e9c6e5200c3.png.Y2KOL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/8058bcbc7cbd1c8d08ea9e9c6e5200c3.png.Y2KOL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-I9HOL3|pool-org.gnome.
+EXEC|execve|584414940448|6621|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6622|584423229189
+EXEC|execve|584423415427|6623|6622|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6616|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/c8ce0817336a5adde90b6d063fcaf988.png.R54ML3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/c8ce0817336a5adde90b6d063fcaf988.png.R54ML3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-VM3ML3|pool-org.gnome.
+CLONE|6624|4200|584479971732
+EXEC|execve|584481021235|6624|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6625|584491184415
+EXEC|execve|584491571421|6626|6625|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6619|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/ac43d523602862611af82ebd0a2c49e7.png.FW2LL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/ac43d523602862611af82ebd0a2c49e7.png.FW2LL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-F90LL3|pool-org.gnome.
+EXEC|execve|584561983556|6627|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6628|584567742655
+EXEC|execve|584568210782|6629|6628|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6623|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/829d0e43a325ee953234a6b014586c46.png.XLHKL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/829d0e43a325ee953234a6b014586c46.png.XLHKL3|pool-org.gnome.
+FILE_CREATE|1000|6626|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+CLONE3|6630|4200|584633361679
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-UNRJL3|pool-org.gnome.
+EXEC|execve|584635388150|6631|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/a4efcfa74c7f65def7d6b5bfd896e6d7.png.SQNJL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/a4efcfa74c7f65def7d6b5bfd896e6d7.png.SQNJL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-IGMJL3|pool-org.gnome.
+CLONE|2|6632|584640592334
+EXEC|execve|584640779761|6633|6632|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+EXEC|execve|584642216270|6634|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6635|584647912232
+EXEC|execve|584648117805|6636|6635|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6629|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/2ff59919efa05d52bb1e8289219fb126.png.TEDIL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/2ff59919efa05d52bb1e8289219fb126.png.TEDIL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-8SHHL3|pool-org.gnome.
+CLONE|6637|4200|584740049253
+EXEC|execve|584740363295|6637|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6638|584747570307
+EXEC|execve|584747749195|6639|6638|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6633|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|6636|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/b9ce61e90ad007ad8ed71adb4789069f.png.9IVHL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/b9ce61e90ad007ad8ed71adb4789069f.png.9IVHL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/5a41aed80c0a6aa9d07f0c02fe1c1d5e.png.9ETHL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/5a41aed80c0a6aa9d07f0c02fe1c1d5e.png.9ETHL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-AOTHL3|pool-org.gnome.
+EXEC|execve|584758907611|6640|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-N4PHL3|pool-org.gnome.
+EXEC|execve|584761232019|6641|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+EXEC|execve|584767590891|6644|6642|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+CLONE|2|6642|584767422256
+CLONE|2|6643|584768765181
+EXEC|execve|584769623050|6645|6643|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6639|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/6c0fe0c633ab088e3d764cec1317f75d.png.2I8EL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/6c0fe0c633ab088e3d764cec1317f75d.png.2I8EL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-B5TFL3|pool-org.gnome.
+EXEC|execve|584849422200|6646|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|6646|4200|584849080020
+CLONE|2|6647|584856251945
+EXEC|execve|584856423012|6648|6647|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6644|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/2cb5fd2aafb4eeb4c0f1a1d836b99eff.png.HG5EL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/2cb5fd2aafb4eeb4c0f1a1d836b99eff.png.HG5EL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-201EL3|pool-org.gnome.
+EXEC|execve|584888440465|6649|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6650|584899859148
+EXEC|execve|584900081181|6651|6650|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6645|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/a1146d5d89d4c7d06e6bafb51f11a2e2.png.TZ9CL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/a1146d5d89d4c7d06e6bafb51f11a2e2.png.TZ9CL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-YN9CL3|pool-org.gnome.
+EXEC|execve|584938759602|6653|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+EXEC|execve|584945696115|6655|6654|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+CLONE|2|6654|584945506460
+FILE_CREATE|1000|6648|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/67f0ec89f1b3278c8d4b890ea6f648a2.png.XWLXL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/67f0ec89f1b3278c8d4b890ea6f648a2.png.XWLXL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-LWKXL3|pool-org.gnome.
+CLONE|6657|4200|584991474049
+EXEC|execve|584992206728|6657|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+EXEC|execve|585002294155|6659|6658|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+CLONE|2|6658|585002172112
+FILE_CREATE|1000|6651|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/bc14a2670dfa98aaf2e4fca673a94689.png.ZTZWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/bc14a2670dfa98aaf2e4fca673a94689.png.ZTZWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-P7XWL3|pool-org.gnome.
+EXEC|execve|585018880510|6660|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6661|585028403850
+EXEC|execve|585028595985|6662|6661|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6655|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/b3e64b01797d471cd9ebf8d5b76efeb4.png.S7LWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/b3e64b01797d471cd9ebf8d5b76efeb4.png.S7LWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-PGJWL3|pool-org.gnome.
+EXEC|execve|585072085374|6663|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|2|6664|585077288925
+EXEC|execve|585077464934|6665|6664|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6662|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/597d5b9a38d064d9b2cf13eface8999b.png.UG5UL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/597d5b9a38d064d9b2cf13eface8999b.png.UG5UL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/tmp/flatpak-seccomp-IW4UL3|pool-org.gnome.
+EXEC|execve|585139628937|6666|4200|1000|pool-org.gnome.|bwrap --ro-bind /usr /usr --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --symlink /usr//bin /bin --symlink /usr//lib64 /lib64 --symlink /usr//lib /lib --symlink /usr//sbin /sbin --ro-bind-try
+CLONE|6666|4200|585139331394
+CLONE|2|6667|585150675502
+EXEC|execve|585151586886|6668|6667|1000|bwrap|/usr/bin/gdk-pixbuf-thumbnailer -s 256 file:///tmp/gnome-desktop-file-to-thumbnail.png /tmp/gnome-desktop-thumbnailer.png
+FILE_CREATE|1000|6665|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/5e45c36574114b36b0bbd0f2ecac7c3c.png.3FFTL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/5e45c36574114b36b0bbd0f2ecac7c3c.png.3FFTL3|pool-org.gnome.
+FILE_CREATE|1000|6659|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/b38bfd2a8bb30b6cf169693ed78cd597.png.Z2RTL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/b38bfd2a8bb30b6cf169693ed78cd597.png.Z2RTL3|pool-org.gnome.
+FILE_CREATE|1000|6668|0|0|/tmp/gnome-desktop-thumbnailer.png|gdk-pixbuf-thum
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/854f9f493818331e41f8b25607cc4cd1.png.4GVRL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.cache/thumbnails/large/854f9f493818331e41f8b25607cc4cd1.png.4GVRL3|pool-org.gnome.
+CLONE3|6669|2241|592058644922
+FILE_CREATE|0|1053|0|0|/run/systemd/inhibit/.#207fd0123a79b400d8|systemd-logind
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/43288_1773123278.9808948.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/43288_1773123278.9808948.png.trashinfo.WXNWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/43288_1773123282.2171216.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/43288_1773123282.2171216.png.trashinfo.O0LWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/44782_1773123357.473066.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/44782_1773123357.473066.png.trashinfo.3BLWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/44782_1773123359.8623433.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/44782_1773123359.8623433.png.trashinfo.TCLWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/46287_1773123385.8530211.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/46287_1773123385.8530211.png.trashinfo.CFLWL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/46287_1773123388.105576.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/46287_1773123388.105576.png.trashinfo.NJLWL3|pool-org.gnome.
+CLONE3|6671|2817|592075120655
+FILE_CREATE|0|1053|0|0|/run/systemd/inhibit/.#21ef02156571d42090|systemd-logind
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/47994_1773123425.9254851.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/47994_1773123425.9254851.png.trashinfo.NUKUL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/47994_1773123427.8458996.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/47994_1773123427.8458996.png.trashinfo.H1LUL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/48731_1773123462.56055.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/48731_1773123462.56055.png.trashinfo.1GLUL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/49940_1773123518.431308.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/49940_1773123518.431308.png.trashinfo.YRLUL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/49940_1773123520.4879072.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/49940_1773123520.4879072.png.trashinfo.B3IUL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4307_1773123638.6885624.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4307_1773123638.6885624.png.trashinfo.33YNL3|pool-org.gnome.
+FILE_CREATE|0|1053|0|0|/run/systemd/inhibit/.#2256b12085184051a7|systemd-logind
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4307_1773123640.8604538.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4307_1773123640.8604538.png.trashinfo.HJWNL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4554_1773123707.6844165.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4554_1773123707.6844165.png.trashinfo.DRWNL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4554_1773123709.9951847.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4554_1773123709.9951847.png.trashinfo.OVXNL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4745_1773123754.2494678.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4745_1773123754.2494678.png.trashinfo.48WNL3|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4745_1773123757.2439668.png.trashinfo|pool-org.gnome.
+FILE_CREATE|1000|4200|0|0|/home/ubuntu/.local/share/Trash/info/4745_1773123757.2439668.png.trashinfo.EAXNL3|pool-org.gnome.
+FILE_CREATE|1000|3280|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/chatEditingSessions/f3535cee-6b8b-4e56-8a95-cf476c34272d/state.json|libuv-worker
+CLONE|6674|3390|597241396117
+EXEC|execve|597242399449|6674|3390|1000|code|git config --get commit.template
+EXEC|execve|597250924153|6675|3390|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|597258310712|6676|3390|1000|code|git status -z -uall
+EXEC|execve|597262281478|6677|3390|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+EXEC|execve|597272306805|6678|3390|1000|code|git blame --root --incremental 87a7a1943e49ccba65e121afdb51e18fb8f8fff8 -- trace_privi.py
+EXEC|execve|597278377285|6679|3390|1000|code|git merge-base refs/heads/main refs/remotes/origin/main
+EXEC|execve|597295461060|6680|3390|1000|code|git ls-files --stage -- trace_privi.py
+EXEC|execve|597301636767|6681|3390|1000|code|git cat-file -s ad739f37a64697ed954c75f898d4eb03ce7e46f5
+EXEC|execve|597308191518|6682|3390|1000|code|git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% 87a7a1943e49ccba65e121afdb51e18fb8f8fff8...refs/remotes/origin/main --
+EXEC|execve|597328197567|6683|3390|1000|code|git show --textconv :trace_privi.py
+FILE_CREATE|1000|3280|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/chatEditingSessions/f3535cee-6b8b-4e56-8a95-cf476c34272d/state.json|libuv-worker
+CLONE|6684|3390|597576907300
+EXEC|execve|597577355158|6684|3390|1000|code|git check-ignore -v -z --stdin
+CLONE|6685|6566|599507864012
+EXEC|execve|599508301388|6685|6566|1000|bash|git add .
