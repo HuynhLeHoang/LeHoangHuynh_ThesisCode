@@ -4,6 +4,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from collections import defaultdict
 import time
+import threading
+
 
 bpf_program = r"""
 #include <uapi/linux/ptrace.h>
@@ -57,10 +59,7 @@ TRACEPOINT_PROBE(raw_syscalls, sys_exit)
     if (id != __NR_setuid &&
         id != __NR_setgid &&
         id != __NR_setreuid &&
-        id != __NR_setregid &&
-        id != __NR_setresuid &&
-        id != __NR_setresgid &&
-        id != __NR_capset)
+        id != __NR_setregid)
         return 0;
 
     /* chỉ log khi thành công */
@@ -96,9 +95,6 @@ syscall_names = {
     106: "setgid",
     113: "setreuid",
     114: "setregid",
-    117: "setresuid",
-    119: "setresgid",
-    126: "capset",
 }
 
 
@@ -109,37 +105,38 @@ def parse_log(file_path):
     labels = {}
 
     with open(file_path, "r") as f:
-        for line in f:
-            parts = line.strip().split("|")
-            if not parts:
-                continue
+        lines = f.readlines()
+    for line in lines:
+        parts = line.strip().split("|")
+        if not parts:
+            continue
 
-            event = parts[0]
+        event = parts[0]
 
-            # ===== CLONE / CLONE3 =====
-            if event in ("CLONE", "CLONE3"):
-                child = parts[1]
-                parent = parts[2]
+        # ===== CLONE / CLONE3 =====
+        if event in ("CLONE", "CLONE3"):
+            child = parts[1]
+            parent = parts[2]
 
-                parent_map[child] = parent
-                children_map[parent].add(child)
+            parent_map[child] = parent
+            children_map[parent].add(child)
 
-                all_edges.append((parent, child, "fork"))
+            all_edges.append((parent, child, "fork"))
 
-            # ===== EXEC =====
-            elif event == "EXEC":
-                # EXEC|execve|timestamp|pid|ppid|uid|comm|cmd
-                pid = parts[3]
-                ppid = parts[4]
-                comm = parts[6]
-                cmd = parts[7]
+        # ===== EXEC =====
+        elif event == "EXEC":
+            # EXEC|execve|timestamp|pid|ppid|uid|comm|cmd
+            pid = parts[3]
+            ppid = parts[4]
+            comm = parts[6]
+            cmd = parts[7]
 
-                parent_map[pid] = ppid
-                children_map[ppid].add(pid)
+            parent_map[pid] = ppid
+            children_map[ppid].add(pid)
 
-                labels[pid] = f"{comm}\n{cmd}"
+            labels[pid] = f"{comm}\n{cmd}"
 
-                all_edges.append((ppid, pid, "exec"))
+            all_edges.append((ppid, pid, "exec"))
 
     return parent_map, children_map, all_edges, labels
 
@@ -158,36 +155,11 @@ def trace_lineage(pid, parent_map):
         current = parent
 
     return lineage
-
-
-def build_expanded_graph(target_pid, parent_map, children_map, all_edges):
-    G = nx.DiGraph()
-
-    lineage = trace_lineage(target_pid, parent_map)
-    lineage_set = set(lineage)
-
-    for node in lineage:
-        if node in parent_map:
-            parent = parent_map[node]
-            G.add_edge(parent, node, type="lineage")
-
-    for node in lineage:
-
-        if node in parent_map:
-            parent = parent_map[node]
-            G.add_edge(parent, node, type="neighbor")
-
-        if node in children_map:
-            for child in children_map[node]:
-                G.add_edge(node, child, type="neighbor")
-
-    return G
-
-
+drawn = []
 def draw_graph(G, labels,pid):
     pos = nx.nx_agraph.graphviz_layout(G, prog="dot")
     plt.figure(figsize=(14, 12))
-    output= str(pid) + '_' + str(time.time()) + ".png"
+    output= "Picture/" + str(pid) + '_' + str(time.time()) + ".png"
     nx.draw(
         G,
         pos,
@@ -211,32 +183,52 @@ def draw_graph(G, labels,pid):
     print(f"Saved to {output}")
     plt.show()
 
+def build_expanded_graph(target_pid1):
+    target_pid = str(target_pid1)
+    if target_pid not in drawn:
+        drawn.append(target_pid)
+    else:
+        return
+    G = nx.DiGraph()
+    parent_map, children_map, all_edges, labels = parse_log("Provenance.log")
+    if target_pid not in parent_map:
+        print("target pid not in parent map")
+    lineage = trace_lineage(target_pid, parent_map)
+    lineage_set = set(lineage)
+    pid = str(target_pid)
+    SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
+    
+    for node in lineage:
+        if node in parent_map:
+            parent = parent_map[node]
+            
+            G.add_edge(parent, node, type="lineage")
+
+    for node in lineage:
+        if node in SudoAuthenLog:
+                return
+        if node in parent_map:
+            parent = parent_map[node]
+            G.add_edge(parent, node, type="neighbor")
+
+        if node in children_map:
+            for child in children_map[node]:
+                if child in SudoAuthenLog:
+                    return
+                G.add_edge(node, child, type="neighbor")
+
+    draw_graph(G, labels, pid)
+
 def print_event(cpu, data, size):
     e = cast(data, POINTER(Event)).contents
     name = syscall_names.get(e.syscall, "unknown")
-    parent_map, children_map, all_edges, labels = parse_log("Provenance.log")
+
     target_pid = e.pid
-    SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
-    pid = e.pid
-    print("value of if:",str(target_pid) not in parent_map)
-    checker = False
-    while True:        
-        for children in children_map[pid]:
-            if str(children) in SudoAuthenLog:
-                break
-                #return
-        try:
-            pid = parent_map[pid]
-        except:
-            checker = True
-            break
     print(f"[PID {e.pid}] UID={e.uid} SUCCESS syscall={name}")
-    #print(parent_map)
-    if target_pid not in parent_map:
-        print("PID not exist")
-    else:
-        G = build_expanded_graph(target_pid, parent_map, children_map, all_edges)
-        draw_graph(G, labels, target_pid)
+    #timer = threading.Timer(10.0, build_expanded_graph, args=(target_pid,))
+    #timer.start()
+    build_expanded_graph(target_pid)
+
 
 def print_sudo_authen(cpu, data, size):
     e = cast(data, POINTER(SudoEvent)).contents
@@ -247,8 +239,8 @@ def print_sudo_authen(cpu, data, size):
 
     print(f"[SUDO AUTH] PID={e.pid} UID={e.uid} FILE={path}")
 
-    with open("SudoAuthen.log","w") as f:
-        f.write(str(e.uid) + "|" + str(e.pid))
+    with open("SudoAuthen.log","a") as f:
+        f.write("\n" + str(e.uid) + "|" + str(e.pid) + "|")
 
 b = BPF(text=bpf_program)
 b["sudo_events"].open_perf_buffer(print_sudo_authen)
