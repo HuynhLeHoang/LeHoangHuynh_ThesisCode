@@ -1225,3 +1225,65 @@ CLONE|6684|3390|597576907300
 EXEC|execve|597577355158|6684|3390|1000|code|git check-ignore -v -z --stdin
 CLONE|6685|6566|599507864012
 EXEC|execve|599508301388|6685|6566|1000|bash|git add .
+FILE_CREATE|1000|6685|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/index.lock|git
+FILE_CREATE|1000|6685|0|0|.git/objects/8d/tmp_obj_hetqUo|git
+CLONE|6686|6566|601120235474
+EXEC|execve|601120670340|6686|6566|1000|bash|git commit
+FILE_CREATE|1000|6686|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/index.lock|git
+FILE_CREATE|1000|6686|0|0|.git/objects/bd/tmp_obj_TZ9UiY|git
+FILE_CREATE|1000|6686|0|0|.git/objects/87/tmp_obj_wce8L4|git
+FILE_CREATE|1000|6686|0|0|.git/COMMIT_EDITMSG|git
+EXEC|execve|601124664189|6687|6686|1000|git|/usr/bin/editor /home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/COMMIT_EDITMSG
+FILE_CREATE|1000|6687|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/.COMMIT_EDITMSG.swp|editor
+CLONE3|6688|1058|607033086689
+CLONE|6691|6566|608208619682
+EXEC|execve|608209202505|6691|6566|1000|bash|git commit -m 
+FILE_CREATE|1000|6691|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/index.lock|git
+FILE_CREATE|1000|6691|0|0|.git/COMMIT_EDITMSG|git
+CLONE3|6692|2126|608726952519
+CLONE3|6695|2845|608728747669
+CLONE|6696|6566|612330945235
+EXEC|execve|612331666207|6696|6566|1000|bash|git commit -m .
+FILE_CREATE|1000|6696|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/index.lock|git
+FILE_CREATE|1000|6696|0|0|.git/COMMIT_EDITMSG|git
+FILE_CREATE|1000|6696|0|0|.git/objects/03/tmp_obj_fJIkdn|git
+FILE_CREATE|1000|6696|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/HEAD.lock|git
+FILE_CREATE|1000|6696|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/refs/heads/main.lock|git
+FILE_CREATE|1000|6696|0|0|.git/logs/HEAD|git
+FILE_CREATE|1000|6696|0|0|.git/logs/refs/heads/main|git
+EXEC|execve|612335166098|6697|6696|1000|git|/usr/lib/git-core/git maintenance run --auto --no-quiet
+FILE_CREATE|1000|6697|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/objects/maintenance.lock|git
+CLONE|6698|6566|615377664402
+EXEC|execve|615377940982|6698|6566|1000|bash|git push
+EXEC|execve|615379999265|6699|6698|1000|git|/usr/lib/git-core/git remote-https origin https://github.com/HuynhLeHoang/LeHoangHuynh_ThesisCode.git
+EXEC|execve|615381536639|6700|6699|1000|git|/usr/lib/git-core/git-remote-https origin https://github.com/HuynhLeHoang/LeHoangHuynh_ThesisCode.git
+CLONE|6702|6700|615747205248
+EXEC|execve|615747653041|6702|6700|1000|git-remote-http|/bin/sh -c /usr/bin/gh auth git-credential get /usr/bin/gh auth git-credential get
+EXEC|execve|615749253609|6703|6702|1000|sh|/usr/bin/gh auth git-credential get
+CLONE3|6710|2845|615788440439
+CLONE|6711|6700|616047366811
+EXEC|execve|616047713808|6711|6700|1000|git-remote-http|/bin/sh -c /usr/bin/gh auth git-credential store /usr/bin/gh auth git-credential store
+EXEC|execve|616049766616|6712|6711|1000|sh|/usr/bin/gh auth git-credential store
+EXEC|execve|616085521811|6720|6700|1000|git-remote-http|/usr/lib/git-core/git send-pack --stateless-rpc --helper-status --thin --progress https://github.com/HuynhLeHoang/LeHoangHuynh_ThesisCode.git/ --stdin
+EXEC|execve|616088584671|6722|6720|1000|git|/usr/lib/git-core/git pack-objects --all-progress-implied --revs --stdout --thin --delta-base-offset --progress
+FILE_CREATE|1000|6698|0|0|/home/ubuntu/Documents/LeHoangHuynh_ThesisCode/.git/refs/remotes/origin/main.lock|git
+FILE_CREATE|1000|6698|0|0|.git/logs/refs/remotes/origin/main|git
+CLONE3|6724|2272|618379294385
+CLONE3|6725|6559|619111571294
+FILE_CREATE|1000|6559|0|0|/home/ubuntu/.cache/event-sound-cache.tdb.91f68a14f6bd4595ac4e9f21391c20c2.x86_64-pc-linux-gnu|gnome-terminal-
+CLONE|6726|3390|619234816176
+EXEC|execve|619235140343|6726|3390|1000|code|git config --get commit.template
+EXEC|execve|619241686084|6727|3390|1000|code|git ls-files --stage -- trace_privi.py
+EXEC|execve|619244992732|6728|3390|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|619249762530|6729|3390|1000|code|git cat-file -s ad739f37a64697ed954c75f898d4eb03ce7e46f5
+EXEC|execve|619257417964|6730|3390|1000|code|git show --textconv :trace_privi.py
+EXEC|execve|619261730019|6731|3390|1000|code|git status -z -uall
+EXEC|execve|619265420024|6732|3390|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+EXEC|execve|619272167616|6733|3390|1000|code|git blame --root --incremental 03b4669e9a96d902002d17f38d2208cdbc138fed -- trace_privi.py
+EXEC|execve|619277789993|6734|3390|1000|code|git merge-base refs/heads/main refs/remotes/origin/main
+EXEC|execve|619285078798|6735|3390|1000|code|git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% 03b4669e9a96d902002d17f38d2208cdbc138fed...refs/remotes/origin/main --
+CLONE3|6736|6559|619298544910
+FILE_CREATE|1000|2044|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/cgroup.subtree_control|systemd
+CLONE3|6738|2845|619302898504
+CLONE|6741|3390|619577085496
+EXEC|execve|619577459077|6741|3390|1000|code|git check-ignore -v -z --stdin

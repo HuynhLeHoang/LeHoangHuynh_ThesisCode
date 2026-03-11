@@ -159,7 +159,7 @@ drawn = []
 def draw_graph(G, labels,pid):
     pos = nx.nx_agraph.graphviz_layout(G, prog="dot")
     plt.figure(figsize=(14, 12))
-    output= "Picture/" + str(pid) + '_' + str(time.time()) + ".png"
+    output= "Picture/PID" + str(pid) + '_' + str(time.time()) + ".png"
     nx.draw(
         G,
         pos,
