@@ -160,12 +160,19 @@ def draw_graph(G, labels,pid):
     pos = nx.nx_agraph.graphviz_layout(G, prog="dot")
     plt.figure(figsize=(14, 12))
     output= "Picture/PID" + str(pid) + '_' + str(time.time()) + ".png"
+    node_colors = []
+    for node in G.nodes():
+        if str(node) == str(pid): 
+            node_colors.append("red")
+        else:
+            node_colors.append("#A7C7E7")
+
     nx.draw(
         G,
         pos,
         with_labels=False,
         node_size=2500,
-        node_color="#A7C7E7",
+        node_color=node_colors,
         arrows=True
     )
 
