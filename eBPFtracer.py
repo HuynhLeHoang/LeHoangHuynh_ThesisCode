@@ -1,9 +1,8 @@
 from bcc import BPF
 from ctypes import *
-from queue import Queue
 from threading import Thread
 import time
-event_queue = Queue(maxsize=1000000)
+
 running = True
 from bcc import BPF
 from ctypes import *
@@ -11,8 +10,6 @@ from queue import Queue
 from threading import Thread
 import time
 
-#event_queue = Queue(maxsize=1000000)
-#running = True
 
 TASK_COMM_LEN = 16
 MAX_ARGS = 20
@@ -499,25 +496,9 @@ print("Tracing provenance ... Ctrl-C to stop.\n")
 # Save node to provenance tree
 # =======================
 
-def writer_thread():
-    with open("Provenance.log", "a") as f:
-        while running or not event_queue.empty():
-            try:
-                line = event_queue.get(timeout=0.5)
-                f.write(line + "\n")
-                event_queue.task_done()
-            except:
-                pass
 
 def provstorage(outputstr):
-    #with queue
-    """
-    try:
-        event_queue.put_nowait(outputstr)
-    except:
-        pass
-    """
-    # no queue
+
     with open("Provenance.log", "a") as f:
         f.write(outputstr + "\n")
 
@@ -590,8 +571,7 @@ b["file_events"].open_perf_buffer(handle_file, page_cnt=64)
 # Main loop
 # =======================
 
-t = Thread(target=writer_thread, daemon=True)
-t.start()
+
 while True:
     try:
         b.perf_buffer_poll()
