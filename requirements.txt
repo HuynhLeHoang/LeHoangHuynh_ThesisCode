@@ -1,0 +1,8 @@
+# Python dependencies used by detector.py.
+matplotlib>=3.5
+networkx>=2.8
+
+# The `bcc` Python module is provided by the system BPF Compiler Collection
+# packages, not by this pip requirements file.
+# On Ubuntu/Debian, install it with:
+# sudo apt install bpfcc-tools python3-bpfcc linux-headers-$(uname -r)

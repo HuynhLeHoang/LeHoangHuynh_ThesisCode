@@ -4,7 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from collections import defaultdict
 import time
-import threading
+
 
 
 bpf_program = r"""
@@ -59,7 +59,10 @@ TRACEPOINT_PROBE(raw_syscalls, sys_exit)
     if (id != __NR_setuid &&
         id != __NR_setgid &&
         id != __NR_setreuid &&
-        id != __NR_setregid)
+        id != __NR_setregid &&
+        id != __NR_setresuid &&
+        id != __NR_setresgid &&
+        id != __NR_capset)
         return 0;
 
     /* chỉ log khi thành công */
@@ -95,6 +98,9 @@ syscall_names = {
     106: "setgid",
     113: "setreuid",
     114: "setregid",
+    117: "setresuid",
+    119: "setresgid",
+    126: "capset",
 }
 
 
@@ -232,8 +238,6 @@ def print_event(cpu, data, size):
 
     target_pid = e.pid
     print(f"[PID {e.pid}] UID={e.uid} SUCCESS syscall={name}")
-    #timer = threading.Timer(10.0, build_expanded_graph, args=(target_pid,))
-    #timer.start()
     build_expanded_graph(target_pid)
 
 

@@ -1,11 +1,5 @@
 from bcc import BPF
 from ctypes import *
-from threading import Thread
-import time
-
-running = True
-from bcc import BPF
-from ctypes import *
 from queue import Queue
 from threading import Thread
 import time
@@ -305,104 +299,7 @@ int trace_clone3_exit(struct tracepoint__syscalls__sys_exit_clone3 *ctx)
     fork_events.perf_submit(ctx, &e, sizeof(e));
     return 0;
 }
-/* =========== Function definition area for file node ==============*/
 
-static __always_inline int submit_file(
-    void *ctx,
-    struct file *file,
-    const char *path,
-    u32 edge)
-{
-    struct inode *inode = NULL;
-    umode_t mode = 0;
-
-    if (!file)
-        return 1;
-
-    bpf_probe_read(&inode, sizeof(inode), &file->f_inode);
-    if (!inode)
-        return 1;
-
-    bpf_probe_read(&mode, sizeof(mode), &inode->i_mode);
-    if (!S_ISREG(mode))
-        return 1;
-
-    struct file_event_t e = {};
-    //system process filter apply
-    e.pid   = bpf_get_current_pid_tgid() >> 32;
-    if (e.pid < MIN_PID){
-        return 1;
-    }
-    //rate limit apply
-    u64 now = bpf_ktime_get_ns();
-    u32 pid = e.pid;
-    u64 *last_time = rate_limiter.lookup(&pid);
-    
-    if (last_time && (now - *last_time) < RATE_LIMIT_NS) {
-        return 0;
-    }
-    rate_limiter.update(&pid, &now);
-
-    e.uid   = bpf_get_current_uid_gid();
-    e.edge  = edge;
-    u64 ino = 0;
-    dev_t dev = 0;
-    struct super_block *sb = NULL;
-
-    bpf_probe_read(&ino, sizeof(ino), &inode->i_ino);
-    bpf_probe_read(&sb, sizeof(sb), &inode->i_sb);
-    if (sb)
-        bpf_probe_read(&dev, sizeof(dev), &sb->s_dev);
-
-    e.inode = ino;
-    e.dev   = dev;
-    e.ts    = bpf_ktime_get_ns();
-
-    bpf_get_current_comm(&e.comm, sizeof(e.comm));
-
-    if (path)
-        bpf_probe_read_user_str(e.path, sizeof(e.path), path);
-
-    file_events.perf_submit(ctx, &e, sizeof(e));
-    return 0;
-}
-
-static __always_inline int submit_inode(
-    void *ctx,
-    struct inode *inode,
-    u32 edge)
-{
-    umode_t mode = 0;
-    struct file_event_t e = {};
-
-    if (!inode)
-        return 1;
-
-    bpf_probe_read(&mode, sizeof(mode), &inode->i_mode);
-    if (!S_ISREG(mode))
-        return 1;
-
-    e.pid = bpf_get_current_pid_tgid() >> 32;
-  
-
-    e.uid = bpf_get_current_uid_gid();
-    e.edge = edge;
-
-    bpf_probe_read(&e.inode, sizeof(e.inode), &inode->i_ino);
-
-    struct super_block *sb = NULL;
-    bpf_probe_read(&sb, sizeof(sb), &inode->i_sb);
-    if (sb)
-        bpf_probe_read(&e.dev, sizeof(e.dev), &sb->s_dev);
-
-    e.ts = bpf_ktime_get_ns();
-    bpf_get_current_comm(&e.comm, sizeof(e.comm));
-
-    e.path[0] = '\0';
-
-    file_events.perf_submit(ctx, &e, sizeof(e));
-    return 0;
-}
 
 TRACEPOINT_PROBE(syscalls, sys_enter_openat)
 {
@@ -512,8 +409,7 @@ def handle_exec(cpu, data, size):
         return
 
     argv0 = e.argv[0].value
-#    if argv0 not in (b"sudo", b"/usr/bin/sudo"):
-#       return
+
 
     syscall = "execve" if e.syscall == 1 else "execveat"
 
@@ -522,26 +418,18 @@ def handle_exec(cpu, data, size):
         for i in range(e.argc)
     )
     outputstr = "EXEC" + "|" + str(syscall) + "|" + str(e.attr.ts) + "|" + str(e.attr.pid) + "|" + str(e.attr.ppid) + "|" + str(e.attr.euid) + "|" + str(e.comm.decode(errors='replace').strip(chr(0))) + "|" + str(cmdline)
-    #print(outputstr)
+
     provstorage(outputstr)
-    #print(f"[EXEC] {syscall}")
-    #print(f"  TIMESTAMP={e.attr.ts}")
-    #print(f"  PID={e.attr.pid} PPID={e.attr.ppid} EUID={e.attr.euid}")
-    #print(f"  COMM={e.comm.decode(errors='replace').strip(chr(0))}")
-    #print(f"  CMD={cmdline}")
+
 
 def handle_fork(cpu, data, size):
     e = cast(data, POINTER(ForkEvent)).contents
     t = {1:"fork", 2:"vfork", 3:"clone", 4:"clone3"}[e.type]
     outputstr = str(t.upper()) + "|" + str(e.child_pid) + "|" + str(e.parent.pid) + "|" + str(e.parent.ts)
-    #print(outputstr)
-    provstorage(outputstr)
-    #print(f"[{t.upper()}] {e.parent.pid} -> {e.child_pid}")
-    #print(f"  TIMESTAMP={e.parent.ts}")
 
-def sudolog(sudolog):
-    with open("SudoAuthen.log", "a") as f:
-        f.write(sudolog + "\n")
+    provstorage(outputstr)
+
+
 
 def handle_file(cpu, data, size):
     e = cast(data, POINTER(FileEvent)).contents
@@ -554,13 +442,7 @@ def handle_file(cpu, data, size):
     #print(outputstr)
     if ("python3" not in e.comm.decode(errors='ignore')) and ("/dev/shm" not in outputstr):
         provstorage(outputstr)
-    #if "/run/sudo/ts" in outputstr:
-    #    sudolog(outputstr)
-    
-    #print(f"[{edge}] pid={e.pid} uid={e.uid} "
-    #      f"inode={e.inode} dev={e.dev} "
-    #      f"path={e.path.decode(errors='ignore')} "
-    #      f"comm={e.comm.decode(errors='ignore')}")
+
 
 
 b["exec_events"].open_perf_buffer(handle_exec)
